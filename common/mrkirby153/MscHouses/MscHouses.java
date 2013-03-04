@@ -31,6 +31,9 @@ public class MscHouses {
 	
 	public static int villageId;
 	public static Block village;
+	
+	public static int Statue_ZombieID;
+	public static Block Statue_Zombie;
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event){
 		Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
@@ -39,7 +42,8 @@ public class MscHouses {
 			HutID = cfg.getBlock("Basic Hut", 700).getInt();
 			HouseToolID = cfg.getItem("House Tool", 3000).getInt();
 			ninebynineID = cfg.getBlock("9x9 House", 701).getInt();
-			villageId = cfg.getBlock("Village Generator", 701).getInt();
+			villageId = cfg.getBlock("Village Generator", 702).getInt();
+			Statue_ZombieID = cfg.getBlock("Zombie Statue Generator", 703).getInt();
 		}finally{
 			cfg.save();
 		}
@@ -51,6 +55,7 @@ public class MscHouses {
 		House_9x9 = new BlockHouse_9x9(ninebynineID, 1).setBlockName("9x9");
 		HouseTool = new ItemHouseTool(HouseToolID).setIconCoord(0,0).setItemName("HouseTool");
 		village = new BlockVillage(villageId, 2).setBlockName("village");
+		Statue_Zombie = new BlockStatue_Zombie(Statue_ZombieID, 3).setBlockName("Statue_Zombie");
 		addCrafting();
 		addNames();
 	}
@@ -60,6 +65,7 @@ public class MscHouses {
 		LanguageRegistry.addName(HouseTool, this.COLOR_CODE +  "dHouse Tool");
 		LanguageRegistry.addName(House_9x9, "9x9 House Building Block");
 		LanguageRegistry.addName(village, "Village Generator");
+		LanguageRegistry.addName(Statue_Zombie, "Zombie Statue Maker");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses", "Msc. Houses");
 		
 	}
