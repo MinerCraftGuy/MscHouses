@@ -161,5 +161,15 @@ public class HouseGen {
 		world.setBlock(x+7, y, z+3, Block.stoneOvenIdle.blockID);
 		world.setBlock(x+7, y, z+7, Block.workbench.blockID);
 	}
+	
+	public void generateCube(int x, int y, int z, int dimX, int dimY, int dimZ, World world){
+		for(int i = 1; i < dimX; i++){
+			for(int j = 1; j < dimY; j++){
+				for(int k = 1; j < dimZ; k++){
+					//TODO Add generate "wireframe" method.
+				}
+			}
+		}
+	}
 
 }
