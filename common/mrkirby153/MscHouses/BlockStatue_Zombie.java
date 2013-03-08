@@ -16,12 +16,16 @@ public class BlockStatue_Zombie extends Block{
 	}
 	
 	@Override
-	public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9) {
+	public boolean onBlockActivated(World world, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9) {
 		int x, y, z;
 		x = par2;
 		y = par3;
 		z = par4;
-		
+		StatueGen s = new StatueGen();
+//		s.zombie(x, y, z, world);
+		if(!world.isRemote){
+			par5EntityPlayer.sendChatToPlayer("Zombie Generated!");
+		}
 		return true;
 	}
 }
