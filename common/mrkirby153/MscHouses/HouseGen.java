@@ -118,8 +118,9 @@ public class HouseGen {
 			}
 		}
 		//Door
-		world.setBlock(x, y, z+4, 0);
-		world.setBlock(x, y+1, z+4, 0);
+		world.setBlockAndMetadata(x, y, z+4, 64, 0);
+		world.setBlockAndMetadata(x, y+1, z+4, 64, 8);
+		world.setBlock(x+1, y, z+4, Block.pressurePlatePlanks.blockID);
 		//Light
 	//	world.setBlock(x+2, y+4, z+2, Block.glowStone.blockID);
 		//Chest
@@ -159,17 +160,13 @@ public class HouseGen {
 		//Add furnace and extra chest
 		world.setBlock(x+7, y, z+2, Block.chest.blockID);
 		world.setBlock(x+7, y, z+3, Block.stoneOvenIdle.blockID);
-		world.setBlock(x+7, y, z+7, Block.workbench.blockID);
+		world.setBlock(x+7, y, z+4, Block.workbench.blockID);
+		
+		//Add Bed and door
+		world.setBlockAndMetadata(x+6, y, z+7, 26, 3);
+		world.setBlockAndMetadata(x+7, y, z+7, 24, 11);
+		
 	}
 	
-	public void generateCube(int x, int y, int z, int dimX, int dimY, int dimZ, World world){
-		for(int i = 1; i < dimX; i++){
-			for(int j = 1; j < dimY; j++){
-				for(int k = 1; j < dimZ; k++){
-					//TODO Add generate "wireframe" method.
-				}
-			}
-		}
-	}
 
 }
