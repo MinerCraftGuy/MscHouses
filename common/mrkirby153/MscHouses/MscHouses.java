@@ -11,7 +11,6 @@ import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -35,15 +34,13 @@ public class MscHouses {
 	
 	public static int Statue_ZombieID;
 	public static Block Statue_Zombie;
-	
-	public static int MarkerID;
-	public static Block marker;
+
+	public static Item debug;
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event){
 		Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
 		try{
 			cfg.load();
-			MarkerID = cfg.getBlock("Marker", 699).getInt();
 			HutID = cfg.getBlock("Basic Hut", 700).getInt();
 			HouseToolID = cfg.getItem("House Tool", 3000).getInt();
 			ninebynineID = cfg.getBlock("9x9 House", 701).getInt();
@@ -61,16 +58,16 @@ public class MscHouses {
 		HouseTool = new ItemHouseTool(HouseToolID).setIconCoord(0,0).setItemName("HouseTool");
 		village = new BlockVillage(villageId, 2).setBlockName("village");
 		Statue_Zombie = new BlockStatue_Zombie(Statue_ZombieID, 3).setBlockName("Statue_Zombie");
-		marker = new BlockMarker(MarkerID, 26).setBlockName("marker");
+		debug = new Debug(698).setIconCoord(3,0).setItemName("debug");
 		addCrafting();
 		addNames();
 	//	EntityRegistry.registerModEntity(EntityMarker.class, "Marker", 1, this, 80, 3, true);
 	}
 	
 	private void addNames() {
-		LanguageRegistry.addName(House_Hut, "Hut Building House Block");
+		LanguageRegistry.addName(House_Hut, "Hut Building House Block. " + this.COLOR_CODE + "bMade by: mrkirby153");
 		LanguageRegistry.addName(HouseTool, this.COLOR_CODE +  "dHouse Tool");
-		LanguageRegistry.addName(House_9x9, "9x9 House Building Block");
+		LanguageRegistry.addName(House_9x9, "9x9 House Building Block. " + this.COLOR_CODE + "bOrigilally made by: Direwolf20");
 		LanguageRegistry.addName(village, "Village Generator");
 		LanguageRegistry.addName(Statue_Zombie, "Zombie Statue Maker");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses", "Msc. Houses");
