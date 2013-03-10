@@ -1,13 +1,18 @@
 package mrkirby153.MscHouses;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 public class ItemHouseTool extends Item{
 	public int defaultDamage = 10;
+	private Icon icon;
 	//	static MscHouses m = new MscHouses();
 	public static int[] damageBlocks = {MscHouses.House_Hut.blockID, MscHouses.House_9x9.blockID};
 	public ItemHouseTool(int par1) {
@@ -41,4 +46,17 @@ public class ItemHouseTool extends Item{
 		return par1ItemStack;
 	}
 
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void func_94581_a(IconRegister iconRegister){
+		icon = iconRegister.func_94245_a("MscHouses:HouseTool");
+	}
+	@Override
+	@SideOnly(Side.CLIENT)
+	public Icon getIconFromDamage(int damage){
+		return icon;
+	}
+	
+	
 }
