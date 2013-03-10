@@ -36,6 +36,7 @@ public class MscHouses {
 	public static Block Statue_Zombie;
 
 	public static Item debug;
+	 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event){
 		Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
@@ -53,12 +54,12 @@ public class MscHouses {
 	
 	@Init
 	public void init(FMLInitializationEvent event){
-		House_Hut= new BlockHouse_Hut(HutID, 0).setBlockName("hut");
-		House_9x9 = new BlockHouse_9x9(ninebynineID, 1).setBlockName("9x9");
-		HouseTool = new ItemHouseTool(HouseToolID).setIconCoord(0,0).setItemName("HouseTool");
-		village = new BlockVillage(villageId, 2).setBlockName("village");
-		Statue_Zombie = new BlockStatue_Zombie(Statue_ZombieID, 3).setBlockName("Statue_Zombie");
-		debug = new Debug(698).setIconCoord(3,0).setItemName("debug");
+		House_Hut= new BlockHouse_Hut(HutID).setUnlocalizedName("hut");
+		House_9x9 = new BlockHouse_9x9(ninebynineID).setUnlocalizedName("9x9");
+		HouseTool = new ItemHouseTool(HouseToolID).setUnlocalizedName("HouseTool");
+		village = new BlockVillage(villageId).setUnlocalizedName("village");
+		Statue_Zombie = new BlockStatue_Zombie(Statue_ZombieID).setUnlocalizedName("Statue_Zombie");
+		debug = new Debug(698).setUnlocalizedName("debug");
 		addCrafting();
 		addNames();
 	//	EntityRegistry.registerModEntity(EntityMarker.class, "Marker", 1, this, 80, 3, true);

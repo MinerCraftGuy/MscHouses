@@ -12,8 +12,8 @@ public class BlockVillage extends Block{
 	
 	private VillageGenerator g = new VillageGenerator();
 
-	public BlockVillage(int par1, int par2) {
-		super(par1, par2, Material.ground);
+	public BlockVillage(int par1) {
+		super(par1, Material.ground);
 		this.setHardness(1F);
 		this.setResistance(0F);
 		this.setCreativeTab(MscHouses.tabHouse);

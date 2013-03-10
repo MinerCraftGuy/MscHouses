@@ -5,7 +5,7 @@ import net.minecraft.world.World;
 
 public class StatueGen {
 
-
+/*
 	public void zombie(int xPos, int yPos, int zPos, World world){
 		//Feet
 		for(int y = 0; y < 2; y++){
@@ -34,4 +34,5 @@ public class StatueGen {
 		
 		world.setBlock(xPos+1, yPos+20, zPos-1, Block.cloth.blockID);
 	}
+	*/
 }

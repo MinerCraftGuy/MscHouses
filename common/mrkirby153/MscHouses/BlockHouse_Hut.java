@@ -2,19 +2,19 @@ package mrkirby153.MscHouses;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockHouse_Hut extends Block{
 
-	protected BlockHouse_Hut(int par1, int par2) {
-		super(par1, par2, Material.ground);
-		this.setCreativeTab(MscHouses.tabHouse);
-		this.setHardness(1F);
-		this.setResistance(0F);
-		GameRegistry.registerBlock(this, "BlockHut");
-	}
+	protected BlockHouse_Hut(int par1)
+    {
+        super(par1, Material.ground);
+        this.setCreativeTab(MscHouses.tabHouse);
+        GameRegistry.registerBlock(this, "BlockHut");
+    }
 
 	
 	@Override
