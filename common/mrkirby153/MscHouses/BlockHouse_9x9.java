@@ -16,6 +16,6 @@ public class BlockHouse_9x9 extends Block{
 	@Override
 	public String getTextureFile() {
 		// TODO Auto-generated method stub
-		return "/MscHouses/resources/block9x9.png";
+		return "mods/MscHouses/textures/blocks/block9x9.png";
 	}
 }
