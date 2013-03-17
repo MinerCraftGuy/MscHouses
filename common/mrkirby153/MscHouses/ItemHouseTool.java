@@ -11,14 +11,13 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 public class ItemHouseTool extends Item{
-	public int defaultDamage = 10;
 	private Icon icon;
 	//	static MscHouses m = new MscHouses();
 	public static int[] damageBlocks = {MscHouses.House_Hut.blockID, MscHouses.House_9x9.blockID};
 	public ItemHouseTool(int par1) {
 		super(par1);
 		this.setCreativeTab(MscHouses.tabHouse);
-		this.setMaxDamage(this.defaultDamage);
+		this.setMaxDamage(MscHouses.HouseToolDamage);
 	}
 	/*	public void damageItem(int damageAmount, EntityPlayer player){
 		ItemStack itemInHand = player.getItemInUse();
