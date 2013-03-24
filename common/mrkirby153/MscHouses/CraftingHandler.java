@@ -12,11 +12,6 @@ public class CraftingHandler implements ICraftingHandler{
 			IInventory craftMatrix) {
 		// System.out.println("Item ID: " + item.itemID);
 		if(item.itemID == MscHouses.invincible.itemID){
-			
-			NBTTagCompound nbt = item.getTagCompound();
-            nbt.setBoolean("enabled", false);
-            nbt.setInteger("timeLeft", 0);
-            item.setTagCompound(nbt);
 		}
 		
 	}
