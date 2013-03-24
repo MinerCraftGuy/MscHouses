@@ -45,6 +45,7 @@ public class MscHouses {
 	public static int InvincibleId;
 	public static Item invincible;
 	public static boolean Invincible;
+	public static Item invinvibleActive;
 	CraftingHandler cHandler = (CraftingHandler) new CraftingHandler();
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event){
