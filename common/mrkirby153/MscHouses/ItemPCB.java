@@ -5,7 +5,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
-
+/**
+ * MscHouses
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ *
+ */
 public class ItemPCB extends Item{
 	private Icon icon;
 	public ItemPCB(int par1) {
@@ -16,14 +21,8 @@ public class ItemPCB extends Item{
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void func_94581_a(IconRegister iconRegister){
-		icon = iconRegister.func_94245_a("MscHouses:pcb");
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public Icon getIconFromDamage(int par1) {
+	public void updateIcons(IconRegister iconRegister) {
 		// TODO Auto-generated method stub
-		return icon;
+		iconIndex = iconRegister.registerIcon("MscHouses:ItemPCB");
 	}
 }
