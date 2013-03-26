@@ -5,7 +5,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-
+/**
+ * MscHouses
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ *
+ */
 public class Debug extends Item{
 
 	public Debug(int par1) {
