@@ -9,9 +9,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-
+/**
+ * MscHouses
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ *
+ */
 public class ItemHouseTool extends Item{
-	private Icon icon;
 	//	static MscHouses m = new MscHouses();
 	public static int[] damageBlocks = {MscHouses.House_Hut.blockID, MscHouses.House_9x9.blockID};
 	public ItemHouseTool(int par1) {
@@ -19,43 +23,36 @@ public class ItemHouseTool extends Item{
 		this.setCreativeTab(MscHouses.tabHouse);
 		this.setMaxDamage(MscHouses.HouseToolDamage);
 	}
-	/*	public void damageItem(int damageAmount, EntityPlayer player){
-		ItemStack itemInHand = player.getItemInUse();
-		int currentDamgage = itemInHand.getItemDamage();
-		itemInHand.setItemDamage(currentDamgage+1);
-	}
-	 */
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,
 			EntityPlayer par3EntityPlayer) {
 		MovingObjectPosition p = this.getMovingObjectPositionFromPlayer(par2World, par3EntityPlayer, true);
 		if(p != null){
 			int block = par2World.getBlockId(p.blockX, p.blockY, p.blockZ);
-			for(int i = 0; i <= damageBlocks.length; i++){
-				if(par2World.getBlockId(p.blockX, p.blockY, p.blockZ) == damageBlocks[i]){
-					par1ItemStack.damageItem(1, par3EntityPlayer);
-					break;
-				}
-			}
-			if(block == MscHouses.House_Hut.blockID)
+
+			if(block == MscHouses.House_Hut.blockID){
 				MscHouses.h.hut(p.blockX, p.blockY, p.blockZ, par2World);
-			if(block== MscHouses.ninebynineID)
+				par1ItemStack.damageItem(1, par3EntityPlayer);
+			}
+			if(block== MscHouses.ninebynineID){
 				MscHouses.h.ninebynine(par2World, p.blockX, p.blockY, p.blockZ);
+				par1ItemStack.damageItem(1, par3EntityPlayer);
+			}
+			if(block == MscHouses.Delux9x9ID){
+				MscHouses.h.ninbynineDelux(par2World, p.blockX, p.blockY, p.blockZ);
+				par1ItemStack.damageItem(1, par3EntityPlayer);
+			}
 		}
 		return par1ItemStack;
 	}
 
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void func_94581_a(IconRegister iconRegister){
-		icon = iconRegister.func_94245_a("MscHouses:HouseTool");
+	public void updateIcons(IconRegister iconRegister) {
+		// TODO Auto-generated method stub
+		iconIndex = iconRegister.registerIcon("MscHouses:HouseTool");
 	}
-	@Override
-	@SideOnly(Side.CLIENT)
-	public Icon getIconFromDamage(int damage){
-		return icon;
-	}
-	
-	
+
+
 }
