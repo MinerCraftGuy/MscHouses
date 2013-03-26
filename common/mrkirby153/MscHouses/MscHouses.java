@@ -14,7 +14,12 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-
+/**
+ * MscHouses
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ *
+ */
 @Mod(modid = "MscHouses", name = "MscHouses", version = "CLOSED BETA")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class MscHouses {
@@ -45,8 +50,10 @@ public class MscHouses {
 	public static int InvincibleId;
 	public static Item invincible;
 	public static boolean Invincible;
-	public static Item invinvibleActive;
-	CraftingHandler cHandler = (CraftingHandler) new CraftingHandler();
+	public static int time;
+	
+	public static Block House_Delux9x9;
+	public static int Delux9x9ID;
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event){
 		Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
@@ -61,6 +68,8 @@ public class MscHouses {
 			villageId = cfg.getBlock("Village Generator", 702).getInt();
 			Statue_ZombieID = cfg.getBlock("Zombie Statue Generator", 703).getInt();
 			PCBID = cfg.getItem("PCB", 4001).getInt();
+			time = cfg.get(cfg.CATEGORY_GENERAL, "Time to recharge Invincible item", 6000).getInt();
+			Delux9x9ID = cfg.getBlock("Delux 9x9", 703).getInt();
 		}finally{
 			cfg.save();
 		}
@@ -71,6 +80,7 @@ public class MscHouses {
 		House_Hut= new BlockHouse_Hut(HutID).setUnlocalizedName("hut");
 		House_9x9 = new BlockHouse_9x9(ninebynineID).setUnlocalizedName("9x9");
 		HouseTool = new ItemHouseTool(HouseToolID).setUnlocalizedName("HouseTool");
+		House_Delux9x9 = new BlockHouse_Delux9x9(Delux9x9ID).setUnlocalizedName("Delux9x9");
 		village = new BlockVillage(villageId).setUnlocalizedName("village");
 		Statue_Zombie = new BlockStatue_Zombie(Statue_ZombieID).setUnlocalizedName("Statue_Zombie");
 		debug = new Debug(698).setUnlocalizedName("debug");
@@ -89,15 +99,17 @@ public class MscHouses {
 		LanguageRegistry.addName(Statue_Zombie, "Zombie Statue Maker");
 		LanguageRegistry.addName(PCB, "PCB Board");
 		LanguageRegistry.addName(invincible, "Invincible Item");
+		LanguageRegistry.addName(House_Delux9x9, "Delux 9x9");
+		LanguageRegistry.addName(debug, "Debug Item");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses", "Msc. Houses");
-	//	LanguageRegistry.instance().addStringLocalization("entity.MscHouses.Marker.name", "Marker");
-		GameRegistry.registerCraftingHandler(cHandler);
 		
 	}
 
 	public void addCrafting(){
 		GameRegistry.addRecipe(new ItemStack(this.PCB, 5), new Object[]{"X#X", "XXX", "X#X", 'X', Item.ingotIron, '#', Item.redstone});
 		GameRegistry.addRecipe(new ItemStack(this.HouseTool, 1), new Object[]{"  X", " # ", "#  ", 'X', this.PCB, '#', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(this.House_Hut, 1), new Object[]{"XXX", "XYX", "XXX", 'X', Block.planks, 'Y', Item.ingotIron});
+		GameRegistry.addRecipe(new ItemStack(this.House_9x9, 1), new Object[]{"X#X", "X@X", "X X", 'X', Block.stone, '#', this.House_Hut, '@', this.PCB});
 	}
 
 }
