@@ -62,4 +62,11 @@ public class ItemInvincible extends Item{
 		return item;
 	}
 	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public boolean hasEffect(ItemStack par1ItemStack) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	
 }

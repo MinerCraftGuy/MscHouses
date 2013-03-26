@@ -53,6 +53,13 @@ public class ItemHouseTool extends Item{
 		// TODO Auto-generated method stub
 		iconIndex = iconRegister.registerIcon("MscHouses:HouseTool");
 	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public boolean hasEffect(ItemStack par1ItemStack) {
+		// TODO Auto-generated method stub
+		return true;
+	}
 
 
 }
