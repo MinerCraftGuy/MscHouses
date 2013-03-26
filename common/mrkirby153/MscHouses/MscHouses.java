@@ -99,7 +99,7 @@ public class MscHouses {
 		LanguageRegistry.addName(Statue_Zombie, "Zombie Statue Maker");
 		LanguageRegistry.addName(PCB, "PCB Board");
 		LanguageRegistry.addName(invincible, "Invincible Item");
-		LanguageRegistry.addName(House_Delux9x9, "Delux 9x9");
+		LanguageRegistry.addName(House_Delux9x9, "Delux 9x9. " + this.COLOR_CODE + "bAdapted from: Direwolf20's 9x9");
 		LanguageRegistry.addName(debug, "Debug Item");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses", "Msc. Houses");
 		
