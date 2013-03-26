@@ -3,7 +3,12 @@ package mrkirby153.MscHouses;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
-
+/**
+ * MscHouses
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ *
+ */
 public class NBTHelper {
 	private static void initNBT(ItemStack itemStack) {
         if (itemStack.stackTagCompound == null) {
