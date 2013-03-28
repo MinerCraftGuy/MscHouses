@@ -5,7 +5,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
-import cpw.mods.fml.common.ICraftingHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.PreInit;
@@ -20,7 +19,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  *
  */
-@Mod(modid = "MscHouses", name = "MscHouses", version = "CLOSED BETA")
+@Mod(modid = "MscHouses", name = "MscHouses and more", version = "1.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class MscHouses {
 	public static HouseGen h= new HouseGen();
@@ -88,28 +87,33 @@ public class MscHouses {
 		invincible = new ItemInvincible(InvincibleId).setUnlocalizedName("Invincible");
 		addCrafting();
 		addNames();
-	//	EntityRegistry.registerModEntity(EntityMarker.class, "Marker", 1, this, 80, 3, true);
 	}
 	
 	private void addNames() {
-		LanguageRegistry.addName(House_Hut, "Hut Building House Block. " + this.COLOR_CODE + "bMade by: mrkirby153");
-		LanguageRegistry.addName(HouseTool, this.COLOR_CODE +  "dHouse Tool");
-		LanguageRegistry.addName(House_9x9, "9x9 House Building Block. " + this.COLOR_CODE + "bOrigilally made by: Direwolf20");
+		LanguageRegistry.addName(House_Hut, "Hut Building House Block. " + MscHouses.COLOR_CODE + "bMade by: mrkirby153");
+		LanguageRegistry.addName(HouseTool, MscHouses.COLOR_CODE +  "dHouse Tool");
+		LanguageRegistry.addName(House_9x9, "9x9 House Building Block. " + MscHouses.COLOR_CODE + "bOrigilally made by: Direwolf20");
 		LanguageRegistry.addName(village, "Village Generator");
 		LanguageRegistry.addName(Statue_Zombie, "Zombie Statue Maker");
 		LanguageRegistry.addName(PCB, "PCB Board");
 		LanguageRegistry.addName(invincible, "Invincible Item");
-		LanguageRegistry.addName(House_Delux9x9, "Delux 9x9. " + this.COLOR_CODE + "bAdapted from: Direwolf20's 9x9");
+		LanguageRegistry.addName(House_Delux9x9, "Delux 9x9. " + MscHouses.COLOR_CODE + "bAdapted from: Direwolf20's 9x9");
 		LanguageRegistry.addName(debug, "Debug Item");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses", "Msc. Houses");
 		
 	}
 
 	public void addCrafting(){
-		GameRegistry.addRecipe(new ItemStack(this.PCB, 5), new Object[]{"X#X", "XXX", "X#X", 'X', Item.ingotIron, '#', Item.redstone});
-		GameRegistry.addRecipe(new ItemStack(this.HouseTool, 1), new Object[]{"  X", " # ", "#  ", 'X', this.PCB, '#', Item.stick});
-		GameRegistry.addRecipe(new ItemStack(this.House_Hut, 1), new Object[]{"XXX", "XYX", "XXX", 'X', Block.planks, 'Y', Item.ingotIron});
-		GameRegistry.addRecipe(new ItemStack(this.House_9x9, 1), new Object[]{"X#X", "X@X", "X X", 'X', Block.stone, '#', this.House_Hut, '@', this.PCB});
+		GameRegistry.addRecipe(new ItemStack(MscHouses.PCB, 1), new Object[]{"X#X", "XXX", "X#X", 'X', Item.ingotIron, '#', Item.redstone});
+		GameRegistry.addRecipe(new ItemStack(MscHouses.HouseTool, 1), new Object[]{"  X", " # ", "#  ", 'X', MscHouses.PCB, '#', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(MscHouses.House_Hut, 1), new Object[]{"XXX", "XYX", "XXX", 'X', Block.planks, 'Y', Item.ingotIron});
+		GameRegistry.addRecipe(new ItemStack(MscHouses.House_9x9, 1), new Object[]{"X#X", "X@X", "X X", 'X', Block.stone, '#', MscHouses.House_Hut, '@', MscHouses.PCB});
+		GameRegistry.addRecipe(new ItemStack(MscHouses.House_Delux9x9, 1), new Object[]{"XZX", "XYX", "@@@", 'X', Item.ingotIron, 'Y', MscHouses.PCB, 'Z', Item.diamond, '@', MscHouses.House_9x9});
+		if(Invincible){
+			GameRegistry.addRecipe(new ItemStack(MscHouses.invincible, 1, 6000), new Object[]{"XXX", "X X", "XXX", 'X', Item.emerald});
+		}
+		
+	GameRegistry.addSmelting(Block.blockDiamond.blockID, new ItemStack(MscHouses.invincible, 1, 300), 1000F);
 	}
 
 }
