@@ -1,7 +1,6 @@
 package mrkirby153.MscHouses;
 
 import net.minecraft.world.World;
-import net.minecraftforge.client.MinecraftForgeClient;
 import cpw.mods.fml.client.FMLClientHandler;
 /**
  * MscHouses
@@ -13,8 +12,6 @@ public class ClientProxy extends CommonProxy{
 	@Override
 	public void registerRenderInformation(){
 		//preload textures
-		MinecraftForgeClient.preloadTexture("/mrkirby153/MscHouses/items.png");
-		MinecraftForgeClient.preloadTexture("/mrkirby153/MscHouses/blocks.png");
 	}
 	@Override
 	public World getClientWorld(){
