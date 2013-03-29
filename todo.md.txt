@@ -1,3 +1,0 @@
-OFFICIAL MSCHOUSES TODO LIST:
-* Add Crafting recipies
-* Add Author's name in blocks
