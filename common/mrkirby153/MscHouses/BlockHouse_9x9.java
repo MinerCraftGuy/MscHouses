@@ -16,15 +16,15 @@ import cpw.mods.fml.relauncher.SideOnly;
  */
 public class BlockHouse_9x9 extends Block {
 
-    protected BlockHouse_9x9(int par1) {
-        super(par1, Material.ground);
-        this.setCreativeTab(MscHouses.tabHouse);
-        GameRegistry.registerBlock(this, "9x9");
-    }
+	protected BlockHouse_9x9(int par1) {
+		super(par1, Material.ground);
+		this.setCreativeTab(MscHouses.tabHouse);
+		GameRegistry.registerBlock(this, "9x9");
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister) {
-        blockIcon = par1IconRegister.registerIcon("MscHouses:Block9x9");
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister) {
+		blockIcon = par1IconRegister.registerIcon("MscHouses:Block9x9");
+	}
 }

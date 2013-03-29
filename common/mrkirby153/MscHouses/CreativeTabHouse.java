@@ -13,16 +13,16 @@ import cpw.mods.fml.relauncher.SideOnly;
  */
 public class CreativeTabHouse extends CreativeTabs {
 
-    public CreativeTabHouse(int par1, String par2Str) {
-        super(par1, par2Str);
-        // TODO Auto-generated constructor stub
-    }
+	public CreativeTabHouse(int par1, String par2Str) {
+		super(par1, par2Str);
+		// TODO Auto-generated constructor stub
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int getTabIconItemIndex() {
-        // TODO Auto-generated method stub
-        return MscHouses.House_Hut.blockID;
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public int getTabIconItemIndex() {
+		// TODO Auto-generated method stub
+		return MscHouses.House_Hut.blockID;
+	}
 
 }

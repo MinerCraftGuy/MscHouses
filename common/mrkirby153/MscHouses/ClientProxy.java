@@ -11,19 +11,19 @@ import cpw.mods.fml.client.FMLClientHandler;
  * 
  */
 public class ClientProxy extends CommonProxy {
-    @Override
-    public void registerRenderInformation() {
-        // preload textures
-    }
+	@Override
+	public void registerRenderInformation() {
+		// preload textures
+	}
 
-    @Override
-    public World getClientWorld() {
-        return FMLClientHandler.instance().getClient().theWorld;
-    }
+	@Override
+	public World getClientWorld() {
+		return FMLClientHandler.instance().getClient().theWorld;
+	}
 
-    @Override
-    public void registerTileEntitySpecalRenderer(/* Placehodler */) {
+	@Override
+	public void registerTileEntitySpecalRenderer(/* Placehodler */) {
 
-    }
+	}
 
 }

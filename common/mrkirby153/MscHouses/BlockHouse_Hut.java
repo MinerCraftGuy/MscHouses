@@ -18,23 +18,23 @@ import cpw.mods.fml.relauncher.SideOnly;
  */
 public class BlockHouse_Hut extends Block {
 
-    protected BlockHouse_Hut(int par1) {
-        super(par1, Material.ground);
-        this.setCreativeTab(MscHouses.tabHouse);
-        GameRegistry.registerBlock(this, "BlockHut");
-    }
+	protected BlockHouse_Hut(int par1) {
+		super(par1, Material.ground);
+		this.setCreativeTab(MscHouses.tabHouse);
+		GameRegistry.registerBlock(this, "BlockHut");
+	}
 
-    @Override
-    public boolean onBlockActivated(World par1World, int par2, int par3,
-            int par4, EntityPlayer par5EntityPlayer, int par6, float par7,
-            float par8, float par9) {
-        // MscHouses.h.hut(par2, par3, par4, par1World);
-        return true;
-    }
+	@Override
+	public boolean onBlockActivated(World par1World, int par2, int par3,
+			int par4, EntityPlayer par5EntityPlayer, int par6, float par7,
+			float par8, float par9) {
+		// MscHouses.h.hut(par2, par3, par4, par1World);
+		return true;
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister) {
-        blockIcon = par1IconRegister.registerIcon("MscHouses:BlockHut");
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister) {
+		blockIcon = par1IconRegister.registerIcon("MscHouses:BlockHut");
+	}
 }
