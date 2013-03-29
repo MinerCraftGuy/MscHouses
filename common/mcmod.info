@@ -1,0 +1,17 @@
+[
+{
+	"modid":"MscHouses",
+	"name": "MscHouses",
+	"description": "Generate houses out of thin air!...Well, maybe not :)",
+	"version": "@VERSION@",
+	"url": "",
+	"updateUrl": "",
+	"authorList": ["mrkirby153"],
+	"credits": "by mrkirby153. Thanks to Dirtgoldcoal, Sortofbob, and Btsulliv",
+	"screenshots": [
+	],
+	"parent":"",
+	"dependencies":[
+	]
+}
+]
