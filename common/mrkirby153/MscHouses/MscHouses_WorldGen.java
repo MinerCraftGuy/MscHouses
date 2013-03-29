@@ -22,7 +22,7 @@ public class MscHouses_WorldGen implements IWorldGenerator{
 
 	private void generateHouse(World world, Random random, int x, int z) {
 	//	int chances = random.nextInt(300);
-		int chances = random.nextInt(40);
+	//	int chances = random.nextInt(40);
 	//	if(chances <= 30){
 			MscHouses.h.ninbynineDelux(world, x+random.nextInt(16), 50, z+random.nextInt());
 	//	}

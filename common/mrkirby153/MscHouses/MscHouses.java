@@ -174,7 +174,7 @@ public class MscHouses {
 	}
 	
 	public void dictionaryRecipies(){
-		GameRegistry.addRecipe(new ShapedOreRecipe(this.PCB, true, new Object[]{"X X", " Y ", "X X", Character.valueOf('X'), ingotCopper, Character.valueOf('Y'), Item.redstone}));
+		GameRegistry.addRecipe(new ShapedOreRecipe(MscHouses.PCB, true, new Object[]{"X X", " Y ", "X X", Character.valueOf('X'), ingotCopper, Character.valueOf('Y'), Item.redstone}));
 	}
 /*
  * [][][]
