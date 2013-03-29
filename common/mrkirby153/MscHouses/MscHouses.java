@@ -5,6 +5,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.PreInit;
@@ -57,6 +59,12 @@ public class MscHouses {
 
 	public static Block House_Delux9x9;
 	public static int Delux9x9ID;
+	
+	public static Block CopperOre;
+	public static int CopperOreID;
+	
+	public static Item ingotCopper;
+	public static int ingotCopperID;
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
@@ -79,6 +87,8 @@ public class MscHouses {
 			time = cfg.get(Configuration.CATEGORY_GENERAL,
 					"Time to recharge Invincible item", 6000).getInt();
 			Delux9x9ID = cfg.getBlock("Delux 9x9", 703).getInt();
+			CopperOreID = cfg.getBlock("Copper Ore", 703).getInt();
+			ingotCopperID = cfg.getItem("Copper Ingot", 4003).getInt();
 		} finally {
 			cfg.save();
 		}
@@ -99,8 +109,11 @@ public class MscHouses {
 		PCB = new ItemPCB(PCBID).setUnlocalizedName("pcbBoard");
 		invincible = new ItemInvincible(InvincibleId)
 				.setUnlocalizedName("Invincible");
+		CopperOre = new BlockCopperOre(CopperOreID).setUnlocalizedName("CopperOre");
+		ingotCopper = new ItemCopper(ingotCopperID).setUnlocalizedName("ingotCopper");
 		addCrafting();
 		addNames();
+//		GameRegistry.registerWorldGenerator(new MscHouses_WorldGen());
 	}
 
 	private void addNames() {
@@ -117,35 +130,55 @@ public class MscHouses {
 		LanguageRegistry.addName(House_Delux9x9, "Delux 9x9. "
 				+ MscHouses.COLOR_CODE + "bAdapted from: Direwolf20's 9x9");
 		LanguageRegistry.addName(debug, "Debug Item");
+		LanguageRegistry.addName(CopperOre, "CopperOre");
+		LanguageRegistry.addName(ingotCopper, "Copper Ingot");
+		//Name Creative tab.
 		LanguageRegistry.instance().addStringLocalization(
 				"itemGroup.MscHouses", "Msc. Houses");
 
 	}
 
 	public void addCrafting() {
-		GameRegistry.addRecipe(new ItemStack(MscHouses.PCB, 1), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(PCB, 1), new Object[]{
 				"X#X", "XXX", "X#X", 'X', Item.ingotIron, '#', Item.redstone});
-		GameRegistry.addRecipe(new ItemStack(MscHouses.HouseTool, 1),
-				new Object[]{"  X", " # ", "#  ", 'X', MscHouses.PCB, '#',
-						Item.stick});
-		GameRegistry.addRecipe(new ItemStack(MscHouses.House_Hut, 1),
+		GameRegistry.addRecipe(new ItemStack(HouseTool, 1),
+				new Object[]{"  X", " # ", "#  ", 'X', PCB, '#',						Item.stick});
+		GameRegistry.addRecipe(new ItemStack(House_Hut, 1),
 				new Object[]{"XXX", "XYX", "XXX", 'X', Block.planks, 'Y',
 						Item.ingotIron});
-		GameRegistry.addRecipe(new ItemStack(MscHouses.House_9x9, 1),
+		GameRegistry.addRecipe(new ItemStack(House_9x9, 1),
 				new Object[]{"X#X", "X@X", "X X", 'X', Block.stone, '#',
-						MscHouses.House_Hut, '@', MscHouses.PCB});
-		GameRegistry.addRecipe(new ItemStack(MscHouses.House_Delux9x9, 1),
+						House_Hut, '@', PCB});
+		GameRegistry.addRecipe(new ItemStack(House_Delux9x9, 1),
 				new Object[]{"XZX", "XYX", "@@@", 'X', Item.ingotIron, 'Y',
-						MscHouses.PCB, 'Z', Item.diamond, '@',
-						MscHouses.House_9x9});
+						PCB, 'Z', Item.diamond, '@',
+						House_9x9});
 		if (Invincible) {
 			GameRegistry.addRecipe(
-					new ItemStack(MscHouses.invincible, 1, 6000), new Object[]{
+					new ItemStack(invincible, 1, 6000), new Object[]{
 							"XXX", "X X", "XXX", 'X', Item.emerald});
 		}
 
-		GameRegistry.addSmelting(Block.blockDiamond.blockID, new ItemStack(
-				MscHouses.invincible, 1, 300), 1000F);
+		
 	}
-
+	
+	public void addSmelting(){
+		GameRegistry.addSmelting(Block.blockDiamond.blockID, new ItemStack(
+				MscHouses.invincible, 1, 300), 10F);
+		GameRegistry.addSmelting(MscHouses.CopperOre.blockID, new ItemStack(ingotCopper), 1F);
+	}
+	
+	public void regesterOres(){
+		OreDictionary.registerOre("ingotCopper", new ItemStack(ingotCopper));
+//		System.
+	}
+	
+	public void dictionaryRecipies(){
+		GameRegistry.addRecipe(new ShapedOreRecipe(this.PCB, true, new Object[]{"X X", " Y ", "X X", Character.valueOf('X'), ingotCopper, Character.valueOf('Y'), Item.redstone}));
+	}
+/*
+ * [][][]
+ * [][][]
+ * [][][]
+ */
 }
