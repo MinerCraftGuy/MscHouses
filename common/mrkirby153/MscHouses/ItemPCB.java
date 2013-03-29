@@ -13,16 +13,16 @@ import cpw.mods.fml.relauncher.SideOnly;
  * 
  */
 public class ItemPCB extends Item {
-    public ItemPCB(int par1) {
-        super(par1);
-        this.setCreativeTab(MscHouses.tabHouse);
-        this.setMaxDamage(0);
-    }
+	public ItemPCB(int par1) {
+		super(par1);
+		this.setCreativeTab(MscHouses.tabHouse);
+		this.setMaxDamage(0);
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister iconRegister) {
-        // TODO Auto-generated method stub
-        iconIndex = iconRegister.registerIcon("MscHouses:ItemPCB");
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void updateIcons(IconRegister iconRegister) {
+		// TODO Auto-generated method stub
+		iconIndex = iconRegister.registerIcon("MscHouses:ItemPCB");
+	}
 }
