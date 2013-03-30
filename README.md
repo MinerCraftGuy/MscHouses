@@ -26,4 +26,33 @@ Here, you will find the latest code hot off the press.
 1. Inside `Dir`, create a directory names `source`.
 2. Move/clone `MscHouses` into `source`.
 3. You should have a file strcuture that looks lie this:
+***
 
+	dir
+	\-mcp
+		\-complicated mcp stuff (should have CHANGELOG).
+		\-forge
+		\-jars
+	\-source
+		\-MscHouses
+			\-MscHouses's files (should have build.xml).
+***
+1. Inside `MscHouses`, create a new file called `build.properties`
+		* Open it up with any text editor, and type into it the following (fully customizable except for `dir.development`):
+ 		* `dir.development=../../`
+		* `dir.release=Releases`
+		* `release.minecraft.version=1.5.1` (as of 3/29)
+		* `release.mod.version=<Mod Version>` 
+2. [FOR WINDOWS] Open up `cmd` by typing `cmd` in Run.
+3. [FOR WINDOWS] Navigate to `dir\source\MscHouses` by typing `cd <dev's location>\source\MscHouses`.
+4. Execute `ant release`. This will take 5-15 minutes. (For me 2) depending on your computing power. If you've done everything correctly, `BUILD SUCCESSFULL` should be displayed.
+5. Go to `dir\source\MscHouses\Releases\<Minecraft Version\<Mod Version>
+	* You should see a jar named `MscHouses-Universal-<Version>.jar`
+6. Install the mod and play Minecraft!
+***
+### Submitting an issue
+Find an issue? Minecraft won't start? Have an idea?
+1. Head over to the [Issues Page] (https://github.com/mrkirby153/MscHouses/issues)
+2. Click `New Issue`
+3. Enter the issue's title, (Something summarizing the issue) and a __Detailed Desription__. REMEMBER: ___CRASHLOG OR IT DIDN'T HAPEN___
+4. Click `Submit Issue` and your done!
