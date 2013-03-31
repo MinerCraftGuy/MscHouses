@@ -9,10 +9,12 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -30,6 +32,8 @@ public class MscHouses {
 	public static HouseGen h = new HouseGen();
 	public static final CreativeTabs tabHouse = new CreativeTabHouse(
 			CreativeTabs.getNextID(), "MscHouses");
+	@Instance("MscHouses")
+	public static MscHouses instance;
 	public static final char COLOR_CODE = '\u00A7';
 	public static int HutID;
 	public static Block House_Hut;
@@ -65,6 +69,9 @@ public class MscHouses {
 	
 	public static Item ingotCopper;
 	public static int ingotCopperID;
+	
+	public static Block oreRefiner;
+	public static int oreRefinerID;
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
@@ -89,6 +96,7 @@ public class MscHouses {
 			Delux9x9ID = cfg.getBlock("Delux 9x9", 703).getInt();
 			CopperOreID = cfg.getBlock("Copper Ore", 703).getInt();
 			ingotCopperID = cfg.getItem("Copper Ingot", 4003).getInt();
+			oreRefinerID = cfg.getBlock("Ore refiner", 704).getInt();
 		} finally {
 			cfg.save();
 		}
@@ -111,9 +119,10 @@ public class MscHouses {
 				.setUnlocalizedName("Invincible");
 		CopperOre = new BlockCopperOre(CopperOreID).setUnlocalizedName("CopperOre");
 		ingotCopper = new ItemCopper(ingotCopperID).setUnlocalizedName("ingotCopper");
+		oreRefiner = new BlockOreRefiner(oreRefinerID).setUnlocalizedName("oreRefiner");
 		addCrafting();
 		addNames();
-//		GameRegistry.registerWorldGenerator(new MscHouses_WorldGen());
+		GameRegistry.registerWorldGenerator(new MscHouses_WorldGen());
 	}
 
 	private void addNames() {
@@ -165,7 +174,7 @@ public class MscHouses {
 	public void addSmelting(){
 		GameRegistry.addSmelting(Block.blockDiamond.blockID, new ItemStack(
 				MscHouses.invincible, 1, 300), 10F);
-		GameRegistry.addSmelting(MscHouses.CopperOre.blockID, new ItemStack(ingotCopper), 1F);
+	//	GameRegistry.addSmelting(MscHouses.CopperOre.blockID, new ItemStack(ingotCopper), 1F);
 	}
 	
 	public void regesterOres(){
