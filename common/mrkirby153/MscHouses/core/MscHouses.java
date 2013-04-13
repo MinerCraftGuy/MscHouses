@@ -8,7 +8,6 @@ import mrkirby153.MscHouses.config.ConfigurationHandler;
 import mrkirby153.MscHouses.item.ModItems;
 import mrkirby153.MscHouses.lib.Reference;
 import mrkirby153.MscHouses.worldGen.HouseGen;
-import mrkirby153.MscHouses.worldGen.MscHouses_WorldGen;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -49,7 +48,7 @@ public class MscHouses {
 
 	@Init
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerWorldGenerator(new MscHouses_WorldGen());
+	//	GameRegistry.registerWorldGenerator(new MscHouses_WorldGen());
 		ModBlocks.init();
 		ModItems.init();
 	}
