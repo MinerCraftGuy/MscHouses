@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses.worldGen;
+package mrkirby153.MscHouses;
 
 import java.util.Random;
 

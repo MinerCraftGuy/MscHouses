@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses.core.helpers;
+package mrkirby153.MscHouses;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;

@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses.item;
+package mrkirby153.MscHouses;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

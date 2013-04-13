@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses.block;
+package mrkirby153.MscHouses;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;

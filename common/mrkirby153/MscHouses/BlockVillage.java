@@ -1,9 +1,7 @@
-package mrkirby153.MscHouses.block;
+package mrkirby153.MscHouses;
 
 import java.util.Random;
 
-import mrkirby153.MscHouses.core.MscHouses;
-import mrkirby153.MscHouses.worldGen.VillageGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;

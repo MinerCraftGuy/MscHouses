@@ -1,7 +1,5 @@
-package mrkirby153.MscHouses.block;
+package mrkirby153.MscHouses;
 
-import mrkirby153.MscHouses.core.MscHouses;
-import mrkirby153.MscHouses.worldGen.StatueGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +14,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
  * 
  */
 public class BlockStatue_Zombie extends Block {
-	public BlockStatue_Zombie(int par1) {
+	protected BlockStatue_Zombie(int par1) {
 		super(par1, Material.ground);
 		this.setCreativeTab(MscHouses.tabHouse);
 		GameRegistry.registerBlock(this, "StatueZombie");

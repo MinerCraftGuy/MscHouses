@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses.core.proxy;
+package mrkirby153.MscHouses;
 
 import net.minecraft.world.World;
 import cpw.mods.fml.client.FMLClientHandler;

@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses.core.proxy;
+package mrkirby153.MscHouses;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
