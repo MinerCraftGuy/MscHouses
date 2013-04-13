@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses;
+package mrkirby153.MscHouses.worldGen;
 
 public class StatueGen {
 

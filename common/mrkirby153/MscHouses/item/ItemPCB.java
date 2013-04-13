@@ -1,5 +1,6 @@
-package mrkirby153.MscHouses;
+package mrkirby153.MscHouses.item;
 
+import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;

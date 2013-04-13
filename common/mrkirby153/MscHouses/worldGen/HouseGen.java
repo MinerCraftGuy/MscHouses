@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses;
+package mrkirby153.MscHouses.worldGen;
 
 import net.minecraft.block.Block;
 import net.minecraft.inventory.IInventory;

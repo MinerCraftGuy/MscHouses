@@ -1,5 +1,6 @@
-package mrkirby153.MscHouses;
+package mrkirby153.MscHouses.block;
 
+import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -16,7 +17,7 @@ import cpw.mods.fml.relauncher.SideOnly;
  */
 public class BlockHouse_9x9 extends Block {
 
-	protected BlockHouse_9x9(int par1) {
+	public BlockHouse_9x9(int par1) {
 		super(par1, Material.ground);
 		this.setCreativeTab(MscHouses.tabHouse);
 		GameRegistry.registerBlock(this, "9x9");

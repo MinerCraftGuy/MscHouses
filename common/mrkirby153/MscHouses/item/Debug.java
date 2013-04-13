@@ -1,5 +1,6 @@
-package mrkirby153.MscHouses;
+package mrkirby153.MscHouses.item;
 
+import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

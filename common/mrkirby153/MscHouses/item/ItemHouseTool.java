@@ -1,5 +1,8 @@
-package mrkirby153.MscHouses;
+package mrkirby153.MscHouses.item;
 
+import mrkirby153.MscHouses.block.ModBlocks;
+import mrkirby153.MscHouses.config.ConfigurationSettings;
+import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -18,13 +21,13 @@ import cpw.mods.fml.relauncher.SideOnly;
  */
 public class ItemHouseTool extends Item {
 	// static MscHouses m = new MscHouses();
-	public static int[] damageBlocks = {MscHouses.House_Hut.blockID,
-			MscHouses.House_9x9.blockID};
+	public static int[] damageBlocks = {ModBlocks.House_Hut.blockID,
+			ModBlocks.House_9x9.blockID};
 
 	public ItemHouseTool(int par1) {
 		super(par1);
 		this.setCreativeTab(MscHouses.tabHouse);
-		this.setMaxDamage(MscHouses.HouseToolDamage);
+		this.setMaxDamage(ConfigurationSettings.ITEM_HOUSETOOL_DAMAGE);
 	}
 
 	@Override
@@ -35,15 +38,15 @@ public class ItemHouseTool extends Item {
 		if (p != null) {
 			int block = par2World.getBlockId(p.blockX, p.blockY, p.blockZ);
 
-			if (block == MscHouses.House_Hut.blockID) {
+			if (block == ModBlocks.House_Hut.blockID) {
 				MscHouses.h.hut(p.blockX, p.blockY, p.blockZ, par2World);
 				par1ItemStack.damageItem(1, par3EntityPlayer);
 			}
-			if (block == MscHouses.ninebynineID) {
+			if (block == ModBlocks.House_9x9.blockID) {
 				MscHouses.h.ninebynine(par2World, p.blockX, p.blockY, p.blockZ);
 				par1ItemStack.damageItem(1, par3EntityPlayer);
 			}
-			if (block == MscHouses.Delux9x9ID) {
+			if (block == ModBlocks.House_Deluxe9x9.blockID) {
 				MscHouses.h.ninbynineDelux(par2World, p.blockX, p.blockY,
 						p.blockZ);
 				par1ItemStack.damageItem(1, par3EntityPlayer);
