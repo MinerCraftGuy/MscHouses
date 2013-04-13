@@ -28,7 +28,7 @@ public class BlockHouse_Hut extends Block {
 	public boolean onBlockActivated(World par1World, int par2, int par3,
 			int par4, EntityPlayer par5EntityPlayer, int par6, float par7,
 			float par8, float par9) {
-		// MscHouses.h.hut(par2, par3, par4, par1World);
+		 MscHouses.h.hut(par2, par3, par4, par1World);
 		return true;
 	}
 
