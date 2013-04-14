@@ -1,7 +1,6 @@
-package mrkirby153.MscHouses;
+package mrkirby153.MscHouses.creativeTab;
 
 import mrkirby153.MscHouses.block.ModBlocks;
-import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
