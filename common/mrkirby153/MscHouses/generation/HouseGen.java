@@ -248,13 +248,13 @@ public class HouseGen {
 					Block.pressurePlateStone));
 			inventory.setInventorySlotContents(3, new ItemStack(
 					Block.stoneButton));
-			inventory.setInventorySlotContents(9, new ItemStack(Item.axeSteel));
+			inventory.setInventorySlotContents(9, new ItemStack(Item.axeIron));
 			inventory.setInventorySlotContents(10, new ItemStack(
-					Item.pickaxeSteel));
+					Item.pickaxeIron));
 			inventory.setInventorySlotContents(11, new ItemStack(
-					Item.shovelSteel));
+					Item.shovelIron));
 			inventory.setInventorySlotContents(12, new ItemStack(
-					Item.swordSteel));
+					Item.swordIron));
 			inventory
 					.setInventorySlotContents(13, new ItemStack(Item.coal, 64));
 		}

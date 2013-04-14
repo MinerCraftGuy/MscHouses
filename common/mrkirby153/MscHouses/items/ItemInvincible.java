@@ -31,9 +31,9 @@ public class ItemInvincible extends Item {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void updateIcons(IconRegister iconRegister) {
+	public void registerIcons(IconRegister iconRegister) {
 		// TODO Auto-generated method stub
-		iconIndex = iconRegister.registerIcon("MscHouses:ItemInvincible");
+		itemIcon = iconRegister.registerIcon("MscHouses:ItemInvincible");
 	}
 
 	@Override

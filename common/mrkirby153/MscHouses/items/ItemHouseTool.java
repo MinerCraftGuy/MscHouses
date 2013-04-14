@@ -58,9 +58,9 @@ public class ItemHouseTool extends Item {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void updateIcons(IconRegister iconRegister) {
+	public void registerIcons(IconRegister iconRegister) {
 		// TODO Auto-generated method stub
-		iconIndex = iconRegister.registerIcon("MscHouses:HouseTool");
+		itemIcon = iconRegister.registerIcon("MscHouses:HouseTool");
 	}
 
 	@Override

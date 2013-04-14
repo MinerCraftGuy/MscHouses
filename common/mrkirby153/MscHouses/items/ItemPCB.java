@@ -19,11 +19,10 @@ public class ItemPCB extends Item {
 		this.setCreativeTab(MscHouses.tabHouse);
 		this.setMaxDamage(0);
 	}
-
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void updateIcons(IconRegister iconRegister) {
+	public void registerIcons(IconRegister iconRegister) {
 		// TODO Auto-generated method stub
-		iconIndex = iconRegister.registerIcon("MscHouses:ItemPCB");
+		itemIcon = iconRegister.registerIcon("MscHouses:ItemPCB");
 	}
 }

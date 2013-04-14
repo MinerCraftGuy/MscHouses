@@ -15,8 +15,9 @@ public class ItemCopper extends Item{
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void updateIcons(IconRegister par1IconRegister) {
-		iconIndex = par1IconRegister.registerIcon("MscHouses:ingotCopper");
+	public void registerIcons(IconRegister iconRegister) {
+		// TODO Auto-generated method stub
+		itemIcon = iconRegister.registerIcon("MscHouses:ingotCopper");
 	}
 	
 	

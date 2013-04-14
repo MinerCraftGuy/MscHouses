@@ -2,7 +2,6 @@ package mrkirby153.MscHouses.core;
 
 import java.io.File;
 
-import mrkirby153.MscHouses.CreativeTabHouse;
 import mrkirby153.MscHouses.block.ModBlocks;
 import mrkirby153.MscHouses.configuration.ConfigurationHandler;
 import mrkirby153.MscHouses.core.handlers.LocalizationHandler;
@@ -12,16 +11,12 @@ import mrkirby153.MscHouses.core.helpers.VersionHelper;
 import mrkirby153.MscHouses.core.lang.lang;
 import mrkirby153.MscHouses.crafting.CraftingBench;
 import mrkirby153.MscHouses.crafting.Furnace;
+import mrkirby153.MscHouses.creativeTab.CreativeTabHouse;
 import mrkirby153.MscHouses.generation.HouseGen;
 import mrkirby153.MscHouses.generation.MscHouses_WorldGen;
-import mrkirby153.MscHouses.items.ItemCopper;
-import mrkirby153.MscHouses.items.ItemInvincible;
-import mrkirby153.MscHouses.items.ItemPCB;
-import mrkirby153.MscHouses.items.Item_Debug;
 import mrkirby153.MscHouses.items.ModItems;
 import mrkirby153.MscHouses.lib.Reference;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -51,7 +46,6 @@ public class MscHouses {
 	public static MscHouses instance;
 	public static final char COLOR_CODE = '\u00A7';
 
-
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		//Inintialize the Log Helper
@@ -77,7 +71,7 @@ public class MscHouses {
 		CraftingBench.init();
 		Furnace.init();
 		TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
-		System.out.println("Testing");
+	//	System.out.println("Testing");
 	}
 
 	@Init

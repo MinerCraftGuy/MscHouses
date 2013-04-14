@@ -3,7 +3,6 @@ package mrkirby153.MscHouses.generation;
 import java.util.Random;
 
 import mrkirby153.MscHouses.block.ModBlocks;
-import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
