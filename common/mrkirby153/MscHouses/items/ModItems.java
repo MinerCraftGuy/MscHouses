@@ -12,6 +12,7 @@ public class ModItems {
 	public static Item HouseTool;
 	public static Item Invincible;
 	public static Item PCB;
+	public static Item moduel;
 
 	public static void init(){
 		Debug = new Item_Debug(ItemId.DEBUG).setUnlocalizedName("debug");
@@ -22,5 +23,6 @@ public class ModItems {
 			LogHelper.log(Level.WARNING, "Invincible Item Enabled!");
 		}
 		PCB = new ItemPCB(ItemId.ITEM_PCB).setUnlocalizedName("pcb");
+		moduel = new ItemModuel(ItemId.ITEM_MODUEL).setUnlocalizedName("Moduel");
 	}
 }
