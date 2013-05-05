@@ -4,11 +4,10 @@ import java.io.File;
 
 import mrkirby153.MscHouses.block.ModBlocks;
 import mrkirby153.MscHouses.configuration.ConfigurationHandler;
-import mrkirby153.MscHouses.core.handlers.LocalizationHandler;
 import mrkirby153.MscHouses.core.handlers.VersionCheckTickHandler;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
 import mrkirby153.MscHouses.core.helpers.VersionHelper;
-import mrkirby153.MscHouses.core.lang.lang;
+import mrkirby153.MscHouses.core.localization.TEMP_ITEMNAMES;
 import mrkirby153.MscHouses.crafting.CraftingBench;
 import mrkirby153.MscHouses.crafting.Furnace;
 import mrkirby153.MscHouses.creativeTab.CreativeTabHouse;
@@ -50,12 +49,6 @@ public class MscHouses {
 	public void preInit(FMLPreInitializationEvent event) {
 		//Inintialize the Log Helper
 		LogHelper.init();
-
-		LocalizationHandler.loadLanguages();
-
-
-		//register Version check tick handler.
-
 		//Check version
 		VersionHelper.execute();
 
@@ -65,13 +58,12 @@ public class MscHouses {
 		ModBlocks.init();
 		//Initalize Items
 		ModItems.init();
-		//Name Items/blocks
-		lang.en_us();
 		//Inialize crafting/smelting recipies
 		CraftingBench.init();
 		Furnace.init();
+		//Register Version Handler
 		TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
-	//	System.out.println("Testing");
+		TEMP_ITEMNAMES.init();
 	}
 
 	@Init
