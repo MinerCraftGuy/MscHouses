@@ -8,6 +8,7 @@ public class ItemId {
 	public static int ITEM_HOUSETOOL_DEFAULT = 4002;
 	public static int ITEM_INVINCIBLE_DEFAULT = 4003;
 	public static int ITEM_PCB_DEFAULT = 4004;
+	public static int ITEM_MODUEL_DEFAULT = 4005;
 	
 	//Current IDs
 	public static int DEBUG;
@@ -15,5 +16,6 @@ public class ItemId {
 	public static int ITEM_HOUSETOOL;
 	public static int ITEM_INVINCBLE;
 	public static int ITEM_PCB;
+	public static int ITEM_MODUEL;
 
 }
