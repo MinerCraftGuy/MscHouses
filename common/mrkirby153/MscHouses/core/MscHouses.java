@@ -3,11 +3,14 @@ package mrkirby153.MscHouses.core;
 import java.io.File;
 
 import mrkirby153.MscHouses.block.ModBlocks;
+import mrkirby153.MscHouses.block.GUI.GuiHandler;
+import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
 import mrkirby153.MscHouses.configuration.ConfigurationHandler;
 import mrkirby153.MscHouses.core.handlers.VersionCheckTickHandler;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
 import mrkirby153.MscHouses.core.helpers.VersionHelper;
 import mrkirby153.MscHouses.core.localization.TEMP_ITEMNAMES;
+import mrkirby153.MscHouses.core.network.CommonProxy;
 import mrkirby153.MscHouses.crafting.CraftingBench;
 import mrkirby153.MscHouses.crafting.Furnace;
 import mrkirby153.MscHouses.creativeTab.CreativeTabHouse;
@@ -20,9 +23,11 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -44,7 +49,8 @@ public class MscHouses {
 	@Instance("MscHouses")
 	public static MscHouses instance;
 	public static final char COLOR_CODE = '\u00A7';
-
+	@SidedProxy(clientSide =Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
+	public static CommonProxy proxy;
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		//Inintialize the Log Helper
@@ -68,9 +74,10 @@ public class MscHouses {
 
 	@Init
 	public void init(FMLInitializationEvent event) {
-
-
 		GameRegistry.registerWorldGenerator(new MscHouses_WorldGen());
+	//	proxy.registerTileEntity();
+		GameRegistry.registerTileEntity(TileEntityBlockBase.class, "TileEntity_BlockBase");
+		NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 	}
 
 }

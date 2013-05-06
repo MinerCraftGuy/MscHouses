@@ -1,5 +1,6 @@
 package mrkirby153.MscHouses.block;
 
+import mrkirby153.MscHouses.lib.BlockId;
 import net.minecraft.block.Block;
 
 public class ModBlocks {

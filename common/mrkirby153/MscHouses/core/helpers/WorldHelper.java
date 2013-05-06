@@ -15,7 +15,7 @@ public class WorldHelper {
 	 * @param zCoord
 	 */
 	@SuppressWarnings("unused")
-	private void  dropItemInWorld(World world, int id, int meta, int xCoord, int yCoord, int zCoord){
+	public void  dropItemInWorld(World world, int id, int meta, int xCoord, int yCoord, int zCoord){
 		EntityItem i = new EntityItem(world, (double)((float)xCoord + 0.01), (double)((float)yCoord + 1), (double)((float)zCoord + 0.01), new ItemStack(id, 1, meta));
 		world.spawnEntityInWorld(i);
 	}

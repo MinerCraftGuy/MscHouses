@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses.block;
+package mrkirby153.MscHouses.lib;
 
 public class BlockId {
 	//Default IDs

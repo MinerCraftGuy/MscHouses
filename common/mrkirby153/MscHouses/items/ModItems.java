@@ -4,6 +4,7 @@ import java.util.logging.Level;
 
 import mrkirby153.MscHouses.configuration.ConfigurationSettings;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
+import mrkirby153.MscHouses.lib.ItemId;
 import net.minecraft.item.Item;
 
 public class ModItems {
