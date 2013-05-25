@@ -15,7 +15,7 @@ import net.minecraft.world.World;
  */
 public class HouseGen {
 
-	public void hut(int x, int y, int z, World world) {
+	public void hut(int x, int y, int z, World world, int blockID) {
 		// Removes House building Block
 
 		world.setBlock(x, y, z, 0, 0, 0);
@@ -32,40 +32,40 @@ public class HouseGen {
 		// Floor
 		for (int x1 = 0; x1 < 5; x1++) {
 			for (int z1 = 0; z1 < 5; z1++) {
-				world.setBlock(x + x1, y - 1, z + z1, Block.planks.blockID, 0,
+				world.setBlock(x + x1, y - 1, z + z1, blockID, 0,
 						0);
 			}
 		}
 		// Celing
 		for (int x1 = 0; x1 < 5; x1++) {
 			for (int z1 = 0; z1 < 5; z1++) {
-				world.setBlock(x + x1, y + 5, z + z1, Block.planks.blockID, 0,
+				world.setBlock(x + x1, y + 5, z + z1, blockID, 0,
 						0);
 			}
 		}
 		// North wall
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x + i, y + j, z, Block.planks.blockID, 0, 0);
+				world.setBlock(x + i, y + j, z, blockID, 0, 0);
 			}
 		}
 		// West wall
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x, y + j, z + i, Block.planks.blockID, 0, 0);
+				world.setBlock(x, y + j, z + i, blockID, 0, 0);
 			}
 		}
 		// East Wall
 		for (int i = 5; i > 0; --i) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x + 4, y + j, z + i - 1, Block.planks.blockID,
+				world.setBlock(x + 4, y + j, z + i - 1, blockID,
 						0, 0);
 			}
 		}
 		// South Wall
 		for (int i = 5; i > 0; --i) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x + i - 1, y + j, z + 4, Block.planks.blockID);
+				world.setBlock(x + i - 1, y + j, z + 4, blockID);
 			}
 		}
 		// Door
@@ -82,7 +82,7 @@ public class HouseGen {
 		inventory.setInventorySlotContents(1, new ItemStack(Item.doorWood));
 	}
 
-	public void ninebynine(World world, int x, int y, int z) {
+	public void ninebynine(World world, int x, int y, int z, int blockID) {
 		// Removes House building Block
 		world.setBlock(x, y, z, 0);
 		// Clear area
@@ -97,37 +97,37 @@ public class HouseGen {
 		// Floor
 		for (int x1 = 0; x1 < 9; x1++) {
 			for (int z1 = 0; z1 < 9; z1++) {
-				world.setBlock(x + x1, y - 1, z + z1, Block.stone.blockID);
+				world.setBlock(x + x1, y - 1, z + z1, blockID);
 			}
 		}
 		// Celing
 		for (int x1 = 0; x1 < 9; x1++) {
 			for (int z1 = 0; z1 < 9; z1++) {
-				world.setBlock(x + x1, y + 5, z + z1, Block.stone.blockID);
+				world.setBlock(x + x1, y + 5, z + z1, blockID);
 			}
 		}
 		// North wall
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x + i, y + j, z, Block.stone.blockID);
+				world.setBlock(x + i, y + j, z, blockID);
 			}
 		}
 		// West wall
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x, y + j, z + i, Block.stone.blockID);
+				world.setBlock(x, y + j, z + i, blockID);
 			}
 		}
 		// East Wall
 		for (int i = 9; i > 0; --i) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x + 8, y + j, z + i - 1, Block.stone.blockID);
+				world.setBlock(x + 8, y + j, z + i - 1, blockID);
 			}
 		}
 		// South Wall
 		for (int i = 9; i > 0; --i) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x + i - 1, y + j, z + 8, Block.stone.blockID);
+				world.setBlock(x + i - 1, y + j, z + 8, blockID);
 			}
 		}
 		// Door
@@ -184,7 +184,7 @@ public class HouseGen {
 
 	}
 
-	public void ninbynineDelux(World world, int x, int y, int z) {
+	public void ninbynineDelux(World world, int x, int y, int z, int blockID) {
 		// Removes House building Block
 		world.setBlock(x, y, z, 0);
 		// Clear area
@@ -199,37 +199,37 @@ public class HouseGen {
 		// Floor
 		for (int x1 = 0; x1 < 9; x1++) {
 			for (int z1 = 0; z1 < 9; z1++) {
-				world.setBlock(x + x1, y - 1, z + z1, Block.planks.blockID);
+				world.setBlock(x + x1, y - 1, z + z1, blockID);
 			}
 		}
 		// Celing
 		for (int x1 = 0; x1 < 9; x1++) {
 			for (int z1 = 0; z1 < 9; z1++) {
-				world.setBlock(x + x1, y + 5, z + z1, Block.planks.blockID);
+				world.setBlock(x + x1, y + 5, z + z1, blockID);
 			}
 		}
 		// North wall
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x + i, y + j, z, Block.planks.blockID);
+				world.setBlock(x + i, y + j, z, blockID);
 			}
 		}
 		// West wall
 		for (int i = 0; i < 9; i++) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x, y + j, z + i, Block.planks.blockID);
+				world.setBlock(x, y + j, z + i, blockID);
 			}
 		}
 		// East Wall
 		for (int i = 9; i > 0; --i) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x + 8, y + j, z + i - 1, Block.planks.blockID);
+				world.setBlock(x + 8, y + j, z + i - 1, blockID);
 			}
 		}
 		// South Wall
 		for (int i = 9; i > 0; --i) {
 			for (int j = 0; j < 5; j++) {
-				world.setBlock(x + i - 1, y + j, z + 8, Block.planks.blockID);
+				world.setBlock(x + i - 1, y + j, z + 8, blockID);
 			}
 		}
 		// Door
