@@ -11,7 +11,7 @@ public class TileEntityBlockBase extends TileEntity implements IInventory{
 	private ItemStack[] inv;
 
     public TileEntityBlockBase(){
-            inv = new ItemStack[2];
+            inv = new ItemStack[3];
     }
     
     @Override
