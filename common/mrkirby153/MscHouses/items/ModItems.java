@@ -14,6 +14,7 @@ public class ModItems {
 	public static Item Invincible;
 	public static Item PCB;
 	public static Item moduel;
+	public static Item modifyer;
 
 	public static void init(){
 		Debug = new Item_Debug(ItemId.DEBUG).setUnlocalizedName("debug");
@@ -25,5 +26,6 @@ public class ModItems {
 		}
 		PCB = new ItemPCB(ItemId.ITEM_PCB).setUnlocalizedName("pcb");
 		moduel = new ItemModuel(ItemId.ITEM_MODUEL).setUnlocalizedName("Moduel");
+		modifyer = new ItemMaterialModifyer(ItemId.ITEM_MODIFYER).setUnlocalizedName("Modifyer");
 	}
 }
