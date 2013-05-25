@@ -2,8 +2,8 @@ package mrkirby153.MscHouses.configuration;
 
 import java.io.File;
 
-import mrkirby153.MscHouses.block.BlockId;
-import mrkirby153.MscHouses.items.ItemId;
+import mrkirby153.MscHouses.lib.BlockId;
+import mrkirby153.MscHouses.lib.ItemId;
 import net.minecraftforge.common.Configuration;
 
 public class ConfigurationHandler {
