@@ -24,8 +24,6 @@ import cpw.mods.fml.relauncher.SideOnly;
  */
 public class ItemHouseTool extends Item {
 	// static MscHouses m = new MscHouses();
-	public static int[] damageBlocks = {ModBlocks.House_Hut.blockID,
-		ModBlocks.House_9x9.blockID};
 
 	public ItemHouseTool(int par1) {
 		super(par1);

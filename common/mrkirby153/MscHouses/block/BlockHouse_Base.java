@@ -6,6 +6,7 @@ import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
 import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -13,6 +14,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockHouse_Base extends BlockContainer{
 
@@ -79,7 +82,11 @@ public class BlockHouse_Base extends BlockContainer{
 	public TileEntity createNewTileEntity(World world) {
 		return new TileEntityBlockBase();
 	}
-
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister iconRegister) {
+		blockIcon = iconRegister.registerIcon("MscHouses:houseBase");
+	}
 
 
 

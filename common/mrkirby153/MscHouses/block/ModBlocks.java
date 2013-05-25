@@ -13,9 +13,6 @@ public class ModBlocks {
 	
 	public static void init(){
 		OreCopper = new BlockCopperOre(BlockId.ORE_COPPER).setUnlocalizedName("oreCopper");
-		House_9x9 = new BlockHouse_9x9(BlockId.HOUSE_9X9).setUnlocalizedName("house9x9");
-		House9x9_Deluxe = new BlockHouse_Delux9x9(BlockId.HOUSE_9X9_DELUXE).setUnlocalizedName("delux9x9");
-		House_Hut = new BlockHouse_Hut(BlockId.HOUSE_HUT).setUnlocalizedName("houseHut");
 		// StatueZombie = new BlockStatue_Zombie(BlockId.HOUSE)
 		BlockBaseBuild = new BlockHouse_Base(BlockId.HOUSE_BASE).setUnlocalizedName("houseBase");
 	}
