@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses.items;
+package mrkirby153.MscHouses.lib;
 
 public class ItemId {
 
