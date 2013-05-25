@@ -22,7 +22,7 @@ public class ItemModuel extends Item{
 	private Icon[] field_94594_d;
 	public ItemModuel(int par1) {
 		super(par1);
-		this.setCreativeTab(MscHouses.tabHouse);
+		this.setCreativeTab(MscHouses.tabHouse_moduel);
 		this.setHasSubtypes(true);
 		this.setMaxDamage(0);
 	}
