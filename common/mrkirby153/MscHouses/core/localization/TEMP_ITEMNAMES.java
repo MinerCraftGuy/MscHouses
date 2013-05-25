@@ -27,9 +27,10 @@ public class TEMP_ITEMNAMES {
 	}
 	private static void blockNames(){
 		LanguageRegistry.addName(ModBlocks.OreCopper, "Copper Ore");
-		LanguageRegistry.addName(ModBlocks.House_9x9, "Nine by Nine");
-		LanguageRegistry.addName(ModBlocks.House9x9_Deluxe, "Nine by Nine deluxe");
-		LanguageRegistry.addName(ModBlocks.House_Hut, "Hut Building Block");
+		LanguageRegistry.addName(ModBlocks.BlockBaseBuild, "House Generator");
+	//	LanguageRegistry.addName(ModBlocks.House_9x9, "Nine by Nine");
+	//	LanguageRegistry.addName(ModBlocks.House9x9_Deluxe, "Nine by Nine deluxe");
+	//	LanguageRegistry.addName(ModBlocks.House_Hut, "Hut Building Block");
 
 		//		LanguageRegistry.addName(ModBlocks.Statue_Zombie, "Zombie Statue Maker");
 	}
