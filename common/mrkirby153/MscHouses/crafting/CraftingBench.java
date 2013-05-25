@@ -31,6 +31,12 @@ public class CraftingBench {
 					new ItemStack(ModItems.Invincible, 1, 6000), new Object[]{
 						"XXX", "X X", "XXX", 'X', Item.emerald});
 		}
+		Block[] itemList = {Block.stone, Block.dirt, Block.wood, Block.sandStone, Block.pumpkin, Block.cobblestoneMossy, Block.netherrack, Block.slowSand, Block.glowStone,
+				Block.obsidian, Block.netherBrick, Block.whiteStone, Block.blockDiamond};
+		for(int i = 1; i < itemList.length; i++){
+			GameRegistry.addRecipe(new ItemStack(ModItems.modifyer, 1, i), new Object[]{"XXX", "XYX", "XXX", 'X', itemList[i] , 'Y', Item.enderPearl});
+		}
+		GameRegistry.addRecipe(new ItemStack(ModItems.modifyer, 1), new Object[]{"XXX", "XYX", "XXX", 'X', Block.stone, 'Y', Item.enderPearl});
 		LogHelper.log(Level.INFO, "Successfully Initalized Crafting Recipies!");
 	}
 
