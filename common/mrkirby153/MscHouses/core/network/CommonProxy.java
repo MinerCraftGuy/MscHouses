@@ -1,8 +1,10 @@
 package mrkirby153.MscHouses.core.network;
 
+import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
  * MscHouses
@@ -36,5 +38,10 @@ public class CommonProxy implements IGuiHandler {
 
 	public World getClientWorld() {
 		return null;
+	}
+
+	public void registerTileEntity() {
+		GameRegistry.registerTileEntity(TileEntityBlockBase.class, "TileEntityBlock_Base");
+		
 	}
 }
