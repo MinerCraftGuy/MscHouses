@@ -14,6 +14,7 @@ import mrkirby153.MscHouses.core.network.CommonProxy;
 import mrkirby153.MscHouses.crafting.CraftingBench;
 import mrkirby153.MscHouses.crafting.Furnace;
 import mrkirby153.MscHouses.creativeTab.CreativeTabHouse;
+import mrkirby153.MscHouses.creativeTab.CreativeTabModuel;
 import mrkirby153.MscHouses.generation.HouseGen;
 import mrkirby153.MscHouses.generation.MscHouses_WorldGen;
 import mrkirby153.MscHouses.items.ModItems;
@@ -45,7 +46,8 @@ import cpw.mods.fml.relauncher.Side;
 public class MscHouses {
 	public static HouseGen h = new HouseGen();
 	public static final CreativeTabs tabHouse = new CreativeTabHouse(
-			CreativeTabs.getNextID(), "MscHouses");
+			CreativeTabs.getNextID(), "MscHouses-main");
+	public static final CreativeTabs tabHouse_moduel = new CreativeTabModuel(CreativeTabs.getNextID(), "MscHouses-Moduel");
 	@Instance("MscHouses")
 	public static MscHouses instance;
 	public static final char COLOR_CODE = '\u00A7';
