@@ -23,6 +23,7 @@ public class TEMP_ITEMNAMES {
 		}
 		LanguageRegistry.addName(ModItems.PCB, "Printed Circut Board (PCB)");
 		LanguageRegistry.addName(ModItems.moduel, "Moduel");
+		LanguageRegistry.addName(ModItems.modifyer, "Material Modifyer");
 	}
 	private static void blockNames(){
 		LanguageRegistry.addName(ModBlocks.OreCopper, "Copper Ore");
@@ -33,14 +34,15 @@ public class TEMP_ITEMNAMES {
 		//		LanguageRegistry.addName(ModBlocks.Statue_Zombie, "Zombie Statue Maker");
 	}
 	private static void generalNames(){
-		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses", MscHouses.COLOR_CODE +"dMsc. Houses");
+		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses-main", MscHouses.COLOR_CODE +"dMsc. Houses blocks/tools");
+		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses-Moduel", MscHouses.COLOR_CODE + "2Msc. Houses moduels");
 	}
 
 	private static void itemMetaNames(){
 		/* Moduel Names */
-		String[] itemNames = {"Base", "Hut", "9x9", "Deluxe 9x9" };
-		for(int i = 0; i < itemNames.length; i++){
-			LanguageRegistry.addName(new ItemStack(ModItems.moduel,1,i), itemNames[i] + " Moduel");
+		String[] itemNames_moduel = {"Base", "Hut", "9x9", "Deluxe 9x9" };
+		for(int i = 0; i < itemNames_moduel.length; i++){
+			LanguageRegistry.addName(new ItemStack(ModItems.moduel,1,i), itemNames_moduel[i] + " Moduel");
 		}
 	}
 }
