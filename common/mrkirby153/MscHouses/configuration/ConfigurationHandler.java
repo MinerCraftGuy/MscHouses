@@ -33,6 +33,7 @@ public class ConfigurationHandler {
 		ItemId.ITEM_INVINCBLE = config.get(config.CATEGORY_ITEM, "Invincible", ItemId.ITEM_INVINCIBLE_DEFAULT).getInt();
 		ItemId.ITEM_PCB = config.get(CATEGORY_TOOLS, "PCB", ItemId.ITEM_INVINCIBLE_DEFAULT).getInt();
 		ItemId.ITEM_MODUEL = config.get(CATEGORY_TOOLS, "Moduel Item", ItemId.ITEM_MODUEL_DEFAULT).getInt();
+		ItemId.ITEM_MODIFYER = config.get(CATEGORY_TOOLS, "Modifyer", ItemId.ITEM_MODIFYER_DEFAULT).getInt();
 
 
 	}
