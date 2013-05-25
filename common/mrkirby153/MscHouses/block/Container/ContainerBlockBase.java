@@ -6,18 +6,18 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.tileentity.TileEntityFurnace;
-import net.minecraft.util.MathHelper;
 
 public class ContainerBlockBase extends Container{
 	public ContainerBlockBase(InventoryPlayer inventoryPlayer, TileEntityBlockBase block_base) {
 
-		// Add the calcinator "to be calcined" slot to the container
-        this.addSlotToContainer(new Slot(block_base, 0, 56, 17));
+		// Add the Moduel slot to the base
+        this.addSlotToContainer(new Slot(block_base, 0, 81, 18));
 
-        // Add the calcinator fuel slot to the container
-        this.addSlotToContainer(new Slot(block_base, 1, 56, 62));
+        // Add the fuel slot to the Block Base
+        this.addSlotToContainer(new Slot(block_base, 1, 81, 64));
+        
+        //Add the material modifyer to the block base
+        this.addSlotToContainer(new Slot(block_base, 2, 81, 39));
 
 
 		// Add the player's inventory slots to the container
