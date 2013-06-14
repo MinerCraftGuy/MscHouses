@@ -11,6 +11,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -32,7 +33,6 @@ public class BlockHouse_Base extends BlockContainer{
 		if (tileEntity == null || player.isSneaking()) {
 			return false;
 		}
-		//code to open gui explained later
 		player.openGui(MscHouses.instance, 0, world, x, y, z);
 		return true;
 	}
@@ -65,7 +65,7 @@ public class BlockHouse_Base extends BlockContainer{
 						new ItemStack(item.itemID, item.stackSize, item.getItemDamage()));
 
 				if (item.hasTagCompound()) {
-					//          entityItem.func_92014_d().setTagCompound((NBTTagCompound) item.getTagCompound().copy());
+					entityItem.getEntityItem().setTagCompound((NBTTagCompound) item.getTagCompound().copy());
 				}
 
 				float factor = 0.05F;
