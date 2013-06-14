@@ -1,9 +1,10 @@
 package mrkirby153.MscHouses.items;
 
-import mrkirby153.MscHouses.block.ModBlocks;
+import java.util.ArrayList;
+
 import mrkirby153.MscHouses.configuration.ConfigurationSettings;
 import mrkirby153.MscHouses.core.MscHouses;
-import mrkirby153.MscHouses.core.helpers.WorldHelper;
+import mrkirby153.MscHouses.core.handlers.FuelHandler;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -31,31 +32,6 @@ public class ItemHouseTool extends Item {
 		this.setMaxDamage(ConfigurationSettings.House_Tool_damage);
 	}
 
-	/*@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,
-			EntityPlayer par3EntityPlayer) {
-		MovingObjectPosition p = this.getMovingObjectPositionFromPlayer(
-				par2World, par3EntityPlayer, true);
-		if (p != null) {
-			int block = par2World.getBlockId(p.blockX, p.blockY, p.blockZ);
-
-			if (block == ModBlocks.House_Hut.blockID) {
-				MscHouses.h.hut(p.blockX, p.blockY, p.blockZ, par2World);
-				par1ItemStack.damageItem(1, par3EntityPlayer);
-			}
-			if (block == ModBlocks.House_9x9.blockID) {
-				MscHouses.h.ninebynine(par2World, p.blockX, p.blockY, p.blockZ);
-				par1ItemStack.damageItem(1, par3EntityPlayer);
-			}
-			if (block == ModBlocks.House9x9_Deluxe.blockID) {
-				MscHouses.h.ninbynineDelux(par2World, p.blockX, p.blockY,
-						p.blockZ);
-				par1ItemStack.damageItem(1, par3EntityPlayer);
-			}
-		}
-		return par1ItemStack;
-	}
-	 */
 	@Override
 	public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player) {
 		MovingObjectPosition p = this.getMovingObjectPositionFromPlayer(world, player, true);
@@ -72,18 +48,22 @@ public class ItemHouseTool extends Item {
 			}
 
 			if(inventory.getStackInSlot(1) != null){
-				if(inventory.getStackInSlot(1).getItem() == Item.coal || inventory.getStackInSlot(1) == new ItemStack(Item.coal, 1, 1)){
+				//	if(inventory.getStackInSlot(1).getItem() == Item.coal || inventory.getStackInSlot(1) == new ItemStack(Item.coal, 1, 1)){
+				//		fuel = true;
+				ArrayList<Item> valid = FuelHandler.getValidFuelsAsArrayList();
+				if(valid.contains(inventory.getStackInSlot(1).getItem())){
 					fuel = true;
+				}else{
+					if(!world.isRemote){
+						player.sendChatToPlayer("No valid fuel detected in inventory");
+					}
 				}
-			}else{
-				if(!world.isRemote)
-					player.sendChatToPlayer("No fuel detected in inventory");
 			}
-			System.out.println("Fuel detected: " + fuel + ". Moduel inside " + moduelId + ". Modifyer material ID " + modifyerMaterial);
-			inventory.setInventorySlotContents(0, null);
-			inventory.setInventorySlotContents(1, null);
-			inventory.setInventorySlotContents(2, null);
 			if(fuel){
+				inventory.setInventorySlotContents(0, null);
+				inventory.setInventorySlotContents(1, null);
+				inventory.setInventorySlotContents(2, null);
+
 				buildHouse(moduelId, modifyerMaterial, p.blockX, p.blockY, p.blockZ, world);
 			}
 
