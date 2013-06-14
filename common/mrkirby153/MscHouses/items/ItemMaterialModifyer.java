@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
+import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -19,7 +20,6 @@ public class ItemMaterialModifyer extends Item{
 	private static final String[] modifyer_file = {"modifyer_stone", "modifyer_dirt", "modifyer_wood", "modifyer_sandstone", "modifyer_pumpkin", "modifyer_mossStone", "modifyer_netherrack", "modifyer_soulSand", "modifyer_glowStone", "modifyer_obsidian", "modifyer_netherBrick"
 		,"modifyer_endStone", "modifyer_diamondBlock"};
 	private static final String[] modifyer_itemNames = {"stone", "dirt", "wood", "sandstone", "pumpkin", "mossStone", "netherrack", "soulsand", "glowstone", "obsidian", "netherbrick", "endStone", "diamondBlock"};
-//	private static final String[] modifyer_itemLore = {"Stone", "Dirt", "Wood", "Sandstone", "Pumpkin", "Mossy Cobblestone", "Netherrack", "Soulsand", "Glowstone", "Obsidian (NOT RECCOMENDED)", "Nether Brick", "End Stone"};
 
 	@SideOnly(Side.CLIENT)
 	private Icon[] field_94594_d;
@@ -59,6 +59,7 @@ public class ItemMaterialModifyer extends Item{
 	public String getUnlocalizedName(ItemStack item) {
 		return this.getUnlocalizedName() + "." + modifyer_file[item.getItemDamage()];
 	}
+	@SuppressWarnings("unchecked")
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {
