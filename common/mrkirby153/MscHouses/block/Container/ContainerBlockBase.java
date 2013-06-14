@@ -15,10 +15,8 @@ public class ContainerBlockBase extends Container{
 
         // Add the fuel slot to the Block Base
         this.addSlotToContainer(new Slot(block_base, 1, 81, 64));
-        
         //Add the material modifyer to the block base
         this.addSlotToContainer(new Slot(block_base, 2, 81, 39));
-
 
 		// Add the player's inventory slots to the container
         for (int inventoryRowIndex = 0; inventoryRowIndex < 3; ++inventoryRowIndex) {
