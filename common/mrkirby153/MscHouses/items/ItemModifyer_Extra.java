@@ -56,7 +56,7 @@ public class ItemModifyer_Extra extends Item {
 		this.field_94594_d = new Icon[material.size()];
 
 		for(int i =0; i < material.size(); i++){
-			this.field_94594_d[i] = par1IconRegister.registerIcon("MscHouses:Cusom_modifyer");
+			this.field_94594_d[i] = par1IconRegister.registerIcon("MscHouses:Custom_modifyer");
 		}
 		//	LogHelper.log(Level.INFO, "Succesfully loaded " + modifyer_id.length + " textures");
 	}
