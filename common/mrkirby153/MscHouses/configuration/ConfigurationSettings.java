@@ -1,5 +1,13 @@
 package mrkirby153.MscHouses.configuration;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * ConfigurationSettings
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class ConfigurationSettings {
 	
 	/*
@@ -19,9 +27,11 @@ public class ConfigurationSettings {
 	public static boolean Invincible;
 	public static int Invincible_time;
 	public static int House_Tool_damage;
+	public static boolean generateCoper;
 	
 	public static boolean Invibcible_Default = false;
 	public static int Invincible_time_Default = 6000;
 	public static int House_Tool_damage_Default = 10;
+	public static boolean generteCopper_Default = false;
 
 }
