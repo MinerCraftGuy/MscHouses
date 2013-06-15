@@ -2,11 +2,20 @@ package mrkirby153.MscHouses.items;
 
 import java.util.logging.Level;
 
+import mrkirby153.MscHouses.api.MaterialRegistry;
 import mrkirby153.MscHouses.configuration.ConfigurationSettings;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
 import mrkirby153.MscHouses.lib.ItemId;
 import net.minecraft.item.Item;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * ModItems
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class ModItems {
 	public static Item Debug;
 	public static Item ingotCopper;
@@ -15,7 +24,7 @@ public class ModItems {
 	public static Item PCB;
 	public static Item moduel;
 	public static Item modifyer;
-
+	public static Item modifyer_extra;
 	public static void init(){
 		Debug = new Item_Debug(ItemId.DEBUG).setUnlocalizedName("debug");
 		ingotCopper = new ItemCopper(ItemId.INGOT_COPPER).setUnlocalizedName("ingotCopper");
@@ -27,5 +36,6 @@ public class ModItems {
 		PCB = new ItemPCB(ItemId.ITEM_PCB).setUnlocalizedName("pcb");
 		moduel = new ItemModuel(ItemId.ITEM_MODUEL).setUnlocalizedName("Moduel");
 		modifyer = new ItemMaterialModifyer(ItemId.ITEM_MODIFYER).setUnlocalizedName("Modifyer");
+		modifyer_extra = new ItemModifyer_Extra(ItemId.ITEM_MODIFYER_EXTRA).setUnlocalizedName("ModifyerModAdded");
 	}
 }
