@@ -6,7 +6,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * TileEntityBlockBase
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class TileEntityBlockBase extends TileEntity implements IInventory{
 	private ItemStack[] inv;
 

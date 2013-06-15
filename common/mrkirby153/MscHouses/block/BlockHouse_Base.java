@@ -17,7 +17,15 @@ import net.minecraft.world.World;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * BlockHouse_Base
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class BlockHouse_Base extends BlockContainer{
 
 	public BlockHouse_Base(int par1) {

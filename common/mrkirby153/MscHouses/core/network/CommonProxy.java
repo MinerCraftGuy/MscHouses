@@ -7,11 +7,13 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
- * MscHouses
  * 
+ * Msc Houses
+ *
+ * CommonProxy
+ *
  * @author mrkirby153
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class CommonProxy implements IGuiHandler {
 	public void registerRenderInformation() {

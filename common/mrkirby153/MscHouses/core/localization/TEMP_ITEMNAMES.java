@@ -6,7 +6,15 @@ import mrkirby153.MscHouses.core.MscHouses;
 import mrkirby153.MscHouses.items.ModItems;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * TEMP_ITEMNAMES
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class TEMP_ITEMNAMES {
 	public static void init(){
 		itemNames();
@@ -24,6 +32,7 @@ public class TEMP_ITEMNAMES {
 		LanguageRegistry.addName(ModItems.PCB, "Printed Circut Board (PCB)");
 		LanguageRegistry.addName(ModItems.moduel, "Moduel");
 		LanguageRegistry.addName(ModItems.modifyer, "Material Modifyer");
+		LanguageRegistry.addName(ModItems.modifyer_extra, "Material Modifyer");
 	}
 	private static void blockNames(){
 		LanguageRegistry.addName(ModBlocks.OreCopper, "Copper Ore");

@@ -5,11 +5,13 @@ import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 
 /**
- * MscHouses
  * 
+ * Msc Houses
+ *
+ * NBTHelper
+ *
  * @author mrkirby153
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class NBTHelper {
 	private static void initNBT(ItemStack itemStack) {

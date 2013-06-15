@@ -1,5 +1,13 @@
 package mrkirby153.MscHouses.core.lang;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * Strings
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class Strings {
 	/* General keys */
     public static final String TRUE = "true";

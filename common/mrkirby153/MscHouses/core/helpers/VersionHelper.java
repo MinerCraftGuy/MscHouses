@@ -11,7 +11,15 @@ import mrkirby153.MscHouses.lib.Colours;
 import mrkirby153.MscHouses.lib.Reference;
 import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.Loader;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * VersionHelper
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class VersionHelper implements Runnable{
 	private static VersionHelper instance = new VersionHelper();
 

@@ -8,11 +8,13 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 /**
- * MscHouses
  * 
+ * Msc Houses
+ *
+ * Item_Debug
+ *
  * @author mrkirby153
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class Item_Debug extends Item {
 

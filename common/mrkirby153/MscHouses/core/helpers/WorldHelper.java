@@ -3,7 +3,15 @@ package mrkirby153.MscHouses.core.helpers;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * WorldHelper
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class WorldHelper {
 	/**
 	 * Drops an item in the world

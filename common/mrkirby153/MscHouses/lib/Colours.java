@@ -1,5 +1,13 @@
 package mrkirby153.MscHouses.lib;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * Colours
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class Colours {
 	public static final String PURE_WHITE = "ffffff";
 

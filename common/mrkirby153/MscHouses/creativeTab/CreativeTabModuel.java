@@ -5,7 +5,15 @@ import cpw.mods.fml.relauncher.SideOnly;
 import mrkirby153.MscHouses.block.ModBlocks;
 import mrkirby153.MscHouses.items.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * CreativeTabModuel
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class CreativeTabModuel extends CreativeTabs{
 	public CreativeTabModuel(int par1, String par2Str) {
 		super(par1, par2Str);

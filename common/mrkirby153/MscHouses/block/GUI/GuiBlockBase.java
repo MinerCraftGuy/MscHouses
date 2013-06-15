@@ -7,7 +7,15 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * GuiBlockBase
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class GuiBlockBase extends GuiContainer{
 	public GuiBlockBase (InventoryPlayer inventoryPlayer,
 			TileEntityBlockBase tileEntity) {

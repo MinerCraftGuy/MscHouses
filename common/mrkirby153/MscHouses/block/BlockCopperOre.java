@@ -7,7 +7,15 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * BlockCopperOre
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class BlockCopperOre extends Block{
 
 	protected BlockCopperOre(int par1) {

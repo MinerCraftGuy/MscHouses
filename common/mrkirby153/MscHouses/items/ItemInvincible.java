@@ -12,11 +12,13 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 /**
- * MscHouses
  * 
+ * Msc Houses
+ *
+ * ItemInvincible
+ *
  * @author mrkirby153
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class ItemInvincible extends Item {
 	private int damage = 6000;

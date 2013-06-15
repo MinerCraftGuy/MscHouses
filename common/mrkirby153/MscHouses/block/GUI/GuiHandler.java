@@ -6,7 +6,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * GuiHandler
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class GuiHandler implements IGuiHandler{
 	//returns an instance of the Container you made earlier
     @Override

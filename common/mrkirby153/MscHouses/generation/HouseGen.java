@@ -7,11 +7,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 /**
- * MscHouses
  * 
+ * Msc Houses
+ *
+ * HouseGen
+ *
  * @author mrkirby153
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
- * 
  */
 public class HouseGen {
 

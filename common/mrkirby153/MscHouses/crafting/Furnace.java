@@ -9,7 +9,15 @@ import mrkirby153.MscHouses.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * Furnace
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class Furnace {
 
 	public static void init(){

@@ -1,5 +1,13 @@
 package mrkirby153.MscHouses.lib;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * BlockId
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class BlockId {
 	//Default IDs
 	public static int ORE_COPPER_DEFAULT = 700;

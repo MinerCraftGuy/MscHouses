@@ -6,7 +6,15 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * ContainerBlockBase
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class ContainerBlockBase extends Container{
 	public ContainerBlockBase(InventoryPlayer inventoryPlayer, TileEntityBlockBase block_base) {
 

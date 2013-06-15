@@ -1,7 +1,15 @@
 package mrkirby153.MscHouses.core.helpers;
 
 import cpw.mods.fml.common.registry.LanguageRegistry;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * LocalizationHelper
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class LocalizationHelper {
 
     /***
