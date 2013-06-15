@@ -25,7 +25,7 @@ import cpw.mods.fml.relauncher.SideOnly;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 public class ItemMaterialModifyer extends Item{
-	private static final String[] modifyer_file = {"modifyer_stone", "modifyer_dirt", "modifyer_wood", "modifyer_sandstone", "modifyer_pumpkin", "modifyer_mossStone", "modifyer_netherrack", "modifyer_soulSand", "modifyer_glowStone", "modifyer_obsidian", "modifyer_netherBrick"
+	public static final String[] modifyer_file = {"modifyer_stone", "modifyer_dirt", "modifyer_wood", "modifyer_sandstone", "modifyer_pumpkin", "modifyer_mossStone", "modifyer_netherrack", "modifyer_soulSand", "modifyer_glowStone", "modifyer_obsidian", "modifyer_netherBrick"
 		,"modifyer_endStone", "modifyer_diamondBlock"};
 	private static final String[] modifyer_itemNames = {"stone", "dirt", "wood", "sandstone", "pumpkin", "mossStone", "netherrack", "soulsand", "glowstone", "obsidian", "netherbrick", "endStone", "diamondBlock"};
 
