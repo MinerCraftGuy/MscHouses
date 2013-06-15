@@ -1,8 +1,10 @@
 package mrkirby153.MscHouses.core.localization;
 
+import mrkirby153.MscHouses.api.MaterialRegistry;
 import mrkirby153.MscHouses.block.ModBlocks;
 import mrkirby153.MscHouses.configuration.ConfigurationSettings;
 import mrkirby153.MscHouses.core.MscHouses;
+import mrkirby153.MscHouses.items.ItemMaterialModifyer;
 import mrkirby153.MscHouses.items.ModItems;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -53,6 +55,12 @@ public class TEMP_ITEMNAMES {
 		String[] itemNames_moduel = {"Base", "Hut", "9x9", "Deluxe 9x9" };
 		for(int i = 0; i < itemNames_moduel.length; i++){
 			LanguageRegistry.addName(new ItemStack(ModItems.moduel,1,i), itemNames_moduel[i] + " Moduel");
+		}
+		for(int i = 0; i < MaterialRegistry.blocks.size(); i++){
+			LanguageRegistry.addName(new ItemStack(ModItems.modifyer_extra,1, i), "Material Modifyer");
+		}
+		for(int i = 0; i < ItemMaterialModifyer.modifyer_file.length; i++){
+			LanguageRegistry.addName(new ItemStack(ModItems.modifyer,1,i), "Material Modifyer");
 		}
 	}
 }
