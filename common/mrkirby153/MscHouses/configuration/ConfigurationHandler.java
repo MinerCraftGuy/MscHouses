@@ -5,7 +5,15 @@ import java.io.File;
 import mrkirby153.MscHouses.lib.BlockId;
 import mrkirby153.MscHouses.lib.ItemId;
 import net.minecraftforge.common.Configuration;
-
+/**
+ * 
+ * Msc Houses
+ *
+ * ConfigurationHandler
+ *
+ * @author mrkirby153
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ */
 public class ConfigurationHandler {
 	public static Configuration config;
 	public static String CATEGORY_HOUSE = "house";
@@ -25,6 +33,7 @@ public class ConfigurationHandler {
 		ConfigurationSettings.DISPLAY_VERSION_RESULT = true;//config.get(config.CATEGORY_GENERAL, ConfigurationSettings.DISPLAY_VERSION_RESULT_CONFIGNAME, ConfigurationSettings.DISPLAY_VERSION_RESULT_DEFAULT).getBoolean(ConfigurationSettings.DISPLAY_VERSION_RESULT_DEFAULT);
         ConfigurationSettings.LAST_DISCOVERED_VERSION = config.get(config.CATEGORY_GENERAL, ConfigurationSettings.LAST_DISCOVERED_VERSION_CONFIGNAME, ConfigurationSettings.LAST_DISCOVERED_VERSION_DEFAULT).getString();
         ConfigurationSettings.LAST_DISCOVERED_VERSION_TYPE = config.get(config.CATEGORY_GENERAL, ConfigurationSettings.LAST_DISCOVERED_VERSION_TYPE_CONFIGNAME, ConfigurationSettings.LAST_DISCOVERED_VERSION_TYPE_DEFAULT).getString();
+        ConfigurationSettings.generateCoper = config.get(config.CATEGORY_GENERAL, "Generate Copper", ConfigurationSettings.generteCopper_Default).getBoolean(ConfigurationSettings.generteCopper_Default);
 
 		//Items
 		ItemId.DEBUG = config.get(CATEGORY_TOOLS, "Debug tool", ItemId.DEBUG_DEFAULT).getInt();
@@ -34,6 +43,7 @@ public class ConfigurationHandler {
 		ItemId.ITEM_PCB = config.get(CATEGORY_TOOLS, "PCB", ItemId.ITEM_INVINCIBLE_DEFAULT).getInt();
 		ItemId.ITEM_MODUEL = config.get(CATEGORY_TOOLS, "Moduel Item", ItemId.ITEM_MODUEL_DEFAULT).getInt();
 		ItemId.ITEM_MODIFYER = config.get(CATEGORY_TOOLS, "Modifyer", ItemId.ITEM_MODIFYER_DEFAULT).getInt();
+		ItemId.ITEM_MODIFYER_EXTRA = config.get(CATEGORY_TOOLS, "Mod added Material modifyer", ItemId.ITEM_MODIFYER_EXTRA_DEFAULT).getInt();
 
 
 	}
