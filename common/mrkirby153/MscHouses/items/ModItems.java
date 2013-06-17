@@ -35,7 +35,7 @@ public class ModItems {
 		}
 		PCB = new ItemPCB(ItemId.ITEM_PCB).setUnlocalizedName("pcb");
 		moduel = new ItemModuel(ItemId.ITEM_MODUEL).setUnlocalizedName("Moduel");
-		modifyer = new ItemMaterialModifyer(ItemId.ITEM_MODIFYER).setUnlocalizedName("Modifyer");
-		modifyer_extra = new ItemModifyer_Extra(ItemId.ITEM_MODIFYER_EXTRA).setUnlocalizedName("ModifyerModAdded");
+	//	modifyer = new ItemMaterialModifyer(ItemId.ITEM_MODIFYER).setUnlocalizedName("Modifyer");
+		modifyer_extra = new ItemMaterialModifyer(ItemId.ITEM_MODIFYER_EXTRA).setUnlocalizedName("ModifyerModAdded");
 	}
 }

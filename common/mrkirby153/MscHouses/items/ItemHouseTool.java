@@ -43,7 +43,7 @@ public class ItemHouseTool extends Item {
 			boolean fuel = false;
 			int moduelId = 0;
 			int modifyerMaterial = 0;
-			boolean isSpecal = false;
+		//	boolean isSpecal = false;
 			if(inventory.getStackInSlot(0) != null){
 				if(inventory.getStackInSlot(0).getItem() instanceof IHouseItem){
 					((IHouseItem) inventory.getStackInSlot(0).getItem()).geneateInit(world, p.blockX, p.blockY, p.blockZ);
@@ -52,12 +52,8 @@ public class ItemHouseTool extends Item {
 				}
 			}
 			if(inventory.getStackInSlot(2) != null){
-				if(inventory.getStackInSlot(2).getItem() == ModItems.modifyer)
-					modifyerMaterial = inventory.getStackInSlot(2).getItemDamage();
-				if(inventory.getStackInSlot(2).getItem() == ModItems.modifyer_extra){
-					modifyerMaterial = MaterialRegistry.materialLookup(inventory.getStackInSlot(2).getItemDamage());
-					isSpecal = true;
-				}
+				modifyerMaterial = MaterialRegistry.materialLookup(inventory.getStackInSlot(2).getItemDamage());
+			//	isSpecal = true;
 			}
 
 			if(inventory.getStackInSlot(1) != null){
@@ -76,9 +72,7 @@ public class ItemHouseTool extends Item {
 				inventory.setInventorySlotContents(0, null);
 				inventory.setInventorySlotContents(1, null);
 				inventory.setInventorySlotContents(2, null);
-				if(!isSpecal)
-					buildHouse(moduelId, modifyerMaterial, p.blockX, p.blockY, p.blockZ, world);
-				else
+				//	buildHouse(moduelId, modifyerMaterial, p.blockX, p.blockY, p.blockZ, world);
 					buildHouse_specal(moduelId, modifyerMaterial, p.blockX, p.blockY, p.blockZ, world);
 			}
 
@@ -86,7 +80,7 @@ public class ItemHouseTool extends Item {
 		return item;
 	}
 
-	private void buildHouse(int moduelId, int modifyerMaterial, int x, int y, int z, World world) {
+/*	private void buildHouse(int moduelId, int modifyerMaterial, int x, int y, int z, World world) {
 		int[] materialId= {0, 1, 3, 17, 24, 86, 48, 87, 88, 89, 49, 112, 121, 57};
 		System.out.println(moduelId+" "+modifyerMaterial);
 		switch(moduelId){
@@ -95,7 +89,8 @@ public class ItemHouseTool extends Item {
 			case 3: MscHouses.h.ninbynineDelux(world, x, y, z, materialId[modifyerMaterial+1]); break;
 		}
 	}
-	
+	*/
+
 	private void buildHouse_specal(int moduelId, int materialId, int x, int y, int z, World world){
 		switch(moduelId){
 			case 1: MscHouses.h.hut(x, y, z, world, materialId); break;

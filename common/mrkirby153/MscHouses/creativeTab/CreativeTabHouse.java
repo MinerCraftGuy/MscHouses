@@ -26,7 +26,7 @@ public class CreativeTabHouse extends CreativeTabs {
 	@SideOnly(Side.CLIENT)
 	public int getTabIconItemIndex() {
 		// TODO Auto-generated method stub
-		return ModItems.modifyer.itemID;
+		return ModItems.modifyer_extra.itemID;
 	}
 
 }

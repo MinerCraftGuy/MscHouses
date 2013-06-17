@@ -33,17 +33,12 @@ public class TEMP_ITEMNAMES {
 		}
 		LanguageRegistry.addName(ModItems.PCB, "Printed Circut Board (PCB)");
 		LanguageRegistry.addName(ModItems.moduel, "Moduel");
-		LanguageRegistry.addName(ModItems.modifyer, "Material Modifyer");
+//		LanguageRegistry.addName(ModItems.modifyer, "Material Modifyer");
 		LanguageRegistry.addName(ModItems.modifyer_extra, "Material Modifyer");
 	}
 	private static void blockNames(){
 		LanguageRegistry.addName(ModBlocks.OreCopper, "Copper Ore");
 		LanguageRegistry.addName(ModBlocks.BlockBaseBuild, "House Generator");
-	//	LanguageRegistry.addName(ModBlocks.House_9x9, "Nine by Nine");
-	//	LanguageRegistry.addName(ModBlocks.House9x9_Deluxe, "Nine by Nine deluxe");
-	//	LanguageRegistry.addName(ModBlocks.House_Hut, "Hut Building Block");
-
-		//		LanguageRegistry.addName(ModBlocks.Statue_Zombie, "Zombie Statue Maker");
 	}
 	private static void generalNames(){
 		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses-main", MscHouses.COLOR_CODE +"dMsc. Houses blocks/tools");
@@ -59,8 +54,8 @@ public class TEMP_ITEMNAMES {
 		for(int i = 0; i < MaterialRegistry.blocks.size(); i++){
 			LanguageRegistry.addName(new ItemStack(ModItems.modifyer_extra,1, i), "Material Modifyer");
 		}
-		for(int i = 0; i < ItemMaterialModifyer.modifyer_file.length; i++){
-			LanguageRegistry.addName(new ItemStack(ModItems.modifyer,1,i), "Material Modifyer");
+		for(int i = 0; i < ItemMaterialModifyer.material.size(); i++){
+		//	LanguageRegistry.addName(new ItemStack(ModItems.modifyer,1,i), "Material Modifyer");
 		}
 	}
 }

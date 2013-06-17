@@ -9,6 +9,7 @@ import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
 import mrkirby153.MscHouses.configuration.ConfigurationHandler;
 import mrkirby153.MscHouses.core.handlers.VersionCheckTickHandler;
 import mrkirby153.MscHouses.core.helpers.FuelHelper;
+import mrkirby153.MscHouses.core.helpers.LocalMaterialHelper;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
 import mrkirby153.MscHouses.core.helpers.VersionHelper;
 import mrkirby153.MscHouses.core.localization.TEMP_ITEMNAMES;
@@ -73,6 +74,7 @@ public class MscHouses {
 		//Register Version Handler
 		TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
 		FuelHelper.registerFuels();
+		LocalMaterialHelper.init();
 	}
 
 	@Init
