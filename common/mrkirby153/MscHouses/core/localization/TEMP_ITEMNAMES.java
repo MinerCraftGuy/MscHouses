@@ -34,7 +34,7 @@ public class TEMP_ITEMNAMES {
 		LanguageRegistry.addName(ModItems.PCB, "Printed Circut Board (PCB)");
 		LanguageRegistry.addName(ModItems.moduel, "Moduel");
 		LanguageRegistry.addName(ModItems.modifyer_extra, "Material Modifyer");
-		LanguageRegistry.addName(ModItems.infiniteDimensons, "Jar of infinite dimensions");
+		LanguageRegistry.addName(ModItems.infiniteDimensons, "Jar of Infinite Dimensions");
 	}
 	private static void blockNames(){
 		LanguageRegistry.addName(ModBlocks.OreCopper, "Copper Ore");
