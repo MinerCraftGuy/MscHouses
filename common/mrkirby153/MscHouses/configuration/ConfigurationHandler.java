@@ -44,7 +44,7 @@ public class ConfigurationHandler {
 		ItemId.ITEM_MODUEL = config.get(CATEGORY_TOOLS, "Moduel Item", ItemId.ITEM_MODUEL_DEFAULT).getInt();
 		ItemId.ITEM_MODIFYER = config.get(CATEGORY_TOOLS, "Modifyer", ItemId.ITEM_MODIFYER_DEFAULT).getInt();
 		ItemId.ITEM_MODIFYER_EXTRA = config.get(CATEGORY_TOOLS, "Mod added Material modifyer", ItemId.ITEM_MODIFYER_EXTRA_DEFAULT).getInt();
-
+		ItemId.ITEM_INFINITE_DIM = config.get(config.CATEGORY_ITEM, "Vial of infinite dimensions", ItemId.ITEM_INFINITE_DIM_DEFAULT).getInt();
 
 	}
 	

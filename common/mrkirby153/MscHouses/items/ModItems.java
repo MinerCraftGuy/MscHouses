@@ -25,6 +25,7 @@ public class ModItems {
 	public static Item moduel;
 	public static Item modifyer;
 	public static Item modifyer_extra;
+	public static Item infiniteDimensons;
 	public static void init(){
 		Debug = new Item_Debug(ItemId.DEBUG).setUnlocalizedName("debug");
 		ingotCopper = new ItemCopper(ItemId.INGOT_COPPER).setUnlocalizedName("ingotCopper");
@@ -37,5 +38,6 @@ public class ModItems {
 		moduel = new ItemModuel(ItemId.ITEM_MODUEL).setUnlocalizedName("Moduel");
 	//	modifyer = new ItemMaterialModifyer(ItemId.ITEM_MODIFYER).setUnlocalizedName("Modifyer");
 		modifyer_extra = new ItemMaterialModifyer(ItemId.ITEM_MODIFYER_EXTRA).setUnlocalizedName("ModifyerModAdded");
+		infiniteDimensons = new ItemInfiniteDimensons(ItemId.ITEM_INFINITE_DIM).setUnlocalizedName("Infinite");
 	}
 }
