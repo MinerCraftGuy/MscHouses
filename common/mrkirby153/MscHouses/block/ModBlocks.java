@@ -14,11 +14,16 @@ import net.minecraft.block.Block;
 public class ModBlocks {
 	public static Block OreCopper;
 	public static Block BlockBaseBuild;
+	public static Block multiFurnaceCore;
+	public static Block multiFurnaceDummy;
+	
 	
 	public static void init(){
 		OreCopper = new BlockCopperOre(BlockId.ORE_COPPER).setUnlocalizedName("oreCopper");
 		// StatueZombie = new BlockStatue_Zombie(BlockId.HOUSE)
 		BlockBaseBuild = new BlockHouse_Base(BlockId.HOUSE_BASE).setUnlocalizedName("houseBase");
+		multiFurnaceCore = new BlockMultiFurnaceCore(750);
+		multiFurnaceDummy = new BlockMultiFurnaceDummy(751);
 	}
 
 }

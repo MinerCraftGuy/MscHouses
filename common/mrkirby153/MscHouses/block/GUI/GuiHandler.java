@@ -2,6 +2,7 @@ package mrkirby153.MscHouses.block.GUI;
 
 import mrkirby153.MscHouses.block.Container.ContainerBlockBase;
 import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
+import mrkirby153.MscHouses.block.TileEntity.TileEntityMultiFurnaceCore;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -35,6 +36,8 @@ public class GuiHandler implements IGuiHandler{
             if(tileEntity instanceof TileEntityBlockBase){
                     return new GuiBlockBase(player.inventory, (TileEntityBlockBase) tileEntity);
             }
+            if(tileEntity instanceof TileEntityMultiFurnaceCore)
+            	return new GuiMultiFurnace(player.inventory, (TileEntityMultiFurnaceCore) tileEntity);
             return null;
 
     }
