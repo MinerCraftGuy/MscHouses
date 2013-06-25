@@ -20,11 +20,7 @@ public class ConfigurationHandler {
 	public static String CATEGORY_TOOLS = "tools";
 	public static void init(File configFile){
 		config = new Configuration(configFile);
-		//Blocks
-		BlockId.HOUSE_HUT = config.get(CATEGORY_HOUSE, "Hut", BlockId.HOUSE_HUT_DEFAULT).getInt();
-		BlockId.HOUSE_9X9 = config.get(CATEGORY_HOUSE, "Nine by Nine", BlockId.HOUSE_9X9_DEFAULT).getInt();
 		BlockId.ORE_COPPER = config.get(config.CATEGORY_BLOCK, "Copper Ore", BlockId.ORE_COPPER_DEFAULT).getInt();
-		BlockId.HOUSE_9X9_DELUXE = config.get(CATEGORY_HOUSE, "Nine by Nine deluxe", BlockId.HOUSE_9X9_DEUXE_DEFAULT).getInt();
 		BlockId.HOUSE_BASE = config.get(CATEGORY_HOUSE, "House Base", BlockId.HOUSE_BASE_DEFAULT).getInt();
 		//General
 		ConfigurationSettings.Invincible = config.get(CATEGORY_TOOLS, "Invincible Item Enabled", ConfigurationSettings.Invibcible_Default).getBoolean(ConfigurationSettings.Invibcible_Default);

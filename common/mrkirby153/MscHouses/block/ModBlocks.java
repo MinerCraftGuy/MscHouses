@@ -13,10 +13,6 @@ import net.minecraft.block.Block;
  */
 public class ModBlocks {
 	public static Block OreCopper;
-	public static Block House_9x9;
-	public static Block House9x9_Deluxe;
-	public static Block House_Hut;
-	public static Block Statue_Zombie;
 	public static Block BlockBaseBuild;
 	
 	public static void init(){
