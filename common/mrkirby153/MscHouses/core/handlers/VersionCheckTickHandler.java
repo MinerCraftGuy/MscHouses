@@ -43,7 +43,7 @@ public class VersionCheckTickHandler implements ITickHandler {
 
                                 if (VersionHelper.getResult() == VersionHelper.OUTDATED) {
                                     FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage(VersionHelper.getResultMessageForClient());
-                                    ConfigurationHandler.set(Configuration.CATEGORY_GENERAL, ConfigurationSettings.DISPLAY_VERSION_RESULT_CONFIGNAME, Strings.FALSE);
+                                //    ConfigurationHandler.set(Configuration.CATEGORY_GENERAL, ConfigurationSettings.DISPLAY_VERSION_RESULT_CONFIGNAME, Strings.FALSE);
                                 }
                             }
                         }
