@@ -35,6 +35,7 @@ import mrkirby153.MscHouses.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.Property;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -96,33 +97,33 @@ public class MscHouses {
 		config = new MscHousesConfiguration(new File(event.getModConfigurationDirectory(), "MscHouses/main.conf"));
 		try{
 			config.load();
-			Property oreCopperId = config.get(config.CATEGORY_BLOCK, "copperOre.id", BlockId.ORE_COPPER_DEFAULT);
+			Property oreCopperId = config.get(Configuration.CATEGORY_BLOCK, "copperOre.id", BlockId.ORE_COPPER_DEFAULT);
 			oreCopperId.comment = "The ID for copper ore. Defaults to " + BlockId.ORE_COPPER_DEFAULT;
-			Property oreCopperEnabled = config.get(config.CATEGORY_GENERAL, "copperOre.genreation", ConfigurationSettings.generteCopper_Default);
+			Property oreCopperEnabled = config.get(Configuration.CATEGORY_GENERAL, "copperOre.genreation", ConfigurationSettings.generteCopper_Default);
 			oreCopperEnabled.comment= "Determines if Copper ore is generated in the world. Defaults to "+ ConfigurationSettings.generteCopper_Default;
 			
-			Property houseGenId = config.get(config.CATEGORY_BLOCK, "houseGen.id", BlockId.HOUSE_BASE_DEFAULT);
+			Property houseGenId = config.get(Configuration.CATEGORY_BLOCK, "houseGen.id", BlockId.HOUSE_BASE_DEFAULT);
 			houseGenId.comment = "The ID for the House generation Block. Defaults to " + BlockId.HOUSE_BASE_DEFAULT;
 			
-			Property debugId = config.get(config.CATEGORY_GENERAL, "debug.id", ItemId.DEBUG_DEFAULT);
+			Property debugId = config.get(Configuration.CATEGORY_GENERAL, "debug.id", ItemId.DEBUG_DEFAULT);
 			debugId.comment = "The Id for the debug tool. Defaults to " + ItemId.DEBUG_DEFAULT;
 			
-			Property ingotCopperId = config.get(config.CATEGORY_ITEM, "ingotCopper.id", ItemId.INGOT_COPPER_DEFAULT);
+			Property ingotCopperId = config.get(Configuration.CATEGORY_ITEM, "ingotCopper.id", ItemId.INGOT_COPPER_DEFAULT);
 			ingotCopperId.comment = "The Id for Copper Ingots. Defaults to " + ItemId.INGOT_COPPER_DEFAULT;
 			
-			Property itemHouseToolId = config.get(config.CATEGORY_ITEM, "houseTool.id", ItemId.ITEM_HOUSETOOL_DEFAULT);
+			Property itemHouseToolId = config.get(Configuration.CATEGORY_ITEM, "houseTool.id", ItemId.ITEM_HOUSETOOL_DEFAULT);
 			itemHouseToolId.comment = "The Id for the House Tool. Defaults to " +ItemId.ITEM_HOUSETOOL_DEFAULT;
 			
-			Property itemPcbId = config.get(config.CATEGORY_ITEM, "pcb.id", ItemId.ITEM_PCB_DEFAULT);
+			Property itemPcbId = config.get(Configuration.CATEGORY_ITEM, "pcb.id", ItemId.ITEM_PCB_DEFAULT);
 			itemPcbId.comment = "The ID for the PCB's. Defaults to " + ItemId.ITEM_PCB_DEFAULT;
 			
-			Property itemModuelId = config.get(config.CATEGORY_ITEM, "moduel.id", ItemId.ITEM_MODUEL_DEFAULT);
+			Property itemModuelId = config.get(Configuration.CATEGORY_ITEM, "moduel.id", ItemId.ITEM_MODUEL_DEFAULT);
 			itemModuelId.comment = "The ID for the House Moduels. Defaults to " + ItemId.ITEM_MODUEL_DEFAULT;
 			
-			Property itemModifyerId = config.get(config.CATEGORY_ITEM, "modifyer.id", ItemId.ITEM_MODIFYER_DEFAULT);
+			Property itemModifyerId = config.get(Configuration.CATEGORY_ITEM, "modifyer.id", ItemId.ITEM_MODIFYER_DEFAULT);
 			itemModifyerId.comment = "The ID for the material modifyers. Defaults to " + ItemId.ITEM_MODIFYER_DEFAULT;
 			
-			Property infiniteDimId = config.get(config.CATEGORY_ITEM, "infinitedim.id", ItemId.ITEM_INFINITE_DIM_DEFAULT);
+			Property infiniteDimId = config.get(Configuration.CATEGORY_ITEM, "infinitedim.id", ItemId.ITEM_INFINITE_DIM_DEFAULT);
 			infiniteDimId.comment = "The ID for the jar of infinite dimensons. Defaults to " + ItemId.ITEM_INFINITE_DIM_DEFAULT;
 			//Defines Blocks
 			OreCopper = new BlockCopperOre(oreCopperId.getInt()).setUnlocalizedName("oreCopper");
