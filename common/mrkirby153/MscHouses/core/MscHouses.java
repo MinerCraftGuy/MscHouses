@@ -13,6 +13,7 @@ import mrkirby153.MscHouses.core.handlers.VersionCheckTickHandler;
 import mrkirby153.MscHouses.core.helpers.FuelHelper;
 import mrkirby153.MscHouses.core.helpers.LocalMaterialHelper;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
+import mrkirby153.MscHouses.core.helpers.OreHelper;
 import mrkirby153.MscHouses.core.localization.TEMP_ITEMNAMES;
 import mrkirby153.MscHouses.core.network.CommonProxy;
 import mrkirby153.MscHouses.crafting.CraftingBench;
@@ -159,6 +160,7 @@ public class MscHouses {
 		CraftingBench.init();
 		Furnace.init();
 		TEMP_ITEMNAMES.init();
+		OreHelper.registerOres();
 	}
 	@ServerStarting
 	public void serverLoad(FMLServerStartingEvent event){

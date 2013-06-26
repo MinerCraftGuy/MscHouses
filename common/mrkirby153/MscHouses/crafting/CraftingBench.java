@@ -8,6 +8,7 @@ import mrkirby153.MscHouses.core.helpers.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import cpw.mods.fml.common.registry.GameRegistry;
 /**
  * 
@@ -27,6 +28,7 @@ public class CraftingBench {
 			for(int i = 0; i < customBlock.length; i++){
 				GameRegistry.addRecipe(new ItemStack(MscHouses.modifyer, 1, i), new Object[]{"XXX","XYX","XZX", 'X', customBlock[i], 'Y', Item.enderPearl, 'Z', MscHouses.PCB});
 			}
+		GameRegistry.addRecipe(new ShapedOreRecipe(MscHouses.PCB, true, new Object[]{ "X#X","XXX","X#X",'X', "ingotCopper", '#', Item.redstone}));
 			LogHelper.log(Level.INFO, "Successfully Initalized Crafting Recipies!");
 		}
 

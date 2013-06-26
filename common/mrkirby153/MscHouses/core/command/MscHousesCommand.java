@@ -52,7 +52,7 @@ public class MscHousesCommand extends CommandBase {
 			sender.sendChatToPlayer("- version : Version information.");
 			return;
 		}
-
+		
 		throw new WrongUsageException(this.getCommandUsage(sender));
 	}
 
