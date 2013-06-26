@@ -2,10 +2,8 @@ package mrkirby153.MscHouses.core.localization;
 
 import mrkirby153.MscHouses.api.MaterialRegistry;
 import mrkirby153.MscHouses.block.ModBlocks;
-import mrkirby153.MscHouses.configuration.ConfigurationSettings;
 import mrkirby153.MscHouses.core.MscHouses;
 import mrkirby153.MscHouses.items.ItemMaterialModifyer;
-import mrkirby153.MscHouses.items.ModItems;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 /**
@@ -25,20 +23,17 @@ public class TEMP_ITEMNAMES {
 		generalNames();
 	}
 	private static void itemNames(){
-		LanguageRegistry.addName(ModItems.Debug, "Debug Tool");
-		LanguageRegistry.addName(ModItems.ingotCopper, "Copper ingot (Texture is a WIP)");
-		LanguageRegistry.addName(ModItems.HouseTool, "House Tool");
-		if(ConfigurationSettings.Invincible){
-			LanguageRegistry.addName(ModItems.Invincible, "Invincible Item");
-		}
-		LanguageRegistry.addName(ModItems.PCB, "Printed Circut Board (PCB)");
-		LanguageRegistry.addName(ModItems.moduel, "Moduel");
-		LanguageRegistry.addName(ModItems.modifyer_extra, "Material Modifyer");
-		LanguageRegistry.addName(ModItems.infiniteDimensons, "Jar of Infinite Dimensions");
+		LanguageRegistry.addName(MscHouses.Debug, "Debug Tool");
+		LanguageRegistry.addName(MscHouses.ingotCopper, "Copper ingot (Texture is a WIP)");
+		LanguageRegistry.addName(MscHouses.HouseTool, "House Tool");
+		LanguageRegistry.addName(MscHouses.PCB, "Printed Circut Board (PCB)");
+		LanguageRegistry.addName(MscHouses.moduel, "Moduel");
+		LanguageRegistry.addName(MscHouses.modifyer, "Material Modifyer");
+		LanguageRegistry.addName(MscHouses.infiniteDimensions, "Jar of Infinite Dimensions");
 	}
 	private static void blockNames(){
-		LanguageRegistry.addName(ModBlocks.OreCopper, "Copper Ore");
-		LanguageRegistry.addName(ModBlocks.BlockBaseBuild, "House Generator");
+		LanguageRegistry.addName(MscHouses.OreCopper, "Copper Ore");
+		LanguageRegistry.addName(MscHouses.BlockBaseBuild, "House Generator");
 	}
 	private static void generalNames(){
 		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses-main", MscHouses.COLOR_CODE +"dMsc. Houses blocks/tools");
@@ -49,13 +44,13 @@ public class TEMP_ITEMNAMES {
 		/* Moduel Names */
 		String[] itemNames_moduel = {"Base", "Hut", "9x9", "Deluxe 9x9" };
 		for(int i = 0; i < itemNames_moduel.length; i++){
-			LanguageRegistry.addName(new ItemStack(ModItems.moduel,1,i), itemNames_moduel[i] + " Moduel");
+			LanguageRegistry.addName(new ItemStack(MscHouses.moduel,1,i), itemNames_moduel[i] + " Moduel");
 		}
 		for(int i = 0; i < MaterialRegistry.blocks.size(); i++){
-			LanguageRegistry.addName(new ItemStack(ModItems.modifyer_extra,1, i), "Material Modifyer");
+			LanguageRegistry.addName(new ItemStack(MscHouses.modifyer,1, i), "Material Modifyer");
 		}
 		for(int i = 0; i < ItemMaterialModifyer.material.size(); i++){
-		//	LanguageRegistry.addName(new ItemStack(ModItems.modifyer,1,i), "Material Modifyer");
+		//	LanguageRegistry.addName(new ItemStack(MscHouses.modifyer,1,i), "Material Modifyer");
 		}
 	}
 }

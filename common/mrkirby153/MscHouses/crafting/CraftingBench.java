@@ -3,8 +3,8 @@ package mrkirby153.MscHouses.crafting;
 import java.util.logging.Level;
 
 import mrkirby153.MscHouses.api.MaterialRegistry;
+import mrkirby153.MscHouses.core.MscHouses;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
-import mrkirby153.MscHouses.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -21,11 +21,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class CraftingBench {
 
 	public static void init(){
-		GameRegistry.addRecipe(new ItemStack(ModItems.PCB, 1), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(MscHouses.PCB, 1), new Object[]{
 			"X#X", "XXX", "X#X", 'X', Item.ingotIron, '#', Item.redstone});
 			Block[] customBlock = MaterialRegistry.getValidBlocksAsArray();
 			for(int i = 0; i < customBlock.length; i++){
-				GameRegistry.addRecipe(new ItemStack(ModItems.modifyer_extra, 1, i), new Object[]{"XXX","XYX","XZX", 'X', customBlock[i], 'Y', Item.enderPearl, 'Z', ModItems.PCB});
+				GameRegistry.addRecipe(new ItemStack(MscHouses.modifyer, 1, i), new Object[]{"XXX","XYX","XZX", 'X', customBlock[i], 'Y', Item.enderPearl, 'Z', MscHouses.PCB});
 			}
 			LogHelper.log(Level.INFO, "Successfully Initalized Crafting Recipies!");
 		}

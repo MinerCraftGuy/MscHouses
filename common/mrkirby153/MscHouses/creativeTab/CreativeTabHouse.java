@@ -1,7 +1,6 @@
 package mrkirby153.MscHouses.creativeTab;
 
-import mrkirby153.MscHouses.block.ModBlocks;
-import mrkirby153.MscHouses.items.ModItems;
+import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -26,7 +25,7 @@ public class CreativeTabHouse extends CreativeTabs {
 	@SideOnly(Side.CLIENT)
 	public int getTabIconItemIndex() {
 		// TODO Auto-generated method stub
-		return ModItems.modifyer_extra.itemID;
+		return MscHouses.modifyer.itemID;
 	}
 
 }
