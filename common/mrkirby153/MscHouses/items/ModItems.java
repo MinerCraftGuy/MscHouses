@@ -30,10 +30,6 @@ public class ModItems {
 		Debug = new Item_Debug(ItemId.DEBUG).setUnlocalizedName("debug");
 		ingotCopper = new ItemCopper(ItemId.INGOT_COPPER).setUnlocalizedName("ingotCopper");
 		HouseTool = new ItemHouseTool(ItemId.ITEM_HOUSETOOL).setUnlocalizedName("ingotCopper");
-		if(ConfigurationSettings.Invincible){
-			Invincible = new ItemInvincible(ItemId.ITEM_INVINCBLE).setUnlocalizedName("invincible");
-			LogHelper.log(Level.WARNING, "Invincible Item Enabled!");
-		}
 		PCB = new ItemPCB(ItemId.ITEM_PCB).setUnlocalizedName("pcb");
 		moduel = new ItemModuel(ItemId.ITEM_MODUEL).setUnlocalizedName("Moduel");
 	//	modifyer = new ItemMaterialModifyer(ItemId.ITEM_MODIFYER).setUnlocalizedName("Modifyer");
