@@ -129,7 +129,7 @@ public class VersionHelper implements Runnable{
          if (result == UNINITIALIZED)
              return "Remote version check failed to initialize properly";
          else if (result == CURRENT) {
-             return "Msc Houses is up to date! Congrats!";
+             return "Using most recent Msc. Houses!";
          }
          else if (result == OUTDATED && remoteVersion != null && remoteUpdateLocation != null) {
              String returnString = "A new @MOD_NAME@ version exists (@REMOTE_MOD_VERSION@) for @MINECRAFT_VERSION@. Get it here: @MOD_UPDATE_LOCATION@";
