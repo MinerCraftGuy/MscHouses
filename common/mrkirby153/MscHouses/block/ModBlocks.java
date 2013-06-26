@@ -1,5 +1,6 @@
 package mrkirby153.MscHouses.block;
 
+import mrkirby153.MscHouses.core.MscHouses;
 import mrkirby153.MscHouses.lib.BlockId;
 import net.minecraft.block.Block;
 /**
@@ -16,12 +17,10 @@ public class ModBlocks {
 	public static Block BlockBaseBuild;
 	public static Block multiFurnaceCore;
 	public static Block multiFurnaceDummy;
-	
+	public static MscHouses h = new MscHouses();
 	
 	public static void init(){
-		OreCopper = new BlockCopperOre(BlockId.ORE_COPPER).setUnlocalizedName("oreCopper");
-		// StatueZombie = new BlockStatue_Zombie(BlockId.HOUSE)
-		BlockBaseBuild = new BlockHouse_Base(BlockId.HOUSE_BASE).setUnlocalizedName("houseBase");
+
 		multiFurnaceCore = new BlockMultiFurnaceCore(750);
 		multiFurnaceDummy = new BlockMultiFurnaceDummy(751);
 	}
