@@ -22,9 +22,7 @@ public class ConfigurationHandler {
 		config = new Configuration(configFile);
 		BlockId.ORE_COPPER = config.get(Configuration.CATEGORY_BLOCK, "Copper Ore", BlockId.ORE_COPPER_DEFAULT).getInt();
 		BlockId.HOUSE_BASE = config.get(CATEGORY_HOUSE, "House Base", BlockId.HOUSE_BASE_DEFAULT).getInt();
-		//General
-		ConfigurationSettings.Invincible = config.get(CATEGORY_TOOLS, "Invincible Item Enabled", ConfigurationSettings.Invibcible_Default).getBoolean(ConfigurationSettings.Invibcible_Default);
-		ConfigurationSettings.Invincible_time = config.get(CATEGORY_TOOLS, "Invincible recharge time (Seconds)", ConfigurationSettings.Invincible_time_Default).getInt();
+		
 		ConfigurationSettings.House_Tool_damage = config.get(CATEGORY_TOOLS, "House Tool Damage", ConfigurationSettings.House_Tool_damage_Default).getInt();
 		ConfigurationSettings.DISPLAY_VERSION_RESULT = true;
         ConfigurationSettings.LAST_DISCOVERED_VERSION = config.get(Configuration.CATEGORY_GENERAL, ConfigurationSettings.LAST_DISCOVERED_VERSION_CONFIGNAME, ConfigurationSettings.LAST_DISCOVERED_VERSION_DEFAULT).getString();
