@@ -4,6 +4,7 @@ import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
@@ -41,7 +42,7 @@ public class Item_Debug extends Item {
 						+ "dBlock ID: " + id + " Block Meta: " + meta);
 			}
 		} else {
-			par3EntityPlayer.sendChatToPlayer("You MUST click on a block.");
+			par3EntityPlayer.sendChatToPlayer(ChatMessageComponent.func_111066_d("You MUST click on a block."));
 		}
 		return par1ItemStack;
 	}

@@ -95,12 +95,14 @@ public class ItemMaterialModifyer extends Item {
 		return par1ItemStack;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 		Block[] var1 = new Block[material.size()];
 		var1 = material.toArray(var1);
-		par3List.add(this.capitalize(StringTranslate.getInstance().translateKey(var1[par1ItemStack.getItemDamage()].getLocalizedName())));
+	//	par3List.add(this.capitalize(StringTranslate.translateKey(var1[par1ItemStack.getItemDamage()].getLocalizedName())));
+		par3List.add(this.capitalize(var1[par1ItemStack.getItemDamage()].getLocalizedName()));
 	}
 
 

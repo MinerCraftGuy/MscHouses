@@ -1,12 +1,18 @@
 package mrkirby153.MscHouses.block.GUI;
 
+import javax.annotation.Resource;
+
+import org.lwjgl.opengl.GL11;
+
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mrkirby153.MscHouses.block.Container.ContainerBlockBase;
 import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
-
-import org.lwjgl.opengl.GL11;
 /**
  * 
  * Msc Houses
@@ -16,6 +22,7 @@ import org.lwjgl.opengl.GL11;
  * @author mrkirby153
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
+@SideOnly(Side.CLIENT)
 public class GuiBlockBase extends GuiContainer{
 	public GuiBlockBase (InventoryPlayer inventoryPlayer,
 			TileEntityBlockBase tileEntity) {
@@ -38,7 +45,10 @@ public class GuiBlockBase extends GuiContainer{
 		//draw your Gui here, only thing you need to change is the path
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 	//	this.mc.renderEngine.bindTexture(texture);
-		this.mc.renderEngine.bindTexture("/mods/MscHouses/textures/gui/BlockBase.png");
+	//	this.mc.renderEngine.bindTexture("/mods/MscHouses/textures/gui/BlockBase.png");
+		ResourceLocation resourceLocation = new ResourceLocation("/mods/MscHouses/textures/gui/BlockBase.png");
+		FMLClientHandler.instance().getClient().renderEngine.func_110577_a(resourceLocation);
+		
 		int x = (width - xSize) / 2;
 		int y = (height - ySize) / 2;
 		this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);

@@ -5,6 +5,7 @@ import java.util.EnumSet;
 import mrkirby153.MscHouses.core.MscHouses;
 import mrkirby153.MscHouses.core.Version;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.ChatMessageComponent;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 /**
@@ -35,12 +36,12 @@ public class VersionCheckTickHandler implements ITickHandler {
 		// if(!Config.disableVersionCheck) {
 
 		if (Version.needsUpdateNoticeAndMarkAsSeen()) {
-			player.sendChatToPlayer(String.format("\u00A7cNew version of MscHouses available: %s for Minecraft %s", Version.getReccomendedVersion(),
-					MscHouses.getMCVersion()));
+			player.sendChatToPlayer(ChatMessageComponent.func_111066_d(String.format("\u00A7cNew version of MscHouses available: %s for Minecraft %s", Version.getReccomendedVersion(),
+					MscHouses.getMCVersion())));
 			for (String updateLine : Version.getChangelog()) {
-				player.sendChatToPlayer("\u00A79" + updateLine);
+				player.sendChatToPlayer(ChatMessageComponent.func_111066_d("\u00A79" + updateLine));
 			}
-			player.sendChatToPlayer("\u00A7cThis message only displays once. Type '/MscHouses version' if you want to see it again.");
+			player.sendChatToPlayer(ChatMessageComponent.func_111066_d("\u00A7cThis message only displays once. Type '/MscHouses version' if you want to see it again."));
 		}
 
 		// }

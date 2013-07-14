@@ -12,6 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
@@ -64,7 +65,7 @@ public class ItemHouseTool extends Item {
 					fuel = true;
 				}else{
 					if(!world.isRemote){
-						player.sendChatToPlayer("No valid fuel detected in inventory");
+						player.sendChatToPlayer(ChatMessageComponent.func_111066_d("No valid fuel detected in inventory"));
 					}
 				}
 			}

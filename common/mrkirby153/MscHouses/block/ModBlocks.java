@@ -20,9 +20,6 @@ public class ModBlocks {
 	public static MscHouses h = new MscHouses();
 	
 	public static void init(){
-
-		multiFurnaceCore = new BlockMultiFurnaceCore(750);
-		multiFurnaceDummy = new BlockMultiFurnaceDummy(751);
 	}
 
 }
