@@ -2,7 +2,6 @@
 
 Here, you will find the latest code hot off the press.
 
-***Latest Version:*** [MscHouses 1.1 for minecraft 1.5.1] (https://dl.dropbox.com/s/h84svmdetd6s3d3/MscHouses-universal-1.1.jar?token_hash=AAFNMCtXATCSDxqsZfh8yUU_okpqNN0QspOv3qkN7qo5uA&dl=1)
 
 [Compiling MscHouses] ()
 ***
