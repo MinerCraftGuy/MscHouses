@@ -48,7 +48,7 @@ public class ItemModuel extends Item{
 		this.field_94594_d = new Icon[moduelFileName.length];
 
 		for(int i =0; i < moduelFileName.length; i++){
-			this.field_94594_d[i] = par1IconRegister.registerIcon("MscHouses:" + moduelFileName[i]);
+			this.field_94594_d[i] = par1IconRegister.registerIcon("mschouses:" + moduelFileName[i]);
 		}
 	}
 

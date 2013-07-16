@@ -24,7 +24,7 @@ public class ItemInfiniteDimensons extends Item{
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
 		// TODO Auto-generated method stub
-		itemIcon = iconRegister.registerIcon("MscHouses:infiniteDimensions");
+		itemIcon = iconRegister.registerIcon("mschouses:infiniteDimensions");
 	}
 
 }

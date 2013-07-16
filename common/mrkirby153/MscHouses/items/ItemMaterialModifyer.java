@@ -56,7 +56,7 @@ public class ItemMaterialModifyer extends Item {
 		this.field_94594_d = new Icon[material.size()];
 
 		for(int i =0; i < material.size(); i++){
-			this.field_94594_d[i] = par1IconRegister.registerIcon("MscHouses:modifyer");
+			this.field_94594_d[i] = par1IconRegister.registerIcon("mschouses:modifyer");
 		}
 		//	LogHelper.log(Level.INFO, "Succesfully loaded " + modifyer_id.length + " textures");
 	}
@@ -82,7 +82,6 @@ public class ItemMaterialModifyer extends Item {
 		var3 = material.toArray(var3);
 		for(int i = 1; i < var3.length; i++){
 			var2 = var3[i];
-			System.out.println(var3[i]);
 			this.modifyer_id[i] = var2.blockID;
 			LogHelper.log(Level.INFO, "Created sub item for item id " + var2.blockID);
 

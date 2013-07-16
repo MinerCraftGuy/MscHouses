@@ -44,22 +44,19 @@ public class ItemHouseTool extends Item {
 			boolean fuel = false;
 			int moduelId = 0;
 			int modifyerMaterial = 0;
-		//	boolean isSpecal = false;
 			if(inventory.getStackInSlot(0) != null){
 				if(inventory.getStackInSlot(0).getItem() instanceof IHouseItem){
 					((IHouseItem) inventory.getStackInSlot(0).getItem()).geneateInit(world, p.blockX, p.blockY, p.blockZ);
 				}else{
-					moduelId = inventory.getStackInSlot(0).getItemDamage();
+					if(inventory.getStackInSlot(0).getItem() == MscHouses.moduel)
+						moduelId = inventory.getStackInSlot(0).getItemDamage();
 				}
 			}
 			if(inventory.getStackInSlot(2) != null){
 				modifyerMaterial = MaterialRegistry.materialLookup(inventory.getStackInSlot(2).getItemDamage());
-			//	isSpecal = true;
 			}
 
 			if(inventory.getStackInSlot(1) != null){
-				//	if(inventory.getStackInSlot(1).getItem() == Item.coal || inventory.getStackInSlot(1) == new ItemStack(Item.coal, 1, 1)){
-				//		fuel = true;
 				ArrayList<Item> valid = FuelRegistry.getValidFuelsAsArrayList();
 				if(valid.contains(inventory.getStackInSlot(1).getItem())){
 					fuel = true;
@@ -73,15 +70,14 @@ public class ItemHouseTool extends Item {
 				inventory.setInventorySlotContents(0, null);
 				inventory.setInventorySlotContents(1, null);
 				inventory.setInventorySlotContents(2, null);
-				//	buildHouse(moduelId, modifyerMaterial, p.blockX, p.blockY, p.blockZ, world);
-					buildHouse_specal(moduelId, modifyerMaterial, p.blockX, p.blockY, p.blockZ, world);
+					buildHouse(moduelId, modifyerMaterial, p.blockX, p.blockY, p.blockZ, world);
 			}
 
 		}
 		return item;
 	}
 
-	private void buildHouse_specal(int moduelId, int materialId, int x, int y, int z, World world){
+	private void buildHouse(int moduelId, int materialId, int x, int y, int z, World world){
 		switch(moduelId){
 			case 1: MscHouses.h.hut(x, y, z, world, materialId); break;
 			case 2: MscHouses.h.ninebynine(world, x, y, z, materialId); break;
@@ -93,7 +89,7 @@ public class ItemHouseTool extends Item {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
 		// TODO Auto-generated method stub
-		itemIcon = iconRegister.registerIcon("MscHouses:HouseTool");
+		itemIcon = iconRegister.registerIcon("mschouses:HouseTool");
 	}
 
 	@Override

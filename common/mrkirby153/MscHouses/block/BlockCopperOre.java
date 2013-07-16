@@ -28,7 +28,7 @@ public class BlockCopperOre extends Block{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		blockIcon = iconRegister.registerIcon("MscHouses:CopperOre");
+		blockIcon = iconRegister.registerIcon("mschouses:CopperOre");
 	}
 
 }

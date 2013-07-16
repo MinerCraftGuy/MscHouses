@@ -25,7 +25,7 @@ public class ItemCopper extends Item{
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
 		// TODO Auto-generated method stub
-		itemIcon = iconRegister.registerIcon("MscHouses:ingotcopper");
+		itemIcon = iconRegister.registerIcon("mschouses:ingotcopper");
 	}
 	
 	

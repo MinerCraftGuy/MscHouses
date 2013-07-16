@@ -25,6 +25,6 @@ public class ItemPCB extends Item {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
 		// TODO Auto-generated method stub
-		itemIcon = iconRegister.registerIcon("MscHouses:ItemPCB");
+		itemIcon = iconRegister.registerIcon("mschouses:ItemPCB");
 	}
 }

@@ -93,7 +93,7 @@ public class BlockHouse_Base extends BlockContainer{
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister iconRegister) {
-		blockIcon = iconRegister.registerIcon("MscHouses:houseBase");
+		blockIcon = iconRegister.registerIcon("mschouses:houseBase");
 	}
 
 
