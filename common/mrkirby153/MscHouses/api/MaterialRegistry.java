@@ -44,7 +44,6 @@ public class MaterialRegistry {
 		for(int i = 0; i < block.length; i++){
 			Block var1 = block[i];
 			block_id[i] = var1.blockID;
-			System.out.println(var1.blockID);
 		}
 		return block_id[id];
 	}
