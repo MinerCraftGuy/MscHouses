@@ -1,7 +1,6 @@
 package mrkirby153.MscHouses.core.localization;
 
 import mrkirby153.MscHouses.api.MaterialRegistry;
-import mrkirby153.MscHouses.block.ModBlocks;
 import mrkirby153.MscHouses.core.MscHouses;
 import mrkirby153.MscHouses.items.ItemMaterialModifyer;
 import net.minecraft.item.ItemStack;

@@ -81,17 +81,6 @@ public class ItemHouseTool extends Item {
 		return item;
 	}
 
-/*	private void buildHouse(int moduelId, int modifyerMaterial, int x, int y, int z, World world) {
-		int[] materialId= {0, 1, 3, 17, 24, 86, 48, 87, 88, 89, 49, 112, 121, 57};
-		System.out.println(moduelId+" "+modifyerMaterial);
-		switch(moduelId){
-			case 1: MscHouses.h.hut(x, y, z, world, materialId[modifyerMaterial+1]); break;
-			case 2: MscHouses.h.ninebynine(world, x, y, z, materialId[modifyerMaterial+1]); break;
-			case 3: MscHouses.h.ninbynineDelux(world, x, y, z, materialId[modifyerMaterial+1]); break;
-		}
-	}
-	*/
-
 	private void buildHouse_specal(int moduelId, int materialId, int x, int y, int z, World world){
 		switch(moduelId){
 			case 1: MscHouses.h.hut(x, y, z, world, materialId); break;

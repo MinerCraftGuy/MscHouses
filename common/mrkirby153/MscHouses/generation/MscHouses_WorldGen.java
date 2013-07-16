@@ -2,8 +2,8 @@ package mrkirby153.MscHouses.generation;
 
 import java.util.Random;
 
-import mrkirby153.MscHouses.block.ModBlocks;
 import mrkirby153.MscHouses.configuration.ConfigurationSettings;
+import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -35,7 +35,7 @@ public class MscHouses_WorldGen implements IWorldGenerator{
 			int zCoord1 = j+random.nextInt(16);
 			int yCoord1 = 30;
 			if(ConfigurationSettings.generateCoper)
-				(new WorldGenMinable(ModBlocks.OreCopper.blockID, 16)).generate(world, random, xCoord1, yCoord1, zCoord1);
+				(new WorldGenMinable(MscHouses.OreCopper.blockID, 16)).generate(world, random, xCoord1, yCoord1, zCoord1);
 			//	System.out.println("Copper has been generated @" +xCoord1 +" " + yCoord1 + " "+ zCoord1);
 		}
 	}

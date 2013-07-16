@@ -2,7 +2,6 @@ package mrkirby153.MscHouses.crafting;
 
 import java.util.logging.Level;
 
-import mrkirby153.MscHouses.block.ModBlocks;
 import mrkirby153.MscHouses.core.MscHouses;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
 import net.minecraft.item.ItemStack;

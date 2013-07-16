@@ -1,6 +1,7 @@
 package mrkirby153.MscHouses.core;
 
 import java.io.File;
+import java.util.logging.Level;
 
 import mrkirby153.MscHouses.block.BlockCopperOre;
 import mrkirby153.MscHouses.block.BlockHouse_Base;
@@ -39,6 +40,7 @@ import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.Property;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PreInit;
@@ -87,8 +89,10 @@ public class MscHouses {
 	public static Item moduel;
 	public static Item modifyer;
 	public static Item infiniteDimensions;
-	@PreInit
+
+	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		LocalMaterialHelper.init();
 		//Inintialize the Log Helper
 		LogHelper.init();
 		//Check version
@@ -126,16 +130,17 @@ public class MscHouses {
 			Property infiniteDimId = config.get(Configuration.CATEGORY_ITEM, "infinitedim.id", ItemId.ITEM_INFINITE_DIM_DEFAULT);
 			infiniteDimId.comment = "The ID for the jar of infinite dimensons. Defaults to " + ItemId.ITEM_INFINITE_DIM_DEFAULT;
 			//Defines Blocks
+			
 			OreCopper = new BlockCopperOre(oreCopperId.getInt()).setUnlocalizedName("oreCopper");
 			BlockBaseBuild = new BlockHouse_Base(houseGenId.getInt()).setUnlocalizedName("houseBase");
 			//Defines Items
-			Debug = new Item_Debug(ItemId.DEBUG).setUnlocalizedName("debug");
-			ingotCopper = new ItemCopper(ItemId.INGOT_COPPER).setUnlocalizedName("ingotCopper");
-			HouseTool = new ItemHouseTool(ItemId.ITEM_HOUSETOOL).setUnlocalizedName("ingotCopper");
-			PCB = new ItemPCB(ItemId.ITEM_PCB).setUnlocalizedName("pcb");
-			moduel = new ItemModuel(ItemId.ITEM_MODUEL).setUnlocalizedName("Moduel");
-			modifyer = new ItemMaterialModifyer(ItemId.ITEM_MODIFYER_EXTRA).setUnlocalizedName("ModifyerModAdded");
-			infiniteDimensions = new ItemInfiniteDimensons(ItemId.ITEM_INFINITE_DIM).setUnlocalizedName("Infinite");
+			Debug = new Item_Debug(debugId.getInt()).setUnlocalizedName("debug");
+			ingotCopper = new ItemCopper(ingotCopperId.getInt()).setUnlocalizedName("ingotCopper");
+			HouseTool = new ItemHouseTool(itemHouseToolId.getInt()).setUnlocalizedName("ingotCopper");
+			PCB = new ItemPCB(itemPcbId.getInt()).setUnlocalizedName("pcb");
+			moduel = new ItemModuel(itemModuelId.getInt()).setUnlocalizedName("Moduel");
+			modifyer = new ItemMaterialModifyer(itemModifyerId.getInt()).setUnlocalizedName("ModifyerModAdded");
+			infiniteDimensions = new ItemInfiniteDimensons(infiniteDimId.getInt()).setUnlocalizedName("Infinite");
 			
 			
 			
@@ -148,10 +153,10 @@ public class MscHouses {
 		//Register Version Handler
 		TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
 		FuelHelper.registerFuels();
-		LocalMaterialHelper.init();
+
 	}
 
-	@Init
+	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerWorldGenerator(new MscHouses_WorldGen());
 	//	proxy.registerTileEntity();
@@ -163,7 +168,8 @@ public class MscHouses {
 		TEMP_ITEMNAMES.init();
 		OreHelper.registerOres();
 	}
-	@ServerStarting
+	
+	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event){
 		event.registerServerCommand(new MscHousesCommand());
 	}

@@ -9,6 +9,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mrkirby153.MscHouses.block.Container.ContainerBlockBase;
 import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
+import mrkirby153.MscHouses.lib.ResourceFile;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -44,10 +45,7 @@ public class GuiBlockBase extends GuiContainer{
 			int par3) {
 		//draw your Gui here, only thing you need to change is the path
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-	//	this.mc.renderEngine.bindTexture(texture);
-	//	this.mc.renderEngine.bindTexture("/mods/MscHouses/textures/gui/BlockBase.png");
-		ResourceLocation resourceLocation = new ResourceLocation("/mods/MscHouses/textures/gui/BlockBase.png");
-		FMLClientHandler.instance().getClient().renderEngine.func_110577_a(resourceLocation);
+		FMLClientHandler.instance().getClient().renderEngine.func_110577_a(ResourceFile.houseGen_Img);
 		
 		int x = (width - xSize) / 2;
 		int y = (height - ySize) / 2;
