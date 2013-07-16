@@ -12,7 +12,7 @@
 	
 	<target name="clean">
 		<delete file="${build.dir.development}\mcp\src\minecraft\mcmod.info" />
-		<delete dir="${build.dir.development}\mcp\src\minecraft\com" />
+		<delete dir="${build.dir.development}\mcp\src\minecraft\mrkirby153" />
 		<delete dir="${build.dir.development}\mcp\reobf\minecraft" />
 	</target>
 	
@@ -55,7 +55,7 @@
 		<jar destfile="${build.dir.share}\${build.release.minecraft.version}\${build.release.mod.version}\MscHouses-universal-${build.release.mod.version}.${build_number.build_number}.jar">
 			<fileset dir="${build.dir.development}\mcp\src\common\"	includes="mcmod.info" />
 			<fileset dir="${build.dir.development}\mcp\reobf\minecraft" />
-			<fileset dir="${build.dir.development}\source\MscHouses\resources" />
+			<fileset dir="${build.dir.development}\source\mschouses\resources" />
 		</jar>
 		
 		<!-- Clean up the MCP source now that we are done -->
