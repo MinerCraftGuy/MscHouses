@@ -58,7 +58,6 @@ public class ItemMaterialModifyer extends Item {
 		for(int i =0; i < material.size(); i++){
 			this.field_94594_d[i] = par1IconRegister.registerIcon("mschouses:modifyer");
 		}
-		//	LogHelper.log(Level.INFO, "Succesfully loaded " + modifyer_id.length + " textures");
 	}
 
 	@Override
