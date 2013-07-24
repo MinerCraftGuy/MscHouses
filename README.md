@@ -1,21 +1,17 @@
 # Welcome to MscHouses!
 
-**All Latest Official Versions Can Be Found [here] (http://minecraft.curseforge.com/mc-mods/msc-houses/files/) Starting with version 5.0
+**All Latest Official Versions Can Be Found [here] (http://minecraft.curseforge.com/mc-mods/msc-houses/files/) Starting with version 5.0**
 
 ## Compiling MscHouses
 ***
 Do you want to contrubute to the MscHouses mod? If you do, you might find this handy
-**Disclaimer**
-`mrkirby153 is not responsable for any OS crashes or fatal errors caused by incorrectly installing Java JRE, Java SDK.
-This includes but is not limited to Blue Screen of Death, System Crash, Malware or any type of Virus. This code cloned 
-directly from THIS github repository  only is 100% virus free guarenteed.` Please refer to [this] (https://dl.dropboxusercontent.com/u/121954827/modding/MscHouses/Virus_Scan.JPG) `Link for proof that this repository contains ABSOLUTLY NO Viruses.
- mrkirby153 would like to thank you for your understanding
- and coorperation`
-1. Download and install Java JRE (*Java Runtime Environment*). You should already have it installed because you can't run minecraft without it. But, if you don't, you can download it [here] (http://www.java.com/inc/BrowserRedirect1.jsp?locale=en)
-2. Download and install Java SDK (*Standard Development Kit*) [here] (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+
+1. Download and install Java JRE (*Java Runtime Environment*). You should already have this installed.
+2. Download and install Java SDK (*Java Standard Development Kit*) [here] (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1889260.html)
 3. Download and install [Apache Ant] (http://ant.apache.org/)
-4. Download and install [Git] (http://git-scm.com/downloads)
-5. Create an empty Directory for Development. This directory is referred to as `Dev` for the remainder of the tutorial
+4. Download and install [Git[ (http://git-scm.com/downloads)
+5. Create and empty directory for development/compilation. This Directory is referred to as `Dev`
+
 
 #### Set Up MCP
 1. Download the latest version of MCP [here] (http://mcp.ocean-labs.de/index.php/MCP_Releases).
@@ -31,13 +27,15 @@ directly from THIS github repository  only is 100% virus free guarenteed.` Pleas
 2. Clone `MscHouses` into `source` by excecuting the following command `$ git clone https://github.com/mrkirby153/MscHouses.git` (HTTPS) or `$ git clone git@github.com:mrkirby153/MscHouses.git` (SSH)
 3. Your file structure should look like this now
     `dev
-        \-mcp
-            \-mcp stuff (should have CHANGELOG)
-            \-forge
-            \-jars
+
+        \-mcp    
+            \-mcp stuff (should have CHANGELOG) 
+            \-forge 
+            \-jars 
         \-source
             \-MscHouses
                 \-MscHouses' files (should have a build.xml)`
+                
 
 ***
 
