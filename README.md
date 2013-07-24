@@ -70,5 +70,5 @@ Find a bug? Minecraft won't start? Have an idea?
 2. Create or log into your github account
 3. Click `New Issue`
 4. Enter the issue's title, (Something summarizing the issue) and a ___DETAILED__ description of how you came about this bug.
- * Remember: ___CRASHLOG OR IT DIDN'T HAPPEN___ (That is, if you're reporting a bug and ther is a crashlog)
+ * Remember: __CRASHLOG OR IT DIDN'T HAPPEN__ (That is, if you're reporting a bug and ther is a crashlog)
 5. Click `Submit Issue` and you're done!
