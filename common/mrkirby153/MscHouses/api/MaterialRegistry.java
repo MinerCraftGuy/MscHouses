@@ -1,7 +1,9 @@
 package mrkirby153.MscHouses.api;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
+import mrkirby153.MscHouses.core.MscHouses;
 import net.minecraft.block.Block;
 
 /**
@@ -15,13 +17,20 @@ import net.minecraft.block.Block;
  */
 public class MaterialRegistry {
 	/**A list of all blocks registered. */
-	public static ArrayList<Block> blocks = new ArrayList<Block>();
+	private static ArrayList<Block> blocks = new ArrayList<Block>();
+	private static ArrayList<Integer> blacklist = MscHouses.blacklisted_ids;
 	/**
 	 * Registers a material for walls.
 	 * @param block
 	 */
 	public static void registerBlock(Block block){
-		blocks.add(block);
+		if(block instanceof Block && !(block.getUnlocalizedName().equalsIgnoreCase("tile.forgefiller"))){
+			blocks.add(block);
+		}
+	}
+	public static void addBlacklistMaterial(Block block){
+		int var1 = block.blockID;
+		blacklist.add(var1);
 	}
 	/**
 	 * Checks if the block provided is registered and returns.
@@ -56,4 +65,25 @@ public class MaterialRegistry {
 		block = blocks.toArray(block);
 		return block;
 	}
+	/**
+	 * Returns a list of ALL the blacklisted blocks as a table.
+	 * @return
+	 */
+	public static int[] getBlacklistedAsArray(){
+		int[] ret = new int[blacklist.size()];
+		Iterator<Integer> iterator = blacklist.iterator();
+		for(int i = 0; i < ret.length; i++){
+			ret[i] = iterator.next().intValue();
+		}
+		return ret;
+	}
+	
+	public static ArrayList<Integer> getBlacklisted(){
+		return blacklist;
+	}
+	
+	public static ArrayList<Block> getValidBlocks(){
+		return blocks;
+	}
 }
+
