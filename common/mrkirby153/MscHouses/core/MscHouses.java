@@ -1,7 +1,6 @@
 package mrkirby153.MscHouses.core;
 
 import java.io.File;
-import java.util.logging.Level;
 
 import mrkirby153.MscHouses.block.BlockCopperOre;
 import mrkirby153.MscHouses.block.BlockHouse_Base;
@@ -41,10 +40,7 @@ import net.minecraftforge.common.Property;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PreInit;
-import cpw.mods.fml.common.Mod.ServerStarting;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;

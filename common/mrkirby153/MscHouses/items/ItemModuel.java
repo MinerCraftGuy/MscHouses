@@ -23,9 +23,9 @@ import cpw.mods.fml.relauncher.SideOnly;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 public class ItemModuel extends Item{
-	private static final String[] moduelFileName = { "moduel_base", "moduel_hut", "moduel_9x9", "moduel_Deluxe9x9" };
+	private  final String[] moduelFileName = { "moduel_base", "moduel_hut", "moduel_9x9", "moduel_Deluxe9x9" };
 	/** List of all moduel names */
-	public static final String[] moduel_name = { "Base", "Hut", "Nine By Nine", "Nine by Nine Deluxe" };
+	public final String[] moduel_name = { "Base", "Hut", "Nine By Nine", "Nine by Nine Deluxe" };
 	@SideOnly(Side.CLIENT)
 	private Icon[] field_94594_d;
 	public ItemModuel(int par1) {
@@ -52,6 +52,7 @@ public class ItemModuel extends Item{
 		}
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(int itemID, CreativeTabs tab,
@@ -77,6 +78,7 @@ public class ItemModuel extends Item{
 		}
 		return par1ItemStack;
 	}
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4) {

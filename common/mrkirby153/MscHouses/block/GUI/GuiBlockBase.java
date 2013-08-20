@@ -1,19 +1,17 @@
 package mrkirby153.MscHouses.block.GUI;
 
-import javax.annotation.Resource;
+import mrkirby153.MscHouses.block.Container.ContainerBlockBase;
+import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
+import mrkirby153.MscHouses.lib.ResourceFile;
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import mrkirby153.MscHouses.block.Container.ContainerBlockBase;
-import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
-import mrkirby153.MscHouses.lib.ResourceFile;
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.StatCollector;
 /**
  * 
  * Msc Houses
