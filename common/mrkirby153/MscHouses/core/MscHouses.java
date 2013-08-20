@@ -1,6 +1,10 @@
 package mrkirby153.MscHouses.core;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Level;
 
 import mrkirby153.MscHouses.block.BlockCopperOre;
 import mrkirby153.MscHouses.block.BlockHouse_Base;
@@ -19,6 +23,7 @@ import mrkirby153.MscHouses.core.network.CommonProxy;
 import mrkirby153.MscHouses.crafting.CraftingBench;
 import mrkirby153.MscHouses.crafting.Furnace;
 import mrkirby153.MscHouses.creativeTab.CreativeTabHouse;
+import mrkirby153.MscHouses.creativeTab.CreativeTabModifyer;
 import mrkirby153.MscHouses.creativeTab.CreativeTabModuel;
 import mrkirby153.MscHouses.generation.HouseGen;
 import mrkirby153.MscHouses.generation.MscHouses_WorldGen;
@@ -68,6 +73,7 @@ public class MscHouses {
 	public static final CreativeTabs tabHouse = new CreativeTabHouse(
 			CreativeTabs.getNextID(), "MscHouses-main");
 	public static final CreativeTabs tabHouse_moduel = new CreativeTabModuel(CreativeTabs.getNextID(), "MscHouses-Moduel");
+	public static final CreativeTabs tabHouse_modifyers = new CreativeTabModifyer(CreativeTabs.getNextID(), "MscHouses-Modifyers");
 	@Instance("MscHouses")
 	public static MscHouses instance;
 	public static final char COLOR_CODE = '\u00A7';
@@ -86,13 +92,12 @@ public class MscHouses {
 	public static Item modifyer;
 	public static Item infiniteDimensions;
 
+	public static ArrayList<Integer> blacklisted_ids = new ArrayList<Integer>();
+	
+	public static String blacklisted_items_string;
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		LocalMaterialHelper.init();
-		//Inintialize the Log Helper
-		LogHelper.init();
-		//Check version
-		Version.check();
+		
 		
 		config = new MscHousesConfiguration(new File(event.getModConfigurationDirectory(), "MscHouses/main.conf"));
 		try{
@@ -125,6 +130,28 @@ public class MscHouses {
 			
 			Property infiniteDimId = config.get(Configuration.CATEGORY_ITEM, "infinitedim.id", ItemId.ITEM_INFINITE_DIM_DEFAULT);
 			infiniteDimId.comment = "The ID for the jar of infinite dimensons. Defaults to " + ItemId.ITEM_INFINITE_DIM_DEFAULT;
+			
+			Property blacklistItems = config.get(Configuration.CATEGORY_ITEM, "blacklist.item", ConfigurationSettings.blacklist_ids_default);
+			blacklistItems.comment = "Place item Id's you DON'T want houses made of here. Seperated by commas";
+			
+			
+			//Split blacklisted id's and put them in an array
+			String ids = blacklistItems.getString();
+			String ids_stripped = ids.replace(" ", "");
+			System.out.println(ids);
+			String[] split_ids = ids_stripped.split(",");
+			for(int i=0; i < split_ids.length; i++){
+				String var1 = split_ids[i];
+				int ids_int = Integer.parseInt(var1);
+				this.blacklisted_ids.add(ids_int);
+			}
+			System.out.println("-----------------");
+			System.out.println(this.blacklisted_ids);
+			LocalMaterialHelper.init();
+			//Inintialize the Log Helper
+			LogHelper.init();
+			//Check version
+			Version.check();
 			//Defines Blocks
 			
 			OreCopper = new BlockCopperOre(oreCopperId.getInt()).setUnlocalizedName("oreCopper");
@@ -140,6 +167,7 @@ public class MscHouses {
 			
 			
 			
+			
 		} finally{
 			if(config.hasChanged())
 				config.save();
@@ -150,6 +178,11 @@ public class MscHouses {
 		TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
 		FuelHelper.registerFuels();
 
+	}
+
+	private void addBlacklist() {
+		
+		
 	}
 
 	@EventHandler

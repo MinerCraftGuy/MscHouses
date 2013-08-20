@@ -45,7 +45,7 @@ public class TEMP_ITEMNAMES {
 		for(int i = 0; i < itemNames_moduel.length; i++){
 			LanguageRegistry.addName(new ItemStack(MscHouses.moduel,1,i), itemNames_moduel[i] + " Moduel");
 		}
-		for(int i = 0; i < MaterialRegistry.blocks.size(); i++){
+		for(int i = 0; i < MaterialRegistry.getValidBlocks().size(); i++){
 			LanguageRegistry.addName(new ItemStack(MscHouses.modifyer,1, i), "Material Modifyer");
 		}
 		for(int i = 0; i < ItemMaterialModifyer.material.size(); i++){

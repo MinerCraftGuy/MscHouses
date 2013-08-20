@@ -24,13 +24,14 @@ public class ConfigurationSettings {
 	public static String LAST_DISCOVERED_VERSION_TYPE;
 	public static final String LAST_DISCOVERED_VERSION_TYPE_CONFIGNAME = "Last discovered version type";
 	public static final String LAST_DISCOVERED_VERSION_TYPE_DEFAULT = "";
-	public static boolean Invincible;
-	public static int Invincible_time;
 	public static int House_Tool_damage;
 	public static boolean generateCoper;
+	public static int[] blacklist_ids;
 	
-	public static boolean Invibcible_Default = false;
-	public static int Invincible_time_Default = 6000;
+	public static int[] blacklist_ids_default_null = {8, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 26, 27, 28, 29, 31, 32, 33, 34, 36,
+		37, 38, 39, 40, 41, 42, 51, 52, 56, 57, 59, 60, 63, 66, 68, 69, 70, 71, 72, 73, 75, 77, 84, 90, 92, 93, 95, 104, 105,
+		106, 111, 116, 117, 119, 120, 122, 127, 129, 131, 132, 133, 138, 140, 141, 143, 144, 147, 148, 149, 151, 153, 155, 159};
+	public static String blacklist_ids_default = "8, 9, 10, 11, 12, 13, 14, 15, 16, 21, 22, 26, 27, 28, 29, 31, 32, 33, 34, 36, 37, 38, 39, 40, 41, 42, 51, 52, 56, 57, 59, 60, 63, 66, 68, 69, 70, 71, 72, 73, 75, 77, 84, 90, 92, 93, 95, 104, 105, 106, 111, 116, 117, 119, 120, 122, 127, 129, 131, 132, 133, 138, 140, 141, 143, 144, 147, 148, 149, 151, 153, 155, 159";
 	public static int House_Tool_damage_Default = 10;
 	public static boolean generteCopper_Default = false;
 

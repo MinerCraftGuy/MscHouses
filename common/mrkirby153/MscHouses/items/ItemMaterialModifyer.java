@@ -36,10 +36,10 @@ public class ItemMaterialModifyer extends Item {
 		super(par1);
 		this.setHasSubtypes(true);
 		this.setMaxDamage(0);
-		material = MaterialRegistry.blocks;
+		material = MaterialRegistry.getValidBlocks();
 		this.makeSubItems();
 		this.modifyer_id = new int[material.size()];
-		this.setCreativeTab(MscHouses.tabHouse_moduel);
+		this.setCreativeTab(MscHouses.tabHouse_modifyers);
 	}
 
 	@Override
@@ -82,9 +82,8 @@ public class ItemMaterialModifyer extends Item {
 		for(int i = 1; i < var3.length; i++){
 			var2 = var3[i];
 			this.modifyer_id[i] = var2.blockID;
-			LogHelper.log(Level.INFO, "Created sub item for item id " + var2.blockID);
-
 		}
+		LogHelper.log(Level.INFO, "Created " + modifyer_id.length + " sub-items");
 	}
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,
