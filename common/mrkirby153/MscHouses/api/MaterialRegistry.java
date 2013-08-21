@@ -28,6 +28,10 @@ public class MaterialRegistry {
 			blocks.add(block);
 		}
 	}
+	/**
+	 * Adds a material to the wall blacklist
+	 * @param block
+	 */
 	public static void addBlacklistMaterial(Block block){
 		int var1 = block.blockID;
 		blacklist.add(var1);
