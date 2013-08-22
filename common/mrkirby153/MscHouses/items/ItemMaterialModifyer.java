@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import mrkirby153.MscHouses.api.MaterialRegistry;
+import mrkirby153.MscHouses.api.WorldUtils;
 import mrkirby153.MscHouses.core.MscHouses;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
 import net.minecraft.block.Block;
@@ -13,6 +14,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -86,10 +88,17 @@ public class ItemMaterialModifyer extends Item {
 		LogHelper.log(Level.INFO, "Created " + modifyer_id.length + " sub-items");
 	}
 	@Override
-	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,
-			EntityPlayer par3EntityPlayer) {
-		par3EntityPlayer.addChatMessage("Material ID: " + MaterialRegistry.materialLookup(par1ItemStack.getItemDamage()));
-		return par1ItemStack;
+	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
+		if(player.isSneaking()){
+			WorldUtils.addBlockToInventory(player, 6, MaterialRegistry.materialLookupAsBlock(itemStack.getItemDamage()));
+			WorldUtils.addItemToInventory(player, 1, Item.enderPearl);
+			WorldUtils.addItemToInventory(player, 1, MscHouses.PCB);
+			itemStack.stackSize--;
+			world.playSoundAtEntity(player, "random.orb", 1, 1);
+			player.addPotionEffect(new PotionEffect(15, 200, 0, true));
+			player.addPotionEffect(new PotionEffect(9, 200, 0, true));
+		}
+		return itemStack;
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -107,5 +116,6 @@ public class ItemMaterialModifyer extends Item {
 	{
 	  return Character.toUpperCase(line.charAt(0)) + line.substring(1);
 	}
+	
 
 }

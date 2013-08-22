@@ -59,6 +59,12 @@ public class MaterialRegistry {
 		}
 		return block_id[id];
 	}
+	
+	public static Block materialLookupAsBlock(int id){
+		Block[] block = new Block[blocks.size()];
+		block = blocks.toArray(block);
+		return block[id];
+	}
 	/**
 	 * Returns a list of all the registered blocks as a table.
 	 * @return Block[]
