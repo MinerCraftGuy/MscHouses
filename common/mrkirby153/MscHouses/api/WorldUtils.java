@@ -15,12 +15,12 @@ import net.minecraft.world.World;
 public class WorldUtils {
 	/**
 	 * Drops an item in the world
-	 * @param world
-	 * @param id
-	 * @param meta
-	 * @param xCoord
-	 * @param yCoord
-	 * @param zCoord
+	 * @param World
+	 * @param Item Id
+	 * @param Item Metadata
+	 * @param X-Coordinate
+	 * @param Y-Coordinate
+	 * @param Z-Coordinate
 	 */
 	public void  dropItemInWorld(World world, int id, int meta, int xCoord, int yCoord, int zCoord){
 		EntityItem i = new EntityItem(world, (double)((float)xCoord + 0.01), (double)((float)yCoord + 1), (double)((float)zCoord + 0.01), new ItemStack(id, 1, meta));

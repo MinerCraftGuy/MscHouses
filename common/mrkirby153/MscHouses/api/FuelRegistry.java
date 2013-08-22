@@ -17,21 +17,21 @@ public class FuelRegistry {
 	public static ArrayList<Item> validFuels = new ArrayList<Item>();
 	/**
 	 * Adds an item to be used as a fuel in the House Generator block.
-	 * @param fuel
+	 * @param Item fuel
 	 */
 	public static void addFuel(Item fuel){
 		FuelRegistry.validFuels.add(fuel);
 	}
 	/**
 	 * Returns an ArrayList of all the valid fuels for the House Generator.
-	 * @return validFuels
+	 * @return ArrayList<Item>
 	 */
 	public static ArrayList<Item> getValidFuelsAsArrayList(){
 		return validFuels;
 	}
 	/**
 	 * Returns a table of all the vaid fuesl for the House Generator.
-	 * @return
+	 * @return Item[] 
 	 */
 	public static Item[] getValidFulesAsList(){
 		Item[] fuels = new Item[validFuels.size()];

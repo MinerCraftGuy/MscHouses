@@ -21,7 +21,6 @@ public class MaterialRegistry {
 	private static ArrayList<Integer> blacklist = MscHouses.blacklisted_ids;
 	/**
 	 * Registers a material for walls.
-	 * @param block
 	 */
 	public static void registerBlock(Block block){
 		if(block instanceof Block && !(block.getUnlocalizedName().equalsIgnoreCase("tile.forgefiller"))){
@@ -30,7 +29,7 @@ public class MaterialRegistry {
 	}
 	/**
 	 * Adds a material to the wall blacklist
-	 * @param block
+	 * @param Block
 	 */
 	public static void addBlacklistMaterial(Block block){
 		int var1 = block.blockID;
@@ -38,16 +37,16 @@ public class MaterialRegistry {
 	}
 	/**
 	 * Checks if the block provided is registered and returns.
-	 * @param b
-	 * @return
+	 * @param Block b
+	 * @return boolean 
 	 */
 	public static boolean isBlockValid(Block b){
 		return blocks.contains(b);
 	}
 	/**
 	 * Returns the Block id  of a Material modifyer from its damage value.
-	 * @param id
-	 * @return
+	 * @param int id
+	 * @return int BlockId
 	 */
 
 	public static int materialLookup(int id){
@@ -62,7 +61,7 @@ public class MaterialRegistry {
 	}
 	/**
 	 * Returns a list of all the registered blocks as a table.
-	 * @return
+	 * @return Block[]
 	 */
 	public static Block[] getValidBlocksAsArray(){
 		Block[] block = new Block[blocks.size()];
@@ -71,7 +70,7 @@ public class MaterialRegistry {
 	}
 	/**
 	 * Returns a list of ALL the blacklisted blocks as a table.
-	 * @return
+	 * @return int[]
 	 */
 	public static int[] getBlacklistedAsArray(){
 		int[] ret = new int[blacklist.size()];
@@ -81,11 +80,17 @@ public class MaterialRegistry {
 		}
 		return ret;
 	}
-	
+	/**
+	 *  Returns an ArrayList of all the blacklisted blocks
+	 * @return ArrayList<Integer>
+	 */
 	public static ArrayList<Integer> getBlacklisted(){
 		return blacklist;
 	}
-	
+	/**
+	 * Returns a list of all the valid blocks you can use to make houses.
+	 * @return ArrayList<Block>
+	 */
 	public static ArrayList<Block> getValidBlocks(){
 		return blocks;
 	}
