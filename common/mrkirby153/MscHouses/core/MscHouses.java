@@ -2,9 +2,6 @@ package mrkirby153.MscHouses.core;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.logging.Level;
 
 import mrkirby153.MscHouses.block.BlockCopperOre;
 import mrkirby153.MscHouses.block.BlockHouse_Base;
@@ -80,6 +77,7 @@ public class MscHouses {
 	@SidedProxy(clientSide =Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
 	public static MscHousesConfiguration config;
+	public static boolean isPlayerSneaking;
 	
 	public static Block OreCopper;
 	public static Block BlockBaseBuild;
@@ -145,8 +143,6 @@ public class MscHouses {
 				int ids_int = Integer.parseInt(var1);
 				this.blacklisted_ids.add(ids_int);
 			}
-			System.out.println("-----------------");
-			System.out.println(this.blacklisted_ids);
 			LocalMaterialHelper.init();
 			//Inintialize the Log Helper
 			LogHelper.init();
@@ -176,14 +172,11 @@ public class MscHouses {
 		
 		//Register Version Handler
 		TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
+		TickRegistry.registerScheduledTickHandler(new HouseTickTimer(), Side.SERVER);
 		FuelHelper.registerFuels();
 
 	}
 
-	private void addBlacklist() {
-		
-		
-	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
