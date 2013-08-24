@@ -12,6 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -28,8 +29,7 @@ import cpw.mods.fml.relauncher.SideOnly;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 public class ItemHouseTool extends Item {
-	// static MscHouses m = new MscHouses();
-
+	private IInventory inventory;
 	public ItemHouseTool(int par1) {
 		super(par1);
 		this.setCreativeTab(MscHouses.tabHouse);
@@ -39,9 +39,13 @@ public class ItemHouseTool extends Item {
 	@Override
 	public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player) {
 		MovingObjectPosition p = this.getMovingObjectPositionFromPlayer(world, player, true);
-		IInventory inventory = (IInventory) world.getBlockTileEntity(p.blockX, p.blockY, p.blockZ);
+		if(world.getBlockTileEntity(p.blockX, p.blockY, p.blockZ) != null)
+		inventory = (IInventory) world.getBlockTileEntity(p.blockX, p.blockY, p.blockZ);
 		if(inventory != null){
 			boolean fuel = false;
+			if(player.capabilities.isCreativeMode){
+				fuel = true;
+			}
 			int moduelId = 0;
 			int modifyerMaterial = 0;
 			if(inventory.getStackInSlot(0) != null){
@@ -67,21 +71,29 @@ public class ItemHouseTool extends Item {
 				}
 			}
 			if(fuel){
-				inventory.setInventorySlotContents(0, null);
-				inventory.setInventorySlotContents(1, null);
-				inventory.setInventorySlotContents(2, null);
-					buildHouse(moduelId, modifyerMaterial, p.blockX, p.blockY, p.blockZ, world);
+				if(!player.capabilities.isCreativeMode){
+					inventory.setInventorySlotContents(0, null);
+					inventory.setInventorySlotContents(1, null);
+					inventory.setInventorySlotContents(2, null);
+					player.addPotionEffect(new PotionEffect(15, 200, 0, true));
+					player.addPotionEffect(new PotionEffect(9, 200, 0, true));
+				}
+				buildHouse(moduelId, modifyerMaterial, p.blockX, p.blockY, p.blockZ, world);
+				
 			}
 
 		}
+
 		return item;
 	}
 
 	private void buildHouse(int moduelId, int materialId, int x, int y, int z, World world){
 		switch(moduelId){
-			case 1: MscHouses.h.hut(x, y, z, world, materialId); break;
-			case 2: MscHouses.h.ninebynine(world, x, y, z, materialId); break;
-			case 3: MscHouses.h.ninbynineDelux(world, x, y, z, materialId); break;
+		case 1: MscHouses.h.hut(x, y, z, world, materialId); break;
+		case 2: MscHouses.h.ninebynine(world, x, y, z, materialId); break;
+		case 3: MscHouses.h.ninbynineDelux(world, x, y, z, materialId); break;
+		case 4: MscHouses.h.netherAlter(world, x, y, z); break;
+		case 5: MscHouses.h.enchanter(world, x, y, z); break;
 		}
 	}
 
