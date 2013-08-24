@@ -136,7 +136,6 @@ public class MscHouses {
 			//Split blacklisted id's and put them in an array
 			String ids = blacklistItems.getString();
 			String ids_stripped = ids.replace(" ", "");
-			System.out.println(ids);
 			String[] split_ids = ids_stripped.split(",");
 			for(int i=0; i < split_ids.length; i++){
 				String var1 = split_ids[i];
