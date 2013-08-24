@@ -1,5 +1,6 @@
 package mrkirby153.MscHouses.generation;
 
+import mrkirby153.MscHouses.core.HouseTickTimer;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
@@ -27,6 +28,10 @@ public class HouseGen {
 			for (int j = 0; j < 5; j++) {
 				for (int k = 0; k < 5; k++) {
 					world.setBlock(x + i, y + j, z + k, 0, 0, 0);
+					HouseTickTimer.resetTickCount();
+					while(HouseTickTimer.tickCount != 1){
+						//"Sleeps" the thread
+					}
 				}
 			}
 		}
@@ -34,8 +39,7 @@ public class HouseGen {
 		// Floor
 		for (int x1 = 0; x1 < 5; x1++) {
 			for (int z1 = 0; z1 < 5; z1++) {
-				world.setBlock(x + x1, y - 1, z + z1, blockID, 0,
-						0);
+				world.setBlock(x + x1, y - 1, z + z1, blockID, 0, 0);
 			}
 		}
 		// Celing
@@ -143,10 +147,8 @@ public class HouseGen {
 				z + 1);
 		inventory.setInventorySlotContents(0, new ItemStack(Item.bed));
 		inventory.setInventorySlotContents(1, new ItemStack(Item.doorWood));
-		inventory.setInventorySlotContents(2, new ItemStack(
-				Block.pressurePlateStone));
-		inventory
-				.setInventorySlotContents(3, new ItemStack(Block.woodenButton));
+		inventory.setInventorySlotContents(2, new ItemStack(Block.pressurePlateStone));
+		inventory.setInventorySlotContents(3, new ItemStack(Block.woodenButton));
 		// Add windows and torches.
 		world.setBlock(x + 2, y + 5, z + 2, Block.glass.blockID);
 		world.setBlock(x + 2, y + 5, z + 3, Block.glass.blockID);
@@ -358,6 +360,121 @@ public class HouseGen {
 
 		// Add anvil
 		world.setBlock(x + 7, y, z + 5, Block.anvil.blockID);
+	}
+
+	public void netherAlter(World world, int x, int y, int z) {
+		//Clear Space
+		for(int xCoord = 0; xCoord <= 6;xCoord++){
+			for(int yCoord = -1; yCoord <= 6; yCoord++){
+				for(int zCoord = 0; zCoord <= 6; zCoord++){
+					world.setBlock(x+xCoord, y+yCoord, z+zCoord, 0);
+				}
+			}
+		}
+		for(int i = 0; i<=6;i++){
+			for(int j=0; j<=6;j++){
+				world.setBlock(x+i, y-1, z+j, Block.netherrack.blockID);
+			}
+		}
+		for(int i=0; i<6;i++){
+			world.setBlock(x, y+i, z, Block.netherBrick.blockID);
+		}
+		for(int i=0; i<6;i++){
+			world.setBlock(x+6, y+i, z, Block.netherBrick.blockID);
+		}
+		for(int i=0; i<6;i++){
+			world.setBlock(x, y+i, z+6, Block.netherBrick.blockID);
+		}
+		for(int i=0; i<6;i++){
+			world.setBlock(x+6, y+i, z+6, Block.netherBrick.blockID);
+		}
+		
+		world.setBlock(x, y+3, z, Block.glowStone.blockID);
+		world.setBlock(x+6, y+3, z, Block.glowStone.blockID);
+		world.setBlock(x, y+3, z+6, Block.glowStone.blockID);
+		world.setBlock(x+6, y+3, z+6, Block.glowStone.blockID);
+		
+		for(int i = 0; i<=6;i++){
+			for(int j=0; j<=6;j++){
+				world.setBlock(x+i, y+4, z+j, Block.netherBrick.blockID);
+			}
+		}
+		for(int i = 0; i<=4;i++){
+			for(int j=0; j<=4;j++){
+				world.setBlock(x+i+1, y+5, z+j+1, Block.netherBrick.blockID);
+			}
+		}
+		world.setBlock(x, y+5, z, Block.stairsNetherBrick.blockID);
+		world.setBlockMetadataWithNotify(x, y+5, z, 2, 0);
+		for(int i=0; i<=5;i++){
+			world.setBlock(x, y+5, z+1+i, Block.stairsNetherBrick.blockID);
+		}
+		
+		for(int i=0; i<=5;i++){
+			world.setBlock(x+1+i, y+5, z, Block.stairsNetherBrick.blockID);
+			world.setBlockMetadataWithNotify(x+1+i, y+5, z, 2, 0);
+		}
+		for(int i=0; i<=5;i++){
+			world.setBlock(x+6, y+5, z+1+i, Block.stairsNetherBrick.blockID);
+			world.setBlockMetadataWithNotify(x+6, y+5, z+1+i, 1, 0);
+		}
+		for(int i=0; i<=5;i++){
+			world.setBlock(x+1+i, y+5, z+6, Block.stairsNetherBrick.blockID);
+			world.setBlockMetadataWithNotify(x+1+i, y+5, z+6, 3, 0);
+		}
+		
+		world.setBlock(x+3, y+0, z+2, Block.obsidian.blockID);
+		world.setBlock(x+3, y+0, z+2+3, Block.obsidian.blockID);
+		world.setBlock(x+3, y+1, z+2, Block.obsidian.blockID);
+		world.setBlock(x+3, y+1, z+2+3, Block.obsidian.blockID);
+		world.setBlock(x+3, y+2, z+2, Block.obsidian.blockID);
+		world.setBlock(x+3, y+2, z+2+3, Block.obsidian.blockID);
+		world.setBlock(x+3, y+3, z+2, Block.obsidian.blockID);
+		world.setBlock(x+3, y+3, z+3, Block.obsidian.blockID);
+		world.setBlock(x+3, y+3, z+4, Block.obsidian.blockID);
+		world.setBlock(x+3, y+3, z+5, Block.obsidian.blockID);
+		world.setBlock(x+3, y-1, z+3, Block.obsidian.blockID);
+		world.setBlock(x+3, y-1, z+4, Block.obsidian.blockID);
+		
+		
+		
+	}
+
+	public void enchanter(World world, int x, int y, int z) {
+		for(int xCoord = 0; xCoord <= 4;xCoord++){
+			for(int yCoord = -1; yCoord <= 1; yCoord++){
+				for(int zCoord = 0; zCoord <= 4; zCoord++){
+					world.setBlock(x+xCoord, y+yCoord, z+zCoord, 0);
+				}
+			}
+		}
+		for(int i = 0; i<=4;i++){
+			for(int j=0; j<=4;j++){
+				world.setBlock(x+i, y-1, z+j, Block.planks.blockID);
+			}
+		}
+		for(int i=0; i <=1; i++){
+			for(int j=0;j<=4;j++){
+				world.setBlock(x+j, y+i, z, Block.bookShelf.blockID);
+			}
+		}
+		for(int i=0; i <=1; i++){
+			for(int j=0;j<=4;j++){
+				world.setBlock(x+j, y+i, z+4, Block.bookShelf.blockID);
+			}
+		}
+		for(int i=0; i <=1; i++){
+			for(int j=0;j<=4;j++){
+				world.setBlock(x+4, y+i, z+j, Block.bookShelf.blockID);
+			}
+		}
+		
+		world.setBlock(x, y, z+1, Block.bookShelf.blockID);
+		world.setBlock(x, y+1, z+1, Block.bookShelf.blockID);
+		
+		world.setBlock(x, y, z+3, Block.bookShelf.blockID);
+		world.setBlock(x, y+1, z+3, Block.bookShelf.blockID);
+		world.setBlock(x+2, y, z+2, Block.enchantmentTable.blockID);
 	}
 
 }

@@ -2,7 +2,7 @@ package mrkirby153.MscHouses.core.localization;
 
 import mrkirby153.MscHouses.api.MaterialRegistry;
 import mrkirby153.MscHouses.core.MscHouses;
-import mrkirby153.MscHouses.items.ItemMaterialModifyer;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 /**
@@ -37,19 +37,17 @@ public class TEMP_ITEMNAMES {
 	private static void generalNames(){
 		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses-main", MscHouses.COLOR_CODE +"dMsc. Houses blocks/tools");
 		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses-Moduel", MscHouses.COLOR_CODE + "2Msc. Houses moduels");
+		LanguageRegistry.instance().addStringLocalization("itemGroup.MscHouses-Modifyers", "Msc. Houses Material modifyers");
 	}
 
 	private static void itemMetaNames(){
 		/* Moduel Names */
-		String[] itemNames_moduel = {"Base", "Hut", "9x9", "Deluxe 9x9" };
+		String[] itemNames_moduel = {"Base", "Hut", "9x9", "Deluxe 9x9","Nether Alter", "Enchhanter"};
 		for(int i = 0; i < itemNames_moduel.length; i++){
 			LanguageRegistry.addName(new ItemStack(MscHouses.moduel,1,i), itemNames_moduel[i] + " Moduel");
 		}
 		for(int i = 0; i < MaterialRegistry.getValidBlocks().size(); i++){
-			LanguageRegistry.addName(new ItemStack(MscHouses.modifyer,1, i), "Material Modifyer");
-		}
-		for(int i = 0; i < ItemMaterialModifyer.material.size(); i++){
-		//	LanguageRegistry.addName(new ItemStack(MscHouses.modifyer,1,i), "Material Modifyer");
+			LanguageRegistry.addName(new ItemStack(MscHouses.modifyer,1, i),  "Material Modifyer");
 		}
 	}
 }
