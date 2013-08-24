@@ -23,9 +23,9 @@ import cpw.mods.fml.relauncher.SideOnly;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 public class ItemModuel extends Item{
-	private  final String[] moduelFileName = { "moduel_base", "moduel_hut", "moduel_9x9", "moduel_Deluxe9x9" };
+	private  final String[] moduelFileName = { "moduel_base", "moduel_hut", "moduel_9x9", "moduel_Deluxe9x9", "moduel_netheralter", "moduel_ench"};
 	/** List of all moduel names */
-	public final String[] moduel_name = { "Base", "Hut", "Nine By Nine", "Nine by Nine Deluxe" };
+	public final String[] moduel_name = { "Base", "Hut", "Nine By Nine", "Nine by Nine Deluxe", "Nether Alter", "Enchanter"};
 	@SideOnly(Side.CLIENT)
 	private Icon[] field_94594_d;
 	public ItemModuel(int par1) {
@@ -87,6 +87,8 @@ public class ItemModuel extends Item{
 			case 1: list.add("Component to build a Hut"); break;
 			case 2: list.add("Component to build a Nine by Nine"); break;
 			case 3: list.add("Component to build a Nine by Nine +"); break;
+			case 4: list.add("Component to build a Nether Alter"); break;
+			case 5: list.add("Component to build an Enchanter"); break;
 		}
 	}
 }
