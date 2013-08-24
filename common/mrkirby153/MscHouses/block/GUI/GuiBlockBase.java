@@ -33,7 +33,7 @@ public class GuiBlockBase extends GuiContainer{
 	protected void drawGuiContainerForegroundLayer(int param1, int param2) {
 		//draw text and stuff here
 		//the parameters for drawString are: string, x, y, color
-		fontRenderer.drawString("Block Base", 8, 6, 4210752);
+		fontRenderer.drawString("House Generator", 8, 6, 4210752);
 		//draws "Inventory" or your regional equivalent
 		fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 96 + 2, 4210752);
 	}
