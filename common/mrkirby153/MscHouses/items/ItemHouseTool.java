@@ -39,8 +39,9 @@ public class ItemHouseTool extends Item {
 	@Override
 	public ItemStack onItemRightClick(ItemStack item, World world, EntityPlayer player) {
 		MovingObjectPosition p = this.getMovingObjectPositionFromPlayer(world, player, true);
-		if(world.getBlockTileEntity(p.blockX, p.blockY, p.blockZ) != null)
-		inventory = (IInventory) world.getBlockTileEntity(p.blockX, p.blockY, p.blockZ);
+		if(p != null)
+			if(world.getBlockTileEntity(p.blockX, p.blockY, p.blockZ) != null)
+				inventory = (IInventory) world.getBlockTileEntity(p.blockX, p.blockY, p.blockZ);
 		if(inventory != null){
 			boolean fuel = false;
 			if(player.capabilities.isCreativeMode){
@@ -79,7 +80,7 @@ public class ItemHouseTool extends Item {
 					player.addPotionEffect(new PotionEffect(9, 200, 0, true));
 				}
 				buildHouse(moduelId, modifyerMaterial, p.blockX, p.blockY, p.blockZ, world);
-				
+
 			}
 
 		}
