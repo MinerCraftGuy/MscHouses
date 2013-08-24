@@ -4,6 +4,7 @@ import java.util.Random;
 
 import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
 import mrkirby153.MscHouses.core.MscHouses;
+import mrkirby153.MscHouses.items.ItemBlockGenerator;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -30,7 +31,7 @@ public class BlockHouse_Base extends BlockContainer{
 
 	public BlockHouse_Base(int par1) {
 		super(par1, Material.cloth);
-		GameRegistry.registerBlock(this, "BlockBase");
+		GameRegistry.registerBlock(this, ItemBlockGenerator.class, "BlockBase");
 		this.setCreativeTab(MscHouses.tabHouse);
 	}
 
