@@ -141,7 +141,7 @@ public class MscHouses {
 			for(int i=0; i < split_ids.length; i++){
 				String var1 = split_ids[i];
 				int ids_int = Integer.parseInt(var1);
-				this.blacklisted_ids.add(ids_int);
+				MscHouses.blacklisted_ids.add(ids_int);
 			}
 			LocalMaterialHelper.init();
 			//Inintialize the Log Helper
