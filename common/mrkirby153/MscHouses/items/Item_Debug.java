@@ -43,7 +43,7 @@ public class Item_Debug extends Item {
 				par3EntityPlayer.addChatMessage(MscHouses.COLOR_CODE + "6[MscHouses] " + MscHouses.COLOR_CODE +"dBlock Coords: "+MscHouses.COLOR_CODE+"rX: "+p.blockX+" Y: " + p.blockY+ " Z: "+p.blockZ);
 			}
 		} else {
-			par3EntityPlayer.sendChatToPlayer(ChatMessageComponent.func_111066_d("You MUST click on a block."));
+			par3EntityPlayer.sendChatToPlayer(ChatMessageComponent.createFromText("You MUST click on a block."));
 		}
 		return par1ItemStack;
 	}

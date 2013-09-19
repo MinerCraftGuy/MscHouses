@@ -1,7 +1,7 @@
 package mrkirby153.MscHouses.block.GUI;
 
 import mrkirby153.MscHouses.block.Container.ContainerBlockBase;
-import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
+import mrkirby153.MscHouses.block.tileEntity.TileEntityBlockBase;
 import mrkirby153.MscHouses.lib.ResourceFile;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -43,7 +43,7 @@ public class GuiBlockBase extends GuiContainer{
 			int par3) {
 		//draw your Gui here, only thing you need to change is the path
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		FMLClientHandler.instance().getClient().renderEngine.func_110577_a(ResourceFile.houseGen_Img);
+		this.mc.getTextureManager().bindTexture(ResourceFile.houseGen_Img);
 		
 		int x = (width - xSize) / 2;
 		int y = (height - ySize) / 2;

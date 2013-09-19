@@ -36,12 +36,12 @@ public class VersionCheckTickHandler implements ITickHandler {
 		// if(!Config.disableVersionCheck) {
 
 		if (Version.needsUpdateNoticeAndMarkAsSeen()) {
-			player.sendChatToPlayer(ChatMessageComponent.func_111066_d(String.format("\u00A7cNew version of MscHouses available: %s for Minecraft %s", Version.getReccomendedVersion(),
+			player.sendChatToPlayer(ChatMessageComponent.createFromText(String.format("\u00A7cNew version of MscHouses available: %s for Minecraft %s", Version.getReccomendedVersion(),
 					MscHouses.getMCVersion())));
 			for (String updateLine : Version.getChangelog()) {
-				player.sendChatToPlayer(ChatMessageComponent.func_111066_d("\u00A79" + updateLine));
+				player.sendChatToPlayer(ChatMessageComponent.createFromText("\u00A79" + updateLine));
 			}
-			player.sendChatToPlayer(ChatMessageComponent.func_111066_d("\u00A7cThis message only displays once. Type '/MscHouses version' if you want to see it again."));
+			player.sendChatToPlayer(ChatMessageComponent.createFromText("\u00A7cThis message only displays once. Type '/MscHouses version' if you want to see it again."));
 		}
 
 		// }

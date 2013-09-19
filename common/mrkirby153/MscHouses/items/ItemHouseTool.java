@@ -67,7 +67,7 @@ public class ItemHouseTool extends Item {
 					fuel = true;
 				}else{
 					if(!world.isRemote){
-						player.sendChatToPlayer(ChatMessageComponent.func_111066_d("No valid fuel detected in inventory"));
+						player.sendChatToPlayer(ChatMessageComponent.createFromText("No valid fuel detected in inventory"));
 					}
 				}
 			}

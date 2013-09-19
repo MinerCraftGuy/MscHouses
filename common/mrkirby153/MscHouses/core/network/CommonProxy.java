@@ -1,6 +1,6 @@
 package mrkirby153.MscHouses.core.network;
 
-import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
+import mrkirby153.MscHouses.block.tileEntity.TileEntityBlockBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;

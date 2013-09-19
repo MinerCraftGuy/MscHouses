@@ -1,4 +1,4 @@
-package mrkirby153.MscHouses.block.TileEntity;
+package mrkirby153.MscHouses.block.tileEntity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+
 /**
  * 
  * Msc Houses

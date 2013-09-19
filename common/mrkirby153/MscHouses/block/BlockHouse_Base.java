@@ -2,7 +2,7 @@ package mrkirby153.MscHouses.block;
 
 import java.util.Random;
 
-import mrkirby153.MscHouses.block.TileEntity.TileEntityBlockBase;
+import mrkirby153.MscHouses.block.tileEntity.TileEntityBlockBase;
 import mrkirby153.MscHouses.core.MscHouses;
 import mrkirby153.MscHouses.items.ItemBlockGenerator;
 import net.minecraft.block.BlockContainer;
