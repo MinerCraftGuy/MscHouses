@@ -15,7 +15,7 @@ public class HouseTickTimer implements IScheduledTickHandler {
 
 	@Override
 	public void tickEnd(EnumSet<TickType> type, Object... tickData) {
-		tickCount++;
+//		tickCount++;
 	//	System.out.println("Tick: "+tickCount);
 
 	}
