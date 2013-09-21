@@ -21,5 +21,8 @@ public class Strings {
     public static final String GENERAL_ERROR_MESSAGE = "version.general_error";
     public static final String FINAL_ERROR_MESSAGE = "version.final_error";
     public static final String MC_VERSION_NOT_FOUND = "version.mc_version_not_found";
+    
+	public static final String NO_FINGERPRINT_MESSAGE = "This version of MscHouses is a development version and may be instable/incomplete";
+	public static final String INVALID_FINGERPRINT_MESSAGE = "This version of MscHouses is not genuine and has been modified from the original.";
 
 }
