@@ -19,11 +19,11 @@
     </target>
     
     <target name="forge-install" depends="forge-uncompress">
-        <exec dir="forge" executable="cmd.exe" osfamily="windows" failonerror="true">
+        <exec dir="forge" executable="cmd.exe" osfamily="windows" failonerror="true" output="con">
             <arg value="/c" />
             <arg value="install.cmd" />
         </exec>
-         <exec dir="forge" executable="bash" osfamily="unix" failonerror="true">
+         <exec dir="forge" executable="bash" osfamily="unix" failonerror="true" output="con">
             <arg line="install.sh" />
         </exec>
     </target>
@@ -102,6 +102,6 @@
     <target name="clean-install">
         <antcall target="clean" />
         <antcall target="forge-clean-install" />
-        <antcall target="release" />
+        <antcall target="build" />
     </target>
 </project>
