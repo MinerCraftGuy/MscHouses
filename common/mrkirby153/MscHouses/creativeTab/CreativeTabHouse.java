@@ -24,7 +24,7 @@ public class CreativeTabHouse extends CreativeTabs {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getTabIconItemIndex() {
-		return MscHouses.BlockBaseBuild.blockID;
+		return MscHouses.BlockHouseGenerator.blockID;
 	}
 
 }
