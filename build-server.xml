@@ -14,7 +14,7 @@
     </target>
     
     <target name="forge-uncompress" depends="forge-download, forge-clean">
-        <unzip src="temp/${minecraftforge_src_archive}" dest="/" />
+        <unzip src="temp/${minecraftforge_src_archive}" dest="forge" />
         <delete dir="temp" />
     </target>
     
@@ -96,7 +96,9 @@
 		<!-- Clean up the MCP source now that we are done -->
 		<antcall target="clean" />
 	</target>
-    
+    <target name="test">
+        <antcall target="build">
+    </target>
     <target name="clean-install">
         <antcall target="clean" />
         <antcall target="forge-clean-install" />
