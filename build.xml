@@ -86,7 +86,6 @@
 		<antcall target="clean" />
 		<antcall target="increment_build_number" />
 		<antcall target="prep" />
-        <antcall target="replace_tokens" />
 		<antcall target="recompile" />
 		<antcall target="reobfuscate" />
 
@@ -120,32 +119,25 @@
 			<fileset dir="${environment.mcp_location}/reobf/minecraft" />
 			<fileset dir="${environment.source_location}/resources" excludes="**/xcf/**" />
 		</jar>
-        
         <antcall target="sign_jar" />
         <antcall target="clean" />
 	</target>
-    <target name="test">
-        <!-- Install forge -->
-        <antcall target="forge-clean-install" />
-		<!-- Prep for the build -->
-		<antcall target="clean" />
-		<antcall target="increment_build_number" />
-		<antcall target="prep" />
-		<antcall target="replace_tokens" />
-		<antcall target="recompile" />
-		<antcall target="reobfuscate" />
-
-		<!-- Build the jar -->
-		<mkdir dir="${environment.release_location}/MC ${build.minecraft_version}/${build.mod_version}" />
-		<jar destfile="${environment.release_location}/MC ${build.minecraft_version}/${build.mod_version}/MscHouses-universal-${build.mod_version}-${build.build_number}.jar">
-			<fileset dir="${environment.mcp_location}/src/minecraft/" includes="mcmod.info" />
-			<fileset dir="${environment.mcp_location}/src/minecraft/" includes="pack.mcmeta" />
-			<fileset dir="${environment.mcp_location}/reobf/minecraft" />
-			<fileset dir="${environment.source_location}/resources" excludes="**/xcf/**" />
-		</jar>
+    <target name="update-install">
+        <propertyfile file="build.properties">
+            <entry key="forge_version" value="${forge-version}" />
+        </propertyfile>
+        <antcall target="clean-install" />
+    </target>
+    <target name="update-forge">
+        <echo message="Updating forge..."/>
+        <input message="Please enter a new forge version you would like Ex: 9.10.1.871" addproperty="forge-version"/>
+        <input message="Are you sure you want to update to forge ${forge-version}? (y/n)" validargs="y,n" addproperty="update.confirm"/>
+        <condition property="update.abort">
+            <equals arg1="n" arg2="${update.confirm}" />
+        </condition>
+        <fail if="update.abort">Forge update aborted by user</fail>
         
-        <antcall target="clean" />
-	</target>
+    </target>
     <target name="clean-install">
         <antcall target="clean" />
         <antcall target="forge-clean-install" />
