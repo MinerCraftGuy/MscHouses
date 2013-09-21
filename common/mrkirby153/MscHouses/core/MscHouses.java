@@ -15,6 +15,7 @@ import mrkirby153.MscHouses.core.helpers.FuelHelper;
 import mrkirby153.MscHouses.core.helpers.LocalMaterialHelper;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
 import mrkirby153.MscHouses.core.helpers.OreHelper;
+import mrkirby153.MscHouses.core.lang.Strings;
 import mrkirby153.MscHouses.core.localization.TEMP_ITEMNAMES;
 import mrkirby153.MscHouses.core.network.CommonProxy;
 import mrkirby153.MscHouses.crafting.CraftingBench;
@@ -44,6 +45,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
@@ -63,7 +65,7 @@ import cpw.mods.fml.relauncher.Side;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER, dependencies = Reference.DEPENDANCIES)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER, dependencies = Reference.DEPENDANCIES, certificateFingerprint=Reference.FINGERPRINT)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class MscHouses {
 	public static HouseGen h = new HouseGen();
@@ -78,10 +80,10 @@ public class MscHouses {
 	public static CommonProxy proxy;
 	public static MscHousesConfiguration config;
 	public static boolean isPlayerSneaking;
-	
+
 	public static Block OreCopper;
 	public static Block BlockBaseBuild;
-	
+
 	public static Item Debug;
 	public static Item ingotCopper;
 	public static Item HouseTool;
@@ -91,12 +93,25 @@ public class MscHouses {
 	public static Item infiniteDimensions;
 
 	public static ArrayList<Integer> blacklisted_ids = new ArrayList<Integer>();
-	
+
 	public static String blacklisted_items_string;
+
+	@EventHandler
+	public void invalidFingerprint(FMLFingerprintViolationEvent event) {
+
+		// Report (log) to the user that the version of Equivalent Exchange 3
+		// they are using has been changed/tampered with
+		if (Reference.FINGERPRINT.equals("@FINGERPRINT@")) {
+			LogHelper.warning(Strings.NO_FINGERPRINT_MESSAGE);
+		}
+		else {
+			LogHelper.severe(Strings.INVALID_FINGERPRINT_MESSAGE);
+		}
+	}
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		
-		
+
+
 		config = new MscHousesConfiguration(new File(event.getModConfigurationDirectory(), "MscHouses/main.conf"));
 		try{
 			config.load();
@@ -104,35 +119,35 @@ public class MscHouses {
 			oreCopperId.comment = "The ID for copper ore. Defaults to " + BlockId.ORE_COPPER_DEFAULT;
 			Property oreCopperEnabled = config.get(Configuration.CATEGORY_GENERAL, "copperOre.genreation", ConfigurationSettings.generteCopper_Default);
 			oreCopperEnabled.comment= "Determines if Copper ore is generated in the world. Defaults to "+ ConfigurationSettings.generteCopper_Default;
-			
+
 			Property houseGenId = config.get(Configuration.CATEGORY_BLOCK, "houseGen.id", BlockId.HOUSE_BASE_DEFAULT);
 			houseGenId.comment = "The ID for the House generation Block. Defaults to " + BlockId.HOUSE_BASE_DEFAULT;
-			
+
 			Property debugId = config.get(Configuration.CATEGORY_GENERAL, "debug.id", ItemId.DEBUG_DEFAULT);
 			debugId.comment = "The Id for the debug tool. Defaults to " + ItemId.DEBUG_DEFAULT;
-			
+
 			Property ingotCopperId = config.get(Configuration.CATEGORY_ITEM, "ingotCopper.id", ItemId.INGOT_COPPER_DEFAULT);
 			ingotCopperId.comment = "The Id for Copper Ingots. Defaults to " + ItemId.INGOT_COPPER_DEFAULT;
-			
+
 			Property itemHouseToolId = config.get(Configuration.CATEGORY_ITEM, "houseTool.id", ItemId.ITEM_HOUSETOOL_DEFAULT);
 			itemHouseToolId.comment = "The Id for the House Tool. Defaults to " +ItemId.ITEM_HOUSETOOL_DEFAULT;
-			
+
 			Property itemPcbId = config.get(Configuration.CATEGORY_ITEM, "pcb.id", ItemId.ITEM_PCB_DEFAULT);
 			itemPcbId.comment = "The ID for the PCB's. Defaults to " + ItemId.ITEM_PCB_DEFAULT;
-			
+
 			Property itemModuelId = config.get(Configuration.CATEGORY_ITEM, "moduel.id", ItemId.ITEM_MODUEL_DEFAULT);
 			itemModuelId.comment = "The ID for the House Moduels. Defaults to " + ItemId.ITEM_MODUEL_DEFAULT;
-			
+
 			Property itemModifyerId = config.get(Configuration.CATEGORY_ITEM, "modifyer.id", ItemId.ITEM_MODIFYER_DEFAULT);
 			itemModifyerId.comment = "The ID for the material modifyers. Defaults to " + ItemId.ITEM_MODIFYER_DEFAULT;
-			
+
 			Property infiniteDimId = config.get(Configuration.CATEGORY_ITEM, "infinitedim.id", ItemId.ITEM_INFINITE_DIM_DEFAULT);
 			infiniteDimId.comment = "The ID for the jar of infinite dimensons. Defaults to " + ItemId.ITEM_INFINITE_DIM_DEFAULT;
-			
+
 			Property blacklistItems = config.get(Configuration.CATEGORY_ITEM, "blacklist.item", ConfigurationSettings.blacklist_ids_default);
 			blacklistItems.comment = "Place item Id's you DON'T want houses made of here. Seperated by commas";
-			
-			
+
+
 			//Split blacklisted id's and put them in an array
 			String ids = blacklistItems.getString();
 			String ids_stripped = ids.replace(" ", "");
@@ -148,7 +163,7 @@ public class MscHouses {
 			//Check version
 			Version.check();
 			//Defines Blocks
-			
+
 			OreCopper = new BlockCopperOre(oreCopperId.getInt()).setUnlocalizedName("oreCopper");
 			BlockBaseBuild = new BlockHouse_Base(houseGenId.getInt()).setUnlocalizedName("houseBase");
 			//Defines Items
@@ -159,16 +174,16 @@ public class MscHouses {
 			moduel = new ItemModuel(itemModuelId.getInt()).setUnlocalizedName("Moduel");
 			modifyer = new ItemMaterialModifyer(itemModifyerId.getInt()).setUnlocalizedName("ModifyerModAdded");
 			infiniteDimensions = new ItemInfiniteDimensons(infiniteDimId.getInt()).setUnlocalizedName("Infinite");
-			
-			
-			
-			
+
+
+
+
 		} finally{
 			if(config.hasChanged())
 				config.save();
 		}
 
-		
+
 		//Register Version Handler
 		TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
 		TickRegistry.registerScheduledTickHandler(new HouseTickTimer(), Side.SERVER);
@@ -180,7 +195,7 @@ public class MscHouses {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerWorldGenerator(new MscHouses_WorldGen());
-	//	proxy.registerTileEntity();
+		//	proxy.registerTileEntity();
 		GameRegistry.registerTileEntity(TileEntityBlockBase.class, "TileEntity_BlockBase");
 		NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 		//Inialize crafting/smelting recipies
@@ -189,12 +204,12 @@ public class MscHouses {
 		TEMP_ITEMNAMES.init();
 		OreHelper.registerOres();
 	}
-	
+
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent event){
 		event.registerServerCommand(new MscHousesCommand());
 	}
-	
+
 	public static String getMCVersion(){
 		return Loader.instance().getMinecraftModContainer().getVersion();
 	}
