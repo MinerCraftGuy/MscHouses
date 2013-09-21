@@ -1,7 +1,4 @@
 language: java
 jdk:
     - oraclejdk7
-before_script:
-    - mkdir src
-    - cd src
-script: ant -buildfile build-server.xml build
+script: ant -buildfile build-server.xml test
