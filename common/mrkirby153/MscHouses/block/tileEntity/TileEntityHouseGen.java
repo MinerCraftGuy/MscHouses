@@ -16,10 +16,10 @@ import net.minecraft.tileentity.TileEntity;
  * @author mrkirby153
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-public class TileEntityBlockBase extends TileEntity implements IInventory{
+public class TileEntityHouseGen extends TileEntity implements IInventory{
 	private ItemStack[] inv;
 
-    public TileEntityBlockBase(){
+    public TileEntityHouseGen(){
             inv = new ItemStack[3];
     }
     

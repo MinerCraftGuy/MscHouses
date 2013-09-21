@@ -1,6 +1,6 @@
 package mrkirby153.MscHouses.block.Container;
 
-import mrkirby153.MscHouses.block.tileEntity.TileEntityBlockBase;
+import mrkirby153.MscHouses.block.tileEntity.TileEntityHouseGen;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -17,8 +17,8 @@ import net.minecraft.tileentity.TileEntityFurnace;
  * @author mrkirby153
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
-public class ContainerBlockBase extends Container{
-	public ContainerBlockBase(InventoryPlayer inventoryPlayer, TileEntityBlockBase block_base) {
+public class ContainerHouseGenerator extends Container{
+	public ContainerHouseGenerator(InventoryPlayer inventoryPlayer, TileEntityHouseGen block_base) {
 
 		// Add the Moduel slot to the base
         this.addSlotToContainer(new Slot(block_base, 0, 81, 18));

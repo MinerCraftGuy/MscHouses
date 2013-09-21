@@ -1,7 +1,7 @@
 package mrkirby153.MscHouses.block.GUI;
 
-import mrkirby153.MscHouses.block.Container.ContainerBlockBase;
-import mrkirby153.MscHouses.block.tileEntity.TileEntityBlockBase;
+import mrkirby153.MscHouses.block.Container.ContainerHouseGenerator;
+import mrkirby153.MscHouses.block.tileEntity.TileEntityHouseGen;
 import mrkirby153.MscHouses.lib.ResourceFile;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -22,11 +22,11 @@ import cpw.mods.fml.relauncher.SideOnly;
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  */
 @SideOnly(Side.CLIENT)
-public class GuiBlockBase extends GuiContainer{
-	public GuiBlockBase (InventoryPlayer inventoryPlayer,
-			TileEntityBlockBase tileEntity) {
+public class GuiHouseGenerator extends GuiContainer{
+	public GuiHouseGenerator (InventoryPlayer inventoryPlayer,
+			TileEntityHouseGen tileEntity) {
 		//the container is instanciated and passed to the superclass for handling
-		super(new ContainerBlockBase(inventoryPlayer, tileEntity));
+		super(new ContainerHouseGenerator(inventoryPlayer, tileEntity));
 	}
 
 	@Override
