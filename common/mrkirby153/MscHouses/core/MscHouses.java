@@ -4,9 +4,9 @@ import java.io.File;
 import java.util.ArrayList;
 
 import mrkirby153.MscHouses.block.BlockCopperOre;
-import mrkirby153.MscHouses.block.BlockHouse_Base;
+import mrkirby153.MscHouses.block.BlockHouseGenerator;
 import mrkirby153.MscHouses.block.GUI.GuiHandler;
-import mrkirby153.MscHouses.block.tileEntity.TileEntityBlockBase;
+import mrkirby153.MscHouses.block.tileEntity.TileEntityHouseGen;
 import mrkirby153.MscHouses.configuration.ConfigurationSettings;
 import mrkirby153.MscHouses.configuration.MscHousesConfiguration;
 import mrkirby153.MscHouses.core.command.MscHousesCommand;
@@ -15,11 +15,7 @@ import mrkirby153.MscHouses.core.helpers.FuelHelper;
 import mrkirby153.MscHouses.core.helpers.LocalMaterialHelper;
 import mrkirby153.MscHouses.core.helpers.LogHelper;
 import mrkirby153.MscHouses.core.helpers.OreHelper;
-import mrkirby153.MscHouses.core.lang.Strings;
-import mrkirby153.MscHouses.core.localization.TEMP_ITEMNAMES;
 import mrkirby153.MscHouses.core.network.CommonProxy;
-import mrkirby153.MscHouses.crafting.CraftingBench;
-import mrkirby153.MscHouses.crafting.Furnace;
 import mrkirby153.MscHouses.creativeTab.CreativeTabHouse;
 import mrkirby153.MscHouses.creativeTab.CreativeTabModifyer;
 import mrkirby153.MscHouses.creativeTab.CreativeTabModuel;
@@ -35,6 +31,7 @@ import mrkirby153.MscHouses.items.Item_Debug;
 import mrkirby153.MscHouses.lib.BlockId;
 import mrkirby153.MscHouses.lib.ItemId;
 import mrkirby153.MscHouses.lib.Reference;
+import mrkirby153.MscHouses.lib.Strings;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -82,7 +79,7 @@ public class MscHouses {
 	public static boolean isPlayerSneaking;
 
 	public static Block OreCopper;
-	public static Block BlockBaseBuild;
+	public static Block BlockHouseGenerator;
 
 	public static Item Debug;
 	public static Item ingotCopper;
@@ -116,36 +113,36 @@ public class MscHouses {
 		try{
 			config.load();
 			Property oreCopperId = config.get(Configuration.CATEGORY_BLOCK, "copperOre.id", BlockId.ORE_COPPER_DEFAULT);
-			oreCopperId.comment = "The ID for copper ore. Defaults to " + BlockId.ORE_COPPER_DEFAULT;
+			oreCopperId.comment = "The id for Copper Ore";
 			Property oreCopperEnabled = config.get(Configuration.CATEGORY_GENERAL, "copperOre.genreation", ConfigurationSettings.generteCopper_Default);
-			oreCopperEnabled.comment= "Determines if Copper ore is generated in the world. Defaults to "+ ConfigurationSettings.generteCopper_Default;
+			oreCopperEnabled.comment= "Determines whether copper ore generates in the world. Set to false to disable";
 
-			Property houseGenId = config.get(Configuration.CATEGORY_BLOCK, "houseGen.id", BlockId.HOUSE_BASE_DEFAULT);
-			houseGenId.comment = "The ID for the House generation Block. Defaults to " + BlockId.HOUSE_BASE_DEFAULT;
+			Property houseGenId = config.get(Configuration.CATEGORY_BLOCK, "houseGen.id", BlockId.HOUSE_GENERATOR_DEFAULT);
+			houseGenId.comment = "The Id for the House Generator.";
 
 			Property debugId = config.get(Configuration.CATEGORY_GENERAL, "debug.id", ItemId.DEBUG_DEFAULT);
-			debugId.comment = "The Id for the debug tool. Defaults to " + ItemId.DEBUG_DEFAULT;
+			debugId.comment = "The Id for the debug tool.";
 
 			Property ingotCopperId = config.get(Configuration.CATEGORY_ITEM, "ingotCopper.id", ItemId.INGOT_COPPER_DEFAULT);
-			ingotCopperId.comment = "The Id for Copper Ingots. Defaults to " + ItemId.INGOT_COPPER_DEFAULT;
+			ingotCopperId.comment = "The Id for Copper Ingots.";
 
 			Property itemHouseToolId = config.get(Configuration.CATEGORY_ITEM, "houseTool.id", ItemId.ITEM_HOUSETOOL_DEFAULT);
-			itemHouseToolId.comment = "The Id for the House Tool. Defaults to " +ItemId.ITEM_HOUSETOOL_DEFAULT;
+			itemHouseToolId.comment = "The Id for the House Tool.";
 
 			Property itemPcbId = config.get(Configuration.CATEGORY_ITEM, "pcb.id", ItemId.ITEM_PCB_DEFAULT);
-			itemPcbId.comment = "The ID for the PCB's. Defaults to " + ItemId.ITEM_PCB_DEFAULT;
+			itemPcbId.comment = "The ID for the PCB's.";
 
 			Property itemModuelId = config.get(Configuration.CATEGORY_ITEM, "moduel.id", ItemId.ITEM_MODUEL_DEFAULT);
-			itemModuelId.comment = "The ID for the House Moduels. Defaults to " + ItemId.ITEM_MODUEL_DEFAULT;
+			itemModuelId.comment = "The ID for the House Moduels.";
 
 			Property itemModifyerId = config.get(Configuration.CATEGORY_ITEM, "modifyer.id", ItemId.ITEM_MODIFYER_DEFAULT);
-			itemModifyerId.comment = "The ID for the material modifyers. Defaults to " + ItemId.ITEM_MODIFYER_DEFAULT;
+			itemModifyerId.comment = "The ID for the material modifyers.";
 
 			Property infiniteDimId = config.get(Configuration.CATEGORY_ITEM, "infinitedim.id", ItemId.ITEM_INFINITE_DIM_DEFAULT);
-			infiniteDimId.comment = "The ID for the jar of infinite dimensons. Defaults to " + ItemId.ITEM_INFINITE_DIM_DEFAULT;
+			infiniteDimId.comment = "The ID for the jar of infinite dimensons.";
 
 			Property blacklistItems = config.get(Configuration.CATEGORY_ITEM, "blacklist.item", ConfigurationSettings.blacklist_ids_default);
-			blacklistItems.comment = "Place item Id's you DON'T want houses made of here. Seperated by commas";
+			blacklistItems.comment = "Place item Id's you DON'T want houses made of here. Seperated by commas(EX: 1,3,5,6)";
 
 
 			//Split blacklisted id's and put them in an array
@@ -165,15 +162,15 @@ public class MscHouses {
 			//Defines Blocks
 
 			OreCopper = new BlockCopperOre(oreCopperId.getInt()).setUnlocalizedName("oreCopper");
-			BlockBaseBuild = new BlockHouse_Base(houseGenId.getInt()).setUnlocalizedName("houseBase");
+			BlockHouseGenerator = new BlockHouseGenerator(houseGenId.getInt()).setUnlocalizedName("HouseGen");
 			//Defines Items
-			Debug = new Item_Debug(debugId.getInt()).setUnlocalizedName("debug");
+			Debug = new Item_Debug(debugId.getInt()).setUnlocalizedName("toolDebug");
 			ingotCopper = new ItemCopper(ingotCopperId.getInt()).setUnlocalizedName("ingotCopper");
-			HouseTool = new ItemHouseTool(itemHouseToolId.getInt()).setUnlocalizedName("ingotCopper");
-			PCB = new ItemPCB(itemPcbId.getInt()).setUnlocalizedName("pcb");
-			moduel = new ItemModuel(itemModuelId.getInt()).setUnlocalizedName("Moduel");
-			modifyer = new ItemMaterialModifyer(itemModifyerId.getInt()).setUnlocalizedName("ModifyerModAdded");
-			infiniteDimensions = new ItemInfiniteDimensons(infiniteDimId.getInt()).setUnlocalizedName("Infinite");
+			HouseTool = new ItemHouseTool(itemHouseToolId.getInt()).setUnlocalizedName("toolHouse");
+			PCB = new ItemPCB(itemPcbId.getInt()).setUnlocalizedName("toolPCB");
+			moduel = new ItemModuel(itemModuelId.getInt()).setUnlocalizedName("itemModuel");
+			modifyer = new ItemMaterialModifyer(itemModifyerId.getInt()).setUnlocalizedName("itemModifyer");
+			infiniteDimensions = new ItemInfiniteDimensons(infiniteDimId.getInt()).setUnlocalizedName("itemInfiniteDim");
 
 
 
@@ -196,12 +193,12 @@ public class MscHouses {
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerWorldGenerator(new MscHouses_WorldGen());
 		//	proxy.registerTileEntity();
-		GameRegistry.registerTileEntity(TileEntityBlockBase.class, "TileEntity_BlockBase");
+		GameRegistry.registerTileEntity(TileEntityHouseGen.class, "TileEntity_HouseGen");
 		NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
 		//Inialize crafting/smelting recipies
-		CraftingBench.init();
-		Furnace.init();
-		TEMP_ITEMNAMES.init();
+		Crafting.addCrafting();
+		Crafting.addSmelting();
+		Localization.localize();
 		OreHelper.registerOres();
 	}
 

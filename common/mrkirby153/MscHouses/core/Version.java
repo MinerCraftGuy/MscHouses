@@ -9,6 +9,8 @@ import java.util.logging.Level;
 
 import mrkirby153.MscHouses.core.helpers.LogHelper;
 import mrkirby153.MscHouses.lib.Reference;
+import mrkirby153.MscHouses.lib.Strings;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.Property;
 /**
  * 
@@ -93,16 +95,14 @@ public class Version implements Runnable{
 						reccomendedVersion = tokens[2];
 
 						if(line.endsWith(VERSION)){
-							LogHelper.log(Level.FINER, "Using latest version (" + getVersion()+")");
+							LogHelper.finer(StatCollector.translateToLocalFormatted(Strings.LATEST, getVersion()));
 							currentVersion = EnumUpdateState.CURRENT;
 							return;
 						}
 					}
 				}
 			}
-
-			LogHelper.log(Level.WARNING, "Using outdated version [" + VERSION + "(build:"+BUILD_NUMBER+")] for Minecraft " +mcVersion
-					+". Consider updating");
+			LogHelper.warning(StatCollector.translateToLocalFormatted(Strings.OUTDATED, VERSION, BUILD_NUMBER, mcVersion));
 			currentVersion = EnumUpdateState.OUTDATED;
 
 		}catch(Exception e){
@@ -153,45 +153,45 @@ public class Version implements Runnable{
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			LogHelper.log(Level.WARNING, "Unable to read changelog from remote site.");
+			LogHelper.warning(StatCollector.translateToLocal(Strings.REMOTE_READ_FAIL));
 		}
 
-		return new String[] { String.format("Unable to retrieve changelog for %s %s", Reference.MOD_NAME, version) };
+		return new String[] { StatCollector.translateToLocalFormatted(Strings.CHANGELOG_MISSING, Reference.MOD_NAME, version) };
 	}
 
 
 	@Override
-    public void run() {
+	public void run() {
 
-        int count = 0;
-        currentVersion = null;
+		int count = 0;
+		currentVersion = null;
 
-       LogHelper.log(Level.INFO, "Beginning version check");
+		LogHelper.info(StatCollector.translateToLocal(Strings.CHECK_INIT));
 
-        try {
-            while ((count < 3) && ((currentVersion == null) || (currentVersion == EnumUpdateState.CONNECTION_ERROR))) {
-                versionCheck();
-                count++;
+		try {
+			while ((count < 3) && ((currentVersion == null) || (currentVersion == EnumUpdateState.CONNECTION_ERROR))) {
+				versionCheck();
+				count++;
 
-                if (currentVersion == EnumUpdateState.CONNECTION_ERROR) {
-                    LogHelper.log(Level.WARNING,"Version check attempt " + count + " failed, trying again in 10 seconds");
-                    Thread.sleep(10000);
-                }
-            }
-        }
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+				if (currentVersion == EnumUpdateState.CONNECTION_ERROR) {
+					LogHelper.warning(StatCollector.translateToLocalFormatted(Strings.CHECK_FAILED, count));
+					Thread.sleep(10000);
+				}
+			}
+		}
+		catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
-        if (currentVersion == EnumUpdateState.CONNECTION_ERROR) {
-           LogHelper.log(Level.WARNING,"Version check failed");
-        }
+		if (currentVersion == EnumUpdateState.CONNECTION_ERROR) {
+			LogHelper.log(Level.WARNING,"Version check failed");
+		}
 
-    }
+	}
 
-    public static void check() {
+	public static void check() {
 
-        new Thread(instance).start();
-    }
+		new Thread(instance).start();
+	}
 
 }
