@@ -23,7 +23,7 @@
             <arg value="/c" />
             <arg value="install.cmd" />
         </exec>
-        <exec dir="forge" executable="bash" osfamily="unix" failonerror="true">
+         <exec dir="forge" executable="bash" osfamily="unix" failonerror="true">
             <arg line="install.sh" />
         </exec>
     </target>
