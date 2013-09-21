@@ -1,12 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
-<properties version="1.0">
-	<comment>English (en_US) Localization File</comment>
-	<entry key="version.init_log_message">Initializing remote version check against remote version authority, located at</entry>
-	<entry key="version.uninitialized">Remote version check failed to initialize properly</entry>
-	<entry key="version.current">Currently using the most up to date version (@REMOTE_MOD_VERSION@) of Equivalent Exchange 3 for @MINECRAFT_VERSION@</entry>
-	<entry key="version.outdated">A new @MOD_NAME@ version exists (@REMOTE_MOD_VERSION@) for @MINECRAFT_VERSION@. Get it here: @MOD_UPDATE_LOCATION@</entry>
-	<entry key="version.general_error">Error while connecting to remote version authority file; trying again</entry>
-	<entry key="version.final_error">Version check stopping after three unsuccessful connection attempts</entry>
-	<entry key="version.mc_version_not_found">Unable to find a version of @MOD_NAME@ for @MINECRAFT_VERSION@ in the remote version authority</entry>
-</properties>
+#Version Check Localizations
+version.mschouses:check_init=Beginning Version Check
+version.mschouses:check_fail=Version check attempt %s failed, trying again in 10 seconds
+version.mschouses:missing_chnglog=Unable to retrieve changelog for %s $s
+version.mschouses:remote_read_fail=Unable to read changelog from remote site
+version.mschouses:outdated=Using outdated version [%s (build:%s)] for minecraft %s. Consider updating
+version.mschouses:lastest=Using latest version (%s)
+version.mschouses:config_version_comment=Indicates the last version the user has been informed about and will suppress further notices about it.
+
+#Item Localizations
+item.mschouses:debug=Debug Item
+item.mschouses:ingotCopper=Copper Ingot
+item.mschouses:houseTool=House Tool
+item.mschouses:pcb=Printed Circuit Board (PCB)
+item.mschouses:moduel=Module
+item.mschouses:material_modifyer=Material Modifier
+item.mschouses:jar_of_dim=Jar of Infinite Dimensions
+
+#Block Localizations
+block.mschouses:copperOre=Copper Ore
+block.mschouses:houseGen=House Generator
+
+#Creative Tab Localizations
+tab.mschouses:main=Msc. Houses Tools and Blocks
+tab.mschouses:moduel=Msc. Houses Modules
+tab.mschouses:modifyer=Msc. Houses Modifiers
