@@ -97,7 +97,7 @@
 		<antcall target="clean" />
 	</target>
     <target name="test">
-        <antcall target="build">
+        <antcall target="build" />
     </target>
     <target name="clean-install">
         <antcall target="clean" />
