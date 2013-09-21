@@ -14,14 +14,14 @@
     </target>
     
     <target name="forge-uncompress" depends="forge-download, forge-clean">
-        <unzip src="temp/${minecraftforge_src_archive}" dest="forge" />
+        <unzip src="temp/${minecraftforge_src_archive}" dest="" />
         <delete dir="temp" />
     </target>
     
     <target name="forge-install" depends="forge-uncompress">
-        <exec dir="forge/" executable="cmd.exe" osfamily="windows" failonerror="true">
+        <exec dir="forge" executable="cmd.exe" osfamily="windows" failonerror="true">
             <arg value="/c" />
-            <arg value="/forge/install.cmd" />
+            <arg value="install.cmd" />
         </exec>
         <exec dir="forge/" executable="bash" osfamily="unix" failonerror="true">
             <arg line="install.sh" />
