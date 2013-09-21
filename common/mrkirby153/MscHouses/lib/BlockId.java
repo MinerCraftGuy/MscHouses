@@ -11,7 +11,7 @@ package mrkirby153.MscHouses.lib;
 public class BlockId {
 	//Default IDs
 	public static int ORE_COPPER_DEFAULT = 700;
-	public static int HOUSE_BASE_DEFAULT = 706;
+	public static int HOUSE_GENERATOR_DEFAULT = 706;
 	
 	//Current IDs
 	public static int ORE_COPPER;
