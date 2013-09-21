@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <project name="MscHouses" default ="build">
-    
+     <property file="build.properties" prefix="build" />
     <property name="minecraftforge_src_archive" value="minecraftforge-src-${build.minecraft_version}-${build.forge_version}.zip"/>
     <property name="minecraftforge_src_archive_location" value="http://files.minecraftforge.net/minecraftforge/${minecraftforge_src_archive}" />
     
