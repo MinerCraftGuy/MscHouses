@@ -96,4 +96,7 @@
 		<!-- Clean up the MCP source now that we are done -->
 		<antcall target="clean" />
 	</target>
+    <target name="test">
+        <antcall target="release" />
+    </target>
 </project>
