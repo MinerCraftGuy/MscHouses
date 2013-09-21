@@ -1,0 +1,26 @@
+#Version Check Localizations
+version.mschouses:check_init=Beginning Version Check
+version.mschouses:check_fail=Version check attempt %s failed, trying again in 10 seconds
+version.mschouses:missing_chnglog=Unable to retrieve changelog for %s $s
+version.mschouses:remote_read_fail=Unable to read changelog from remote site
+version.mschouses:outdated=Using outdated version [%s (build:%s)] for minecraft %s. Consider updating
+version.mschouses:lastest=Using latest version (%s)
+version.mschouses:config_version_comment=Indicates the last version the user has been informed about and will suppress further notices about it.
+
+#Item Localizations
+item.mschouses:debug=Debug Item
+item.mschouses:ingotCopper=Copper Ingot
+item.mschouses:houseTool=House Tool
+item.mschouses:pcb=Printed Circuit Board (PCB)
+item.mschouses:moduel=Module
+item.mschouses:material_modifyer=Material Modifier
+item.mschouses:jar_of_dim=Jar of Infinite Dimensions
+
+#Block Localizations
+block.mschouses:copperOre=Copper Ore
+block.mschouses:houseGen=House Generator
+
+#Creative Tab Localizations
+tab.mschouses:main=Msc. Houses Tools and Blocks
+tab.mschouses:moduel=Msc. Houses Modules
+tab.mschouses:modifyer=Msc. Houses Modifiers
