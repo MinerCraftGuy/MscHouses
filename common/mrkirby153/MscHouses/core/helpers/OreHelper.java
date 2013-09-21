@@ -8,5 +8,4 @@ public class OreHelper {
 	public static void registerOres(){
 		OreDictionary.registerOre("ingotCopper", new ItemStack(MscHouses.ingotCopper));
 	}
-
 }
