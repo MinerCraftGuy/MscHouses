@@ -45,8 +45,8 @@
     </target>
     
     <target name="prep">
-        <copy todir="${environment.mcp_location}/src/minecraft">
-            <fileset dir="${environment.source_location}/common" />
+        <copy todir="src/minecraft">
+            <fileset dir="common" />
         </copy>
     </target>
     
