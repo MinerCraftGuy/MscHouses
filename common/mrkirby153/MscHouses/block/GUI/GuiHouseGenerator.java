@@ -42,7 +42,7 @@ public class GuiHouseGenerator extends GuiContainer{
 		fontRenderer.drawString(StatCollector.translateToLocal(Strings.RESOURCE_PREFIX+Strings.TILE_HOUSE_GEN), 8, 6, 4210752);
 		//draws "Inventory" or your regional equivalent
 		fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 96 + 2, 4210752);
-	//	this.buttonList.add(generate = new GuiButton(0, xSize / 2 - 150, ySize / 4 + 17 + 12, "Generate"));
+		this.buttonList.add(generate = new GuiButton(0, this.width /2 + 20, this.height /2 - 65, 60, 20, "Generate"));
 	}
 
 	@Override
