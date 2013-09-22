@@ -24,3 +24,6 @@ block.mschouses:houseGen=House Generator
 tab.mschouses:main=Msc. Houses Tools and Blocks
 tab.mschouses:moduel=Msc. Houses Modules
 tab.mschouses:modifyer=Msc. Houses Modifiers
+
+#Tile Localizations
+mschouses:houseGen=House Generator

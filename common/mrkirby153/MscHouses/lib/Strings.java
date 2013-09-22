@@ -42,4 +42,7 @@ public class Strings {
 	public static final String TAB_MAIN = "tab.mschouses:main";
 	public static final String TAB_MODUEL = "tab.mschouses:moduel";
 	public static final String TAB_MODIFYER = "tab.mschouses:modifyer";
+	
+	/* GUI Strings */
+	public static final String TILE_HOUSE_GEN = "houseGen";
 }

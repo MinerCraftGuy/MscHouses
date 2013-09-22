@@ -3,13 +3,13 @@ package mrkirby153.MscHouses.block.GUI;
 import mrkirby153.MscHouses.block.Container.ContainerHouseGenerator;
 import mrkirby153.MscHouses.block.tileEntity.TileEntityHouseGen;
 import mrkirby153.MscHouses.lib.ResourceFile;
+import mrkirby153.MscHouses.lib.Strings;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 /**
@@ -27,13 +27,15 @@ public class GuiHouseGenerator extends GuiContainer{
 			TileEntityHouseGen tileEntity) {
 		//the container is instanciated and passed to the superclass for handling
 		super(new ContainerHouseGenerator(inventoryPlayer, tileEntity));
+		this.ySize = 176;
+		this.xSize = 176;
 	}
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(int param1, int param2) {
 		//draw text and stuff here
 		//the parameters for drawString are: string, x, y, color
-		fontRenderer.drawString("House Generator", 8, 6, 4210752);
+		fontRenderer.drawString(StatCollector.translateToLocal(Strings.RESOURCE_PREFIX+Strings.TILE_HOUSE_GEN), 8, 6, 4210752);
 		//draws "Inventory" or your regional equivalent
 		fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 96 + 2, 4210752);
 	}
