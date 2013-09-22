@@ -4,7 +4,9 @@ import mrkirby153.MscHouses.block.Container.ContainerHouseGenerator;
 import mrkirby153.MscHouses.block.tileEntity.TileEntityHouseGen;
 import mrkirby153.MscHouses.lib.ResourceFile;
 import mrkirby153.MscHouses.lib.Strings;
+import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
 
@@ -23,6 +25,8 @@ import cpw.mods.fml.relauncher.SideOnly;
  */
 @SideOnly(Side.CLIENT)
 public class GuiHouseGenerator extends GuiContainer{
+	
+	private GuiButton generate;
 	public GuiHouseGenerator (InventoryPlayer inventoryPlayer,
 			TileEntityHouseGen tileEntity) {
 		//the container is instanciated and passed to the superclass for handling
@@ -38,6 +42,7 @@ public class GuiHouseGenerator extends GuiContainer{
 		fontRenderer.drawString(StatCollector.translateToLocal(Strings.RESOURCE_PREFIX+Strings.TILE_HOUSE_GEN), 8, 6, 4210752);
 		//draws "Inventory" or your regional equivalent
 		fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 96 + 2, 4210752);
+	//	this.buttonList.add(generate = new GuiButton(0, xSize / 2 - 150, ySize / 4 + 17 + 12, "Generate"));
 	}
 
 	@Override
