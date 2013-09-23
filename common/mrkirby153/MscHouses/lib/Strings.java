@@ -37,7 +37,7 @@ public class Strings {
 	
 	/* Block Names */
 	public static final String BLOCK_ORE_COPPER_NAME = "copperOre";
-	public static final String BLOCK_HOUSE_GEN_NAME = "houseGen";
+	public static final String BLOCK_HOUSE_GEN_NAME = "item.mschouses:houseGen";
 	/* Creative Tabs */
 	public static final String TAB_MAIN = "tab.mschouses:main";
 	public static final String TAB_MODUEL = "tab.mschouses:moduel";

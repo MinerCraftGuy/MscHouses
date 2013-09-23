@@ -5,6 +5,7 @@ import java.util.Random;
 import mrkirby153.MscHouses.block.tileEntity.TileEntityHouseGen;
 import mrkirby153.MscHouses.core.MscHouses;
 import mrkirby153.MscHouses.items.ItemBlockGenerator;
+import mrkirby153.MscHouses.lib.Strings;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -31,7 +32,6 @@ public class BlockHouseGenerator extends BlockContainer{
 
 	public BlockHouseGenerator(int par1) {
 		super(par1, Material.cloth);
-		GameRegistry.registerBlock(this, ItemBlockGenerator.class, "BlockBase");
 		this.setCreativeTab(MscHouses.tabHouse);
 	}
 
@@ -44,6 +44,16 @@ public class BlockHouseGenerator extends BlockContainer{
 		}
 		player.openGui(MscHouses.instance, 0, world, x, y, z);
 		return true;
+	}
+	
+	@Override
+	public String getUnlocalizedName() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("tile.");
+		sb.append(Strings.RESOURCE_PREFIX);
+		sb.append(Strings.BLOCK_HOUSE_GEN_NAME);
+		
+		return sb.toString();
 	}
 
 	@Override
@@ -96,7 +106,4 @@ public class BlockHouseGenerator extends BlockContainer{
 	public void registerIcons(IconRegister iconRegister) {
 		blockIcon = iconRegister.registerIcon("mschouses:houseBase");
 	}
-
-
-
 }

@@ -22,7 +22,6 @@ public class BlockCopperOre extends Block{
 		super(par1, Material.ground);
 		this.setHardness(1F);
 		this.setCreativeTab(CreativeTabs.tabAllSearch);
-		GameRegistry.registerBlock(this, "copperOre");
 	}
 	
 	@Override
