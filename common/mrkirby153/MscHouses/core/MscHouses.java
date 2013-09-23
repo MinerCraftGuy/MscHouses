@@ -21,6 +21,7 @@ import mrkirby153.MscHouses.creativeTab.CreativeTabModifyer;
 import mrkirby153.MscHouses.creativeTab.CreativeTabModuel;
 import mrkirby153.MscHouses.generation.HouseGen;
 import mrkirby153.MscHouses.generation.MscHouses_WorldGen;
+import mrkirby153.MscHouses.items.ItemBlockGenerator;
 import mrkirby153.MscHouses.items.ItemCopper;
 import mrkirby153.MscHouses.items.ItemHouseTool;
 import mrkirby153.MscHouses.items.ItemInfiniteDimensons;
@@ -171,10 +172,9 @@ public class MscHouses {
 			moduel = new ItemModuel(itemModuelId.getInt()).setUnlocalizedName("itemModuel");
 			modifyer = new ItemMaterialModifyer(itemModifyerId.getInt()).setUnlocalizedName("itemModifyer");
 			infiniteDimensions = new ItemInfiniteDimensons(infiniteDimId.getInt()).setUnlocalizedName("itemInfiniteDim");
-
-
-
-
+			
+			GameRegistry.registerBlock(BlockHouseGenerator, ItemBlockGenerator.class, Strings.BLOCK_HOUSE_GEN_NAME);
+			GameRegistry.registerBlock(OreCopper, Strings.BLOCK_ORE_COPPER_NAME);
 		} finally{
 			if(config.hasChanged())
 				config.save();
