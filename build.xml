@@ -160,4 +160,35 @@
         <antcall target="forge-clean-install" />
         <antcall target="release" />
     </target>
+    
+    <target name="install-source">
+        <echo message="Installing Msc. Houses and dependancies" />
+        <echo message="Creating environment.properties..." />
+        <!-- Create environment.properties -->
+        <property name="root.dir" value=".." />
+        <echo file="environment.properties">base_location=${root.dir}/
+source_location=${base_location}
+mcp_location=${base_location}/forge/mcp
+release_location=${base_location}/releases</echo>
+        <echo message="Replacing \ with /" />
+        <replace file="environment.properties" value="/">
+            <include name="**/*.properties" />
+            <replacetoken>\</replacetoken>
+        </replace>
+        <!-- Create private.properties -->
+        <echo message="Creating private.properties..." />
+        <echo message="Requesting user credentals..." />
+        <input message="Please enter your fingerprint signautre. Press ENTER to skip" addproperty="install-keystore-fingerprint" />
+        <input message="Please enter your keystore location (EX: C:/keys/keystore.keystore). Press ENTER to skip" addproperty="install-keystore-location" />
+        <input message="Please enter your keystore user alias. Press ENTER to skip" addproperty="install-keystore-alias" />
+        <input message="Please enter your keystore password. Press ENTER to skip" addproperty="install-keystore-password" />
+        <echo message="Really creating private.properties" />
+        <echo file="private.properties">fingerprint_signature=${install-keystore-fingerprint}
+keystore_location=${install-keystore-location}
+keystore_user_alias=${install-keystore-alias}
+keystore_user_password=${install-keystore-password}</echo>
+        <echo message="Building Msc. Houses..." />
+        <antcall target="forge-clean-install" />
+        <antcall target="build" />
+    </target>
 </project>
