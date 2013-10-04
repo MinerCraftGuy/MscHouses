@@ -126,7 +126,7 @@
         <propertyfile file="build.properties">
             <entry key="forge_version" value="${forge-version}" />
         </propertyfile>
-        <antcall target="clean-install" />
+      <antcall target="clean-install" />
     </target>
     <target name="update-forge">
         <echo message="Updating forge..."/>
@@ -136,7 +136,24 @@
             <equals arg1="n" arg2="${update.confirm}" />
         </condition>
         <fail if="update.abort">Forge update aborted by user</fail>
-        
+        <antcall target="update-install" />
+    </target>
+    
+    <target name="update-minecraft">
+        <echo message="Updating Minecraft and forge..." />
+        <input message="Please enter a new Minecraft version you would like EX: 1.6.4" addproperty="update-mc-version" />
+        <input message="Please enter a new forge version you would like EX: 9.10.1.871" addproperty="update-forge-version" />
+        <input message="Are you sure you want to upadte to minecraft forge ${update-forge-version} for Minecraft ${update-mc-version}?(y/n)" validargs="y,n" addproperty="update.confirm"/>
+        <condition property="update.abort">
+            <equals arg1="n" arg2="${update.confirm}" />
+        </condition>
+        <fail if="update.abort">Minecraft update aborted by user</fail>
+        <!-- Update property file -->
+        <propertyfile file="build.properties">
+            <entry key="forge_version" value="${update-forge-version}" />
+            <entry key="minecraft_version" value="${update-mc-version}" />
+        </propertyfile>
+        <antcall target="clean-install" />
     </target>
     <target name="clean-install">
         <antcall target="clean" />
