@@ -2,8 +2,8 @@
 **All new versions can be found [here](http://minecraft.curseforge.com/mc-mods/msc-houses/files) beginning with version 5.0**
 
 [Minecraft Forums Page](http://www.minecraftforum.net/topic/1763986-)  
-[Compiling]
-[Contributing]
+[Compiling](https://github.com/mrkirby153/MscHouses#compiling)
+[Contributing](https://github.com/mrkirby153/MscHouses#contributing)
 
 #### Compiling
 IMPORTANT: Report any issues you may have. There may be some problems with the documentation
