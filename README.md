@@ -1,74 +1,81 @@
-# Welcome to MscHouses!
+# Msc Houses Repository
+**All new versions can be found [here](http://minecraft.curseforge.com/mc-mods/msc-houses/files) beginning with version 5.0**
 
-**All Latest Official Versions Can Be Found [here] (http://minecraft.curseforge.com/mc-mods/msc-houses/files/) Starting with version 5.0**
+[Minecraft Forums Page](http://www.minecraftforum.net/topic/1763986-)  
+[Compiling]
+[Contributing]
 
-## Compiling MscHouses
+#### Compiling
+IMPORTANT: Report any issues you may have. There may be some problems with the documentation
 ***
-Do you want to contrubute to the MscHouses mod? If you do, you might find this handy
+**Prerequisites**
+**Please make sure you know what you are doing! It is not my fault if you completely blow up your system :)**
 
-1. Download and install Java JRE (*Java Runtime Environment*). You should already have this installed.
-2. Download and install Java SDK (*Java Standard Development Kit*) [here] (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1889260.html)
-3. Download and install [Apache Ant] (http://ant.apache.org/)
-4. Download and install [Git[ (http://git-scm.com/downloads)
-5. Create and empty directory for development/compilation. This Directory is referred to as `Dev`
+1. Download and install the Java JDK [from here](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) for your OS.
+  1. Go to `Controll Pannel/System` and click on `Advanced System Settings`
+  2. Click on `Environment Variables`
+  3. Under `System Variables` click `New`
+  4. For `Variable name`, input `JAVA_HOME`
+  5. For `Variable Value`, input something similar to `C:\Program Files\Java\jdk1.7.0_25` or where Java JDK was installed
+  6. Scroll down to a variable named `Path` and double click it.
+  7. Append `;%JAVA_HOME%\bin` and click OK
+2. Download Apache Ant [from here] (http://ant.apache.org/)
+  1. Unizp the files anywhere you want, eg `C:\ant\`. Just **Remember where you put it**
+  2. Once again, go to your `Environment Variables`
+  3. Under System Variables, click `New`
+  4. For `Variable Name` input `ANT_HOME`
+  5. For `Variable Value` input `C:\ant`
+  6. Scroll down to `Path` and double click it.
+  7. Append `;%ANT_HOME%\bin` EXACTLY as shown to the end.
+3. Download and install Github for [windows](http://windows.github.com/) or for [mac](http://mac.github.com/). Note: Github is OPTIONAL! You can use your own git application
+  1. Create a Github account
+  2. Scroll to the top of the [github page](https://github.com/mrkirby153/MscHouses/) and login
+  3. Click `Clone in Desktop` near the bottom of the right-hand toolbar. If prompted, chose `Launch`. (Chrome)
+    * Github will flash and `mrkirby153/MscHouses` will apear
+    * The local reposiotry defaults to `C:\Users\(username)\Documents\GitHub\MscHouses`
+4. Create an empty directory for development. This directory is referred to as `Development` from now on. It can be where MscHouses was cloned but it mgith be a bit messy
+5. If you are using a different directory, copy/move all `MscHouses/` to `Development/source`
 
+**Installing**
 
-#### Set Up MCP
-1. Download the latest version of MCP [here] (http://mcp.ocean-labs.de/index.php/MCP_Releases).
-2. Inside `Dev`, create a directory called `mcp` and extract MCP into it.
- * To verify, check if a file named `CHAGELOG` exists inside of `MCP`
-3. Download the latest forge ___SOURCE___ (At Least 9.10.0.789) and unzip it into `mcp`. You can get it from [here] (http://files.minecraftforge.net)
-4. Excecute `install.cmd` (Windows) or `install.sh` (Linux and Mac) located in `mcp/forge`. This will take anywhere from 5-20 minutes depending on your computer's proccessing power
+1. Open up your OS's command-line and execute `cd Dev's Location\source`
+2. Execute `ant install-source`. This will generally take 5-15 minutes depending on your computer. If you've done everything right, `BUILD SUCCESSFULL` is displayed after it finished
+  * If `BUILD FAILED` is displayed, check the error output (Near `BUILD FAILED`). Fix everyting and try again
+3. Go to `Development/source/MscHouses/Releases/1.6.4/<VERSION NUMBER>`
+  * You should see a .jar file named `Msc Houses-universal-<VERSION NUMBER>-<BUILD NUMBER>`
+4. Copy the jar into your Minecraft Mods folder and play!
 
+**Updating your Repo**  
+
+1. Check if mrkirby153 has updated MscHouses (he probably did) since the last time you've compiled. If he did, follow these insructions
+2. Open Github
+3. Double click on `mrkirby153/MscHouses`
+4. At the top there is a button named `Sync`/`Sync Branch` (or `Refreshing...` if it's still checking)
+5. Click `Sync`, and wait for it to finish
+6. Re-compile (or move it to `Development/source` then re-compile) by running `ant build`
+
+### Contributing
 ***
+**Submitting a PR**
 
-####Set Up MscHouses
-1. Inside `Dev`, create a directory named `source`.
-2. Clone `MscHouses` into `source` by excecuting the following command `$ git clone https://github.com/mrkirby153/MscHouses.git` (HTTPS) or `$ git clone git@github.com:mrkirby153/MscHouses.git` (SSH)
-3. Your file structure should look like this now
-    `dev
+Found a bug? Want to make it more efeccent? Want to just help out? Great!!
 
-        \-mcp    
-            \-mcp stuff (should have CHANGELOG) 
-            \-forge 
-            \-jars 
-        \-source
-            \-MscHouses
-                \-MscHouses' files (should have a build.xml)`
-                
+**IMPORTANT: mrkirby153 DOES *NOT WANT ANY** `build.xml` **CHANGES UNLESS if fixes up something broken**
 
-***
+1. If you haven't already create a Github account
+2. Click the `Fork` icon at the top right of this page.
+3. Make the changes you want to
+4. Click `Pull Request` ant thre right-hand side of the grey bar below  your fork's name
+5. Click `Click to create a pull request for this  comparison`, enter your PR's title and a detailed description telling mrkirby153 what you've changed. EX: `Made generations more effecient`
+6. Click `Send Pull Request` and you're done
 
-4. Inside `MscHouses`, create a new file called `build.properties`
-    * Open it up with any text editor and type the following into it (Fully customizable except for `dir.development`):
-    * `dir.development=../../`
-    * `dir.release=Releases`
-    * `release.minecraft.version=1.6.2` or the version you are compiling
-    * `release.mod.version=<Mod Version>`
-5. Open your OS's command line interface (cmd [Command Prompt] for Windows, Terminal for Linux and Mac)
-6. Navigate to `dev\source\MscHouses` by typing `cd <dev volder location\source\MscHouses`.
-7. Excecute `ant release`. This should take anywhere between 5 and 15 minutes. Once again depending on your Computer's Proccessing speed
-8. After the build, if `BUILD SUCCESSFULL` is not displayed, open an issue ticket with the console log. If it is, navigate to `dev\source\MscHouses\Releases\<Minecraft Version\<Version Number>\` and locate the file named `Msc Houses-universal-<VERSION NUMBER>.jar`
-9. Install that file to your mods folder and play Minecraft!
+**Creating an issue**
 
-***
+Game crashing? Have a suggesstion? Found a bug? Create an issue now!
 
-#### Contributing to MscHouses
-1. Fork the MscHouses repository by clicking the box marked `fork`
-2. Once you've forked the repository successfully, clone ___YOUR___ repository to your local machene.
-3. Code, Code, Code! Change anything you wish with the mod
- * Please code in a seperate branch. Do not use the branch `master`
-4. Once you're done, click the `pull request` button on the upper right and submit the request
-5. Wait. Wait to see if I like the changes you made to the mod. If I like it, I'll merge the request into the repo.
-6. Done!
+Please don't create any frivolous issues! If it's a crash, post it on the forum. If it's a bug, make sure it hasn't been reported already
 
-***
-
-#### Submitting an issue
-Find a bug? Minecraft won't start? Have an idea?
-1. Head over to the [Issue Page] (https://github.com/mrkirby153/MscHouses/issues)
-2. Create or log into your github account
-3. Click `New Issue`
-4. Enter the issue's title, (Something summarizing the issue) and a ___DETAILED__ description of how you came about this bug.
- * Remember: __CRASHLOG OR IT DIDN'T HAPPEN__ (That is, if you're reporting a bug and ther is a crashlog)
-5. Click `Submit Issue` and you're done!
+1. Go to the [issues page](https://github.com/mrkirby153/MscHouses/issues)
+2. Click the bright green `New Issue` button
+3. Enter your issue's title (Something that sumarizes the issue) and create a detailed description on how to reproduce it. **PROVDE A CRASHLOG IF THERE IS ONE**
+4. Click `Submit Issue` and your done!
