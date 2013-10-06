@@ -8,17 +8,17 @@ version.mschouses:lastest=Using latest version (%s)
 version.mschouses:config_version_comment=Indicates the last version the user has been informed about and will suppress further notices about it.
 
 #Item Localizations
-tile.mschouses:debug=Debug Item
-item.mschouses:ingotCopper=Copper Ingot
-item.mschouses:houseTool=House Tool
-item.mschouses:pcb=Printed Circuit Board (PCB)
-item.mschouses:moduel=Module
-item.mschouses:material_modifyer=Material Modifier
-item.mschouses:jar_of_dim=Jar of Infinite Dimensions
+item.toolDebug.name=Debug Item
+item.ingotCopper.name=Copper Ingot
+item.houseTool.name=House Tool
+item.pcb.name=Printed Circuit Board (PCB)
+item.moduel.name=Module
+item.material_modifyer.name=Material Modifier
+item.jar_of_dim.name=Jar of Infinite Dimensions
 
 #Block Localizations
-block.mschouses:copperOre=Copper Ore
-block.mschouses:houseGen=House Generator
+block.copperOre.name=Copper Ore
+block.houseGen.name=House Generator
 
 #Creative Tab Localizations
 tab.mschouses:main=Msc. Houses Tools and Blocks
