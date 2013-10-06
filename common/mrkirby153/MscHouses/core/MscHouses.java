@@ -7,6 +7,7 @@ import mrkirby153.MscHouses.block.BlockCopperOre;
 import mrkirby153.MscHouses.block.BlockHouseGenerator;
 import mrkirby153.MscHouses.block.GUI.GuiHandler;
 import mrkirby153.MscHouses.block.tileEntity.TileEntityHouseGen;
+import mrkirby153.MscHouses.configuration.ConfigurationHelper;
 import mrkirby153.MscHouses.configuration.ConfigurationSettings;
 import mrkirby153.MscHouses.configuration.MscHousesConfiguration;
 import mrkirby153.MscHouses.core.command.MscHousesCommand;
@@ -97,7 +98,7 @@ public class MscHouses {
 	@EventHandler
 	public void invalidFingerprint(FMLFingerprintViolationEvent event) {
 
-		// Report (log) to the user that the version of Equivalent Exchange 3
+		// Report (log) to the user that the version of MscHouses
 		// they are using has been changed/tampered with
 		if (Reference.FINGERPRINT.equals("@FINGERPRINT@")) {
 			LogHelper.warning(Strings.NO_FINGERPRINT_MESSAGE);
@@ -108,9 +109,8 @@ public class MscHouses {
 	}
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-
-
 		config = new MscHousesConfiguration(new File(event.getModConfigurationDirectory(), "MscHouses/main.conf"));
+		
 		try{
 			config.load();
 			Property oreCopperId = config.get(Configuration.CATEGORY_BLOCK, "copperOre.id", BlockId.ORE_COPPER_DEFAULT);
