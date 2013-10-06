@@ -1,7 +1,6 @@
 package mrkirby153.MscHouses.core;
 
 import mrkirby153.MscHouses.lib.Strings;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
