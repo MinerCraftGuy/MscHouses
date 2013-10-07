@@ -7,7 +7,6 @@ import mrkirby153.MscHouses.block.BlockCopperOre;
 import mrkirby153.MscHouses.block.BlockHouseGenerator;
 import mrkirby153.MscHouses.block.GUI.GuiHandler;
 import mrkirby153.MscHouses.block.tileEntity.TileEntityHouseGen;
-import mrkirby153.MscHouses.configuration.ConfigurationHelper;
 import mrkirby153.MscHouses.configuration.ConfigurationSettings;
 import mrkirby153.MscHouses.configuration.MscHousesConfiguration;
 import mrkirby153.MscHouses.core.command.MscHousesCommand;
