@@ -35,10 +35,6 @@ public class GuiHouseGenerator extends GuiContainer{
 		this.xSize = 176;
 	}
 	@Override
-	public void initGui() {
-	//	this.buttonList.add(generate = new GuiButton(0, this.width /2 + 20, this.height /2 - 65, 60, 20, "Generate"));
-	}
-	@Override
 	protected void drawGuiContainerForegroundLayer(int param1, int param2) {
 		//draw text and stuff here
 		//the parameters for drawString are: string, x, y, color
