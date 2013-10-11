@@ -161,16 +161,16 @@ public class MscHouses {
 			Version.check();
 			//Defines Blocks
 
-			OreCopper = new BlockCopperOre(oreCopperId.getInt()).setUnlocalizedName("oreCopper");
-			BlockHouseGenerator = new BlockHouseGenerator(houseGenId.getInt()).setUnlocalizedName("HouseGen");
+			OreCopper = new BlockCopperOre(oreCopperId.getInt()).setUnlocalizedName(Strings.BLOCK_ORE_COPPER_NAME);
+			BlockHouseGenerator = new BlockHouseGenerator(houseGenId.getInt()).setUnlocalizedName(Strings.BLOCK_HOUSE_GEN_NAME);
 			//Defines Items
-			Debug = new Item_Debug(debugId.getInt()).setUnlocalizedName("toolDebug");
-			ingotCopper = new ItemCopper(ingotCopperId.getInt()).setUnlocalizedName("ingotCopper");
-			HouseTool = new ItemHouseTool(itemHouseToolId.getInt()).setUnlocalizedName("toolHouse");
-			PCB = new ItemPCB(itemPcbId.getInt()).setUnlocalizedName("toolPCB");
-			moduel = new ItemModuel(itemModuelId.getInt()).setUnlocalizedName("itemModuel");
-			modifyer = new ItemMaterialModifyer(itemModifyerId.getInt()).setUnlocalizedName("itemModifyer");
-			infiniteDimensions = new ItemInfiniteDimensons(infiniteDimId.getInt()).setUnlocalizedName("itemInfiniteDim");
+			Debug = new Item_Debug(debugId.getInt()).setUnlocalizedName(Strings.ITEM_DEBUG_NAME);
+			ingotCopper = new ItemCopper(ingotCopperId.getInt()).setUnlocalizedName(Strings.ITEM_INGOT_COPPER_NAME);
+			HouseTool = new ItemHouseTool(itemHouseToolId.getInt()).setUnlocalizedName(Strings.ITEM_HOUSE_TOOL_NAME);
+			PCB = new ItemPCB(itemPcbId.getInt()).setUnlocalizedName(Strings.ITEM_PCB_NAME);
+			moduel = new ItemModuel(itemModuelId.getInt()).setUnlocalizedName(Strings.ITEM_MODUEL_NAME);
+			modifyer = new ItemMaterialModifyer(itemModifyerId.getInt()).setUnlocalizedName(Strings.ITEM_MATERIAL_MODIFYER_NAME);
+			infiniteDimensions = new ItemInfiniteDimensons(infiniteDimId.getInt()).setUnlocalizedName(Strings.ITEM_INFINITE_DIM_NAME);
 			
 			GameRegistry.registerBlock(BlockHouseGenerator, ItemBlockGenerator.class, Strings.BLOCK_HOUSE_GEN_NAME);
 			GameRegistry.registerBlock(OreCopper, Strings.BLOCK_ORE_COPPER_NAME);

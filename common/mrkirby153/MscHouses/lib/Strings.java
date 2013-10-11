@@ -27,17 +27,17 @@ public class Strings {
 	public static final String NO_FINGERPRINT_MESSAGE = "This version of "+Reference.MOD_NAME+" is in development and may contain features that are unstable";
 	public static final String INVALID_FINGERPRINT_MESSAGE = "This version of "+Reference.MOD_NAME+" has been modified from the original!";
 	/* Item Names */
-	public static final String ITEM_DEBUG_NAME = "debug";
+	public static final String ITEM_DEBUG_NAME = "toolDebug";
 	public static final String ITEM_INGOT_COPPER_NAME = "ingotCopper";
-	public static final String ITEM_HOUSE_TOOL_NAME = "houseTool";
-	public static final String ITEM_PCB_NAME = "pcb";
-	public static final String ITEM_MODUEL_NAME = "moduel";
-	public static final String ITEM_MATERIAL_MODIFYER_NAME = "material_modifyer";
-	public static final String ITEM_INFINITE_DIM_NAME = "jar_of_dim";
+	public static final String ITEM_HOUSE_TOOL_NAME = "toolHouse";
+	public static final String ITEM_PCB_NAME = "toolPCB";
+	public static final String ITEM_MODUEL_NAME = "itemModule";
+	public static final String ITEM_MATERIAL_MODIFYER_NAME = "itemModifyer";
+	public static final String ITEM_INFINITE_DIM_NAME = "iteminfiniteDim";
 	
 	/* Block Names */
-	public static final String BLOCK_ORE_COPPER_NAME = "copperOre";
-	public static final String BLOCK_HOUSE_GEN_NAME = "item.mschouses:houseGen";
+	public static final String BLOCK_ORE_COPPER_NAME = "oreCopper";
+	public static final String BLOCK_HOUSE_GEN_NAME = "houseGen";
 	/* Creative Tabs */
 	public static final String TAB_MAIN = "tab.mschouses:main";
 	public static final String TAB_MODUEL = "tab.mschouses:moduel";
