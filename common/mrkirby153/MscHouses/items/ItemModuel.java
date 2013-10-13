@@ -63,7 +63,7 @@ public class ItemModuel extends Item{
 	}
 	@Override
 	public String getUnlocalizedName(ItemStack item) {
-		return this.getUnlocalizedName() + "." + this.moduelFileName[item.getItemDamage()];
+		return this.getUnlocalizedName(); //+ "." + this.moduelFileName[item.getItemDamage()];
 	}
 
 	@Override

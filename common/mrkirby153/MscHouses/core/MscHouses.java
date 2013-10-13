@@ -197,7 +197,7 @@ public class MscHouses {
 		//Inialize crafting/smelting recipies
 		Crafting.addCrafting();
 		Crafting.addSmelting();
-		Localization.localize();
+		//Localization.localize();
 		OreHelper.registerOres();
 	}
 

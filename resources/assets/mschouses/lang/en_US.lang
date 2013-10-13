@@ -12,18 +12,18 @@ item.toolDebug.name=Debug Item
 item.ingotCopper.name=Copper Ingot
 item.toolHouse.name=House Tool
 item.toolPCB.name=Printed Circuit Board (PCB)
-item.itemModuel.name=Module
+item.itemModule.name=Module
 item.itemModifyer.name=Material Modifier
-item.itemInfiniteDim=Jar of Infinite Dimensions
+item.iteminfiniteDim=Jar of Infinite Dimensions
 
 #Block Localizations
 block.oreCopper.name=Copper Ore
-block.houseGen.name=House Generator
+
 
 #Creative Tab Localizations
-tab.mschouses:main=Msc. Houses Tools and Blocks
-tab.mschouses:moduel=Msc. Houses Modules
-tab.mschouses:modifyer=Msc. Houses Modifiers
+itemGroup.MscHouses-main=Msc. Houses Tools and Blocks
+itemGroup.MscHouses-Moduel=Msc. Houses Modules
+itemGroup.MscHouses-Modifyers=Msc. Houses Modifiers
 
 #Tile Localizations
-mschouses:houseGen=House Generator
+tile.mschouses:houseGen.name=House Generator

@@ -73,7 +73,7 @@ public class ItemMaterialModifyer extends Item {
 
 	@Override
 	public String getUnlocalizedName(ItemStack item) {
-		return this.getUnlocalizedName() + "." + modifyer_id[item.getItemDamage()];
+		return this.getUnlocalizedName(); //+ "." + modifyer_id[item.getItemDamage()];
 	}
 
 	public void makeSubItems(){
